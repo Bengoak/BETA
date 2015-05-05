@@ -6,9 +6,10 @@
 
 package betaproyecto;
 
-/**
- *
- * @author Asus
+/*
+
+PRUEBA 1PRUEBA 1PRUEBA 1
+
  */
 public class BETAPROYECTO {
 
