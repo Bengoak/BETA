@@ -14,8 +14,10 @@ public class Info extends javax.swing.JFrame {
     /**
      * Creates new form Info
      */
-    public Info() {
+    public Info() {        
         initComponents();
+        this.setSize(1151, 662);
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -36,22 +38,51 @@ public class Info extends javax.swing.JFrame {
         jmlistado = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1151, 662));
 
         jMenu1.setText("Menu");
 
         jminfo.setText("Informacón");
+        jminfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jminfoActionPerformed(evt);
+            }
+        });
         jMenu1.add(jminfo);
 
         jmfase.setText("Fase");
+        jmfase.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmfaseActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmfase);
 
         jmformulario.setText("Formulario");
+        jmformulario.setEnabled(false);
+        jmformulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmformularioActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmformulario);
 
         jmdetalles.setText("Detalles situación solicitud");
+        jmdetalles.setEnabled(false);
+        jmdetalles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmdetallesActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmdetalles);
 
         jmlistado.setText("Listado del sorteo");
+        jmlistado.setEnabled(false);
+        jmlistado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jmlistadoActionPerformed(evt);
+            }
+        });
         jMenu1.add(jmlistado);
 
         jMenuBar1.add(jMenu1);
@@ -71,6 +102,36 @@ public class Info extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jminfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminfoActionPerformed
+        
+        Cvista.lanzar(0);
+        
+    }//GEN-LAST:event_jminfoActionPerformed
+
+    private void jmfaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmfaseActionPerformed
+        
+        Cvista.lanzar(1);
+        
+    }//GEN-LAST:event_jmfaseActionPerformed
+
+    private void jmformularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmformularioActionPerformed
+        
+        Cvista.lanzar(2);
+        
+    }//GEN-LAST:event_jmformularioActionPerformed
+
+    private void jmdetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmdetallesActionPerformed
+        
+        Cvista.lanzar(3);
+        
+    }//GEN-LAST:event_jmdetallesActionPerformed
+
+    private void jmlistadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlistadoActionPerformed
+        
+        Cvista.lanzar(4);
+        
+    }//GEN-LAST:event_jmlistadoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -110,10 +171,10 @@ public class Info extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jmdetalles;
-    private javax.swing.JMenuItem jmfase;
-    private javax.swing.JMenuItem jmformulario;
+    public static javax.swing.JMenuItem jmdetalles;
+    public static javax.swing.JMenuItem jmfase;
+    public static javax.swing.JMenuItem jmformulario;
     private javax.swing.JMenuItem jminfo;
-    private javax.swing.JMenuItem jmlistado;
+    public static javax.swing.JMenuItem jmlistado;
     // End of variables declaration//GEN-END:variables
 }
