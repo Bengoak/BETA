@@ -104,7 +104,7 @@ public class BusquedaIndividual extends javax.swing.JFrame {
 
     private void bconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bconsultaActionPerformed
         
-        BETAPROYECTO.busquedaindividual();
+        //BETAPROYECTO.busquedaindividual();
         Cvista.estadodetalles(1);
         Cvista.cerrarbusquedaIndividual();
         

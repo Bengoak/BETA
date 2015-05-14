@@ -42,7 +42,7 @@ public class Info extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
-        jminfo.setText("Informacón");
+        jminfo.setText("Información");
         jminfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jminfoActionPerformed(evt);

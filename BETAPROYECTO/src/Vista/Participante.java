@@ -34,6 +34,7 @@ public class Participante extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        tpParticipantes.setEditable(false);
         jScrollPane1.setViewportView(tpParticipantes);
 
         jLabel1.setText("Participantes");
@@ -94,7 +95,7 @@ public class Participante extends javax.swing.JFrame {
 
     private void bFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFinActionPerformed
         
-        BETAPROYECTO.finsolicitud();
+        //BETAPROYECTO.finsolicitud();
         
     }//GEN-LAST:event_bFinActionPerformed
 

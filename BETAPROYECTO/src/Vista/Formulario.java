@@ -17,6 +17,14 @@ public class Formulario extends Pvirgen {
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
+        //comboPro.addItem(BETAPROYECTO.cogerprovincia());
+        //comboMu.addItem(BETAPROYECTO.cogermunicipio());
+        //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
+        //comboNum.addItem(BETAPROYECTO.cogernumero());
+        
+        
+        
+        
     }
 
     /**
@@ -332,6 +340,7 @@ public class Formulario extends Pvirgen {
 
         comboMu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adios", "adios" }));
         comboMu.setSelectedIndex(-1);
+        comboMu.setEnabled(false);
         comboMu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboMuActionPerformed(evt);
@@ -340,6 +349,7 @@ public class Formulario extends Pvirgen {
 
         comboLoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "epa", "Epa" }));
         comboLoc.setSelectedIndex(-1);
+        comboLoc.setEnabled(false);
         comboLoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboLocActionPerformed(evt);
@@ -358,9 +368,16 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftCp.setEnabled(false);
+        ftCp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftCpActionPerformed(evt);
+            }
+        });
 
         comboNum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
         comboNum.setSelectedIndex(-1);
+        comboNum.setEnabled(false);
         comboNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboNumActionPerformed(evt);
@@ -372,7 +389,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoUno.setEnabled(false);
 
+        cTlfnoUno.setEnabled(false);
         cTlfnoUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoUnoActionPerformed(evt);
@@ -384,7 +403,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoDos.setEnabled(false);
 
+        cTlfnoDos.setEnabled(false);
         cTlfnoDos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoDosActionPerformed(evt);
@@ -396,7 +417,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoTres.setEnabled(false);
 
+        cTlfnoTres.setEnabled(false);
         cTlfnoTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoTresActionPerformed(evt);
@@ -408,7 +431,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoCuatro.setEnabled(false);
 
+        cTlfnoCuatro.setEnabled(false);
         cTlfnoCuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoCuatroActionPerformed(evt);
@@ -416,6 +441,7 @@ public class Formulario extends Pvirgen {
         });
 
         bLupaCalle.setText("lupa");
+        bLupaCalle.setEnabled(false);
         bLupaCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLupaCalleActionPerformed(evt);
@@ -427,6 +453,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftLetra.setEnabled(false);
         ftLetra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftLetraActionPerformed(evt);
@@ -438,6 +465,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftEscalera.setEnabled(false);
         ftEscalera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftEscaleraActionPerformed(evt);
@@ -449,6 +477,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftPiso.setEnabled(false);
         ftPiso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftPisoActionPerformed(evt);
@@ -460,6 +489,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftMano.setEnabled(false);
         ftMano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftManoActionPerformed(evt);
@@ -468,7 +498,7 @@ public class Formulario extends Pvirgen {
 
         jLabel24.setText("*Povincia");
 
-        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hola", "Ola" }));
+        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alava", "Gipuzkoa" }));
         comboPro.setSelectedIndex(-1);
         comboPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -639,6 +669,7 @@ public class Formulario extends Pvirgen {
         });
 
         bLupaCentro.setText("lupa");
+        bLupaCentro.setEnabled(false);
         bLupaCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLupaCentroActionPerformed(evt);
@@ -839,15 +870,18 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_rbMujerActionPerformed
 
     private void comboMuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMuActionPerformed
-        if(comboMu.getSelectedIndex() != -1){
-            comboMu.setEnabled(false);
+        
+        comboPro.setEnabled(false);
+        if(comboMu.getSelectedIndex() != -1){            
+            ftCp.setEnabled(true);
         }
         //BETAPROYECTO.cogermunicipio();
     }//GEN-LAST:event_comboMuActionPerformed
 
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
-        if(comboLoc.getSelectedIndex() != -1){
-            comboLoc.setEnabled(false);
+        ftCp.setEnabled(false);
+        if(comboLoc.getSelectedIndex() != -1){            
+            bLupaCalle.setEnabled(true);
         }
         //BETAPROYECTO.cogerlocalidad();        
     }//GEN-LAST:event_comboLocActionPerformed
@@ -857,8 +891,20 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_tfCalleActionPerformed
 
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
+        bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
-            comboNum.setEnabled(false);
+            ftLetra.setEnabled(true);
+            ftEscalera.setEnabled(true);
+            ftPiso.setEnabled(true);
+            ftMano.setEnabled(true);
+            ftTlfnoUno.setEnabled(true);
+            cTlfnoUno.setEnabled(true);
+            ftTlfnoDos.setEnabled(true);
+            cTlfnoDos.setEnabled(true);
+            ftTlfnoTres.setEnabled(true);
+            cTlfnoTres.setEnabled(true);
+            ftTlfnoCuatro.setEnabled(true);
+            cTlfnoCuatro.setEnabled(true);
         }
         //BETAPROYECTO.cogernumeros();
     }//GEN-LAST:event_comboNumActionPerformed
@@ -896,6 +942,9 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_ftManoActionPerformed
 
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
+        if(rAlava.isSelected()){
+            bLupaCentro.setEnabled(true);
+        }
         //BETAPROYECTO.centroalava();
     }//GEN-LAST:event_rAlavaActionPerformed
 
@@ -960,26 +1009,38 @@ public class Formulario extends Pvirgen {
         rModeloA.setSelected(false);
         rModeloB.setSelected(false);
         rModeloD.setSelected(false);
-        cDiscapacidad.setSelected(false);
+        cDiscapacidad.setSelected(false);        
         
         
-        comboPro.setEnabled(true);
-        comboMu.setEnabled(true);
-        comboLoc.setEnabled(true);
-        comboNum.setEnabled(true);
+        tfNombreTutor.setEnabled(false);
+        tfPrimerApellidoTutor.setEnabled(false);
+        tfSegundoApellidoTutor.setEnabled(false);
+        tfNombreNen.setEnabled(false);
+        tfPrimerApellidoNen.setEnabled(false);
+        tfSegundoApellidoNen.setEnabled(false);
+        rbHombre.setEnabled(false);
+        rbMujer.setEnabled(false);
+        ftFecha.setEnabled(false);
+        
+        bLupaCentro.setEnabled(false);
+        
+        borrardireccion();
                 
         
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
-            //BETAPROYECTO.cogerprovincia();
+        //comboPro.addItem("Alava");
+        //comboPro.addItem("Bizkaia");
+        //comboPro.addItem("Gipuzkoa");
+        
         if(comboPro.getSelectedIndex() != -1){
-            comboPro.setEnabled(false);
-        }
-        if(comboPro.getSelectedIndex() != -1){
+            //comboPro.setEnabled(false);
             rAlava.setText(comboPro.getSelectedItem().toString());
             rFueraAlava.setText("Fuera de " + comboPro.getSelectedItem().toString());
+            comboMu.setEnabled(true);
         }
+        
     }//GEN-LAST:event_comboProActionPerformed
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
@@ -1047,7 +1108,9 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_ftDniTutorActionPerformed
 
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
-        //BETAPROYECTO.cogercalle();
+        comboLoc.setEnabled(false);
+        comboNum.setEnabled(true);
+        //BETAPROYECTO.cojercalle();
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
@@ -1074,10 +1137,8 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro.setText(null);
         cTlfnoCuatro.setSelected(false);
         
-        comboPro.setEnabled(true);
-        comboMu.setEnabled(true);
-        comboLoc.setEnabled(true);
-        comboNum.setEnabled(true);
+        borrardireccion();
+        
     }//GEN-LAST:event_bBorrarDireccionActionPerformed
 
     private void ftDniNenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniNenActionPerformed
@@ -1085,6 +1146,11 @@ public class Formulario extends Pvirgen {
         validarDni(ftDniNen.getText());
         
     }//GEN-LAST:event_ftDniNenActionPerformed
+
+    private void ftCpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftCpActionPerformed
+        comboMu.setEnabled(false);
+        comboLoc.setEnabled(true);
+    }//GEN-LAST:event_ftCpActionPerformed
 
     private Boolean validarDni(String DniTutor) {
         boolean validacion = Cvista.validardni(DniTutor);
@@ -1097,6 +1163,22 @@ public class Formulario extends Pvirgen {
         
     }
     
+    private void borrardireccion(){
+        comboPro.setEnabled(true);
+        comboNum.setEnabled(false);
+        ftLetra.setEnabled(false);
+        ftEscalera.setEnabled(false);
+        ftPiso.setEnabled(false);
+        ftMano.setEnabled(false);
+        ftTlfnoUno.setEnabled(false);
+        cTlfnoUno.setEnabled(false);
+        ftTlfnoDos.setEnabled(false);
+        cTlfnoDos.setEnabled(false);
+        ftTlfnoTres.setEnabled(false);
+        cTlfnoTres.setEnabled(false);
+        ftTlfnoCuatro.setEnabled(false);
+        cTlfnoCuatro.setEnabled(false);
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
