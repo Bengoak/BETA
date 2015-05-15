@@ -45,7 +45,7 @@
                           <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="430" max="32767" attributes="0"/>
+                  <EmptySpace pref="147" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -87,11 +87,28 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="bAbrirInscripcion" min="-2" max="-2" attributes="0"/>
-                          <Component id="bEjecutarSorteo" min="-2" max="-2" attributes="0"/>
-                          <Component id="bCerrarInscripcion" min="-2" max="-2" attributes="0"/>
+                          <Component id="bAbrirInscripcion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bCerrarInscripcion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bEjecutarSorteo" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="549" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="101" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bFase1Informacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase2Informacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Informacion" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bFase2Detalles" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Detalles" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFormulario" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="63" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="bFase2Listado" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Listado" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -99,11 +116,25 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="bAbrirInscripcion" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bAbrirInscripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase1Informacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFormulario" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="bCerrarInscripcion" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bCerrarInscripcion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase2Informacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase2Detalles" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase2Listado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="bEjecutarSorteo" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="bEjecutarSorteo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Informacion" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Detalles" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="bFase3Listado" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -134,6 +165,78 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bAbrirInscripcionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase1Informacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase1InformacionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase2Informacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase2InformacionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase3Informacion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Informaci&#xf3;n"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase3InformacionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFormulario">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Formulario"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFormularioActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase2Detalles">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Detalles situaci&#xf3;n Solicitud"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase2DetallesActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase3Detalles">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Detalles situaci&#xf3;n Solicitud"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase3DetallesActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase2Listado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listado"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase2ListadoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="bFase3Listado">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listado"/>
+                <Property name="enabled" type="boolean" value="false"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bFase3ListadoActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

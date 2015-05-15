@@ -18,13 +18,9 @@ public class Formulario extends Pvirgen {
         initComponents();
         this.setSize(1151, 662);
         //comboPro.addItem(BETAPROYECTO.cogerprovincia());
-        //comboMu.addItem(BETAPROYECTO.cogermunicipio());
+        
         //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
         //comboNum.addItem(BETAPROYECTO.cogernumero());
-        
-        
-        
-        
     }
 
     /**
@@ -51,10 +47,10 @@ public class Formulario extends Pvirgen {
         rbMujer = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        ftFecha = new javax.swing.JFormattedTextField();
         tfNombreNen = new javax.swing.JTextField();
         tfPrimerApellidoNen = new javax.swing.JTextField();
         tfSegundoApellidoNen = new javax.swing.JTextField();
+        dcFecha = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -161,9 +157,6 @@ public class Formulario extends Pvirgen {
 
         jLabel12.setText("dd/mm/aaaa");
 
-        ftFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/mm/aaaa"))));
-        ftFecha.setEnabled(false);
-
         tfNombreNen.setEnabled(false);
 
         tfPrimerApellidoNen.setEnabled(false);
@@ -193,15 +186,9 @@ public class Formulario extends Pvirgen {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(ftFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel12))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(rbHombre)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rbMujer))))
+                                .addComponent(rbHombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbMujer))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,7 +198,12 @@ public class Formulario extends Pvirgen {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNombreNen, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(tfNombreNen, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -233,16 +225,16 @@ public class Formulario extends Pvirgen {
                     .addComponent(tfSegundoApellidoNen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(ftFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
+                    .addComponent(jLabel10)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbHombre)
                         .addComponent(rbMujer)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -832,9 +824,9 @@ public class Formulario extends Pvirgen {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -846,7 +838,7 @@ public class Formulario extends Pvirgen {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bProtección))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -875,21 +867,21 @@ public class Formulario extends Pvirgen {
         if(comboMu.getSelectedIndex() != -1){            
             ftCp.setEnabled(true);
         }
-        //BETAPROYECTO.cogermunicipio();
     }//GEN-LAST:event_comboMuActionPerformed
 
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
         ftCp.setEnabled(false);
         if(comboLoc.getSelectedIndex() != -1){            
             bLupaCalle.setEnabled(true);
-        }
-        //BETAPROYECTO.cogerlocalidad();        
+        }       
     }//GEN-LAST:event_comboLocActionPerformed
 
     private void tfCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCalleActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_tfCalleActionPerformed
-
+    
+    
+    
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
         bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
@@ -949,6 +941,9 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_rAlavaActionPerformed
 
     private void rFueraAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraAlavaActionPerformed
+        if(rFueraAlava.isSelected()){
+            bLupaCentro.setEnabled(true);
+        }
         //BETAPROYECTO.centrofueraalava();
     }//GEN-LAST:event_rFueraAlavaActionPerformed
 
@@ -974,7 +969,9 @@ public class Formulario extends Pvirgen {
 
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         
-        ftDniTutor.setText(null);
+        Info.jmformulario.doClick();
+        
+        /*ftDniTutor.setText(null);
         tfNombreTutor.setText(null);
         tfPrimerApellidoTutor.setText(null);
         tfSegundoApellidoTutor.setText(null);
@@ -1024,22 +1021,20 @@ public class Formulario extends Pvirgen {
         
         bLupaCentro.setEnabled(false);
         
-        borrardireccion();
+        borrardireccion();*/
                 
         
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
-        //comboPro.addItem("Alava");
-        //comboPro.addItem("Bizkaia");
-        //comboPro.addItem("Gipuzkoa");
         
         if(comboPro.getSelectedIndex() != -1){
-            //comboPro.setEnabled(false);
             rAlava.setText(comboPro.getSelectedItem().toString());
             rFueraAlava.setText("Fuera de " + comboPro.getSelectedItem().toString());
             comboMu.setEnabled(true);
         }
+        
+        //comboMu.addItem(BETAPROYECTO.cogermunicipio(comboPro.getSelectedItem().toString()));
         
     }//GEN-LAST:event_comboProActionPerformed
 
@@ -1070,11 +1065,12 @@ public class Formulario extends Pvirgen {
         
         if(validardatos()){
             /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
-            ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), sexo, ftFecha.getText(),
+            ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getDate(),
             comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
             comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
             ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
             tfCentro.getText(), bgModelo.getSelection(), discapacidad);*/
+            //BETAPROYECTO.cogerparticipantes();
             Cvista.guardar();
         }
     }//GEN-LAST:event_bGuardarActionPerformed
@@ -1096,25 +1092,29 @@ public class Formulario extends Pvirgen {
             tfSegundoApellidoNen.setEnabled(true);
             rbHombre.setEnabled(true);
             rbMujer.setEnabled(true);
-            ftFecha.setEnabled(true);
+            dcFecha.setEnabled(true);
             }
             tfNombreNen.setEnabled(true);
             tfPrimerApellidoNen.setEnabled(true);
             tfSegundoApellidoNen.setEnabled(true);
             rbHombre.setEnabled(true);
             rbMujer.setEnabled(true);
-            ftFecha.setEnabled(true);
+            dcFecha.setEnabled(true);
         }
     }//GEN-LAST:event_ftDniTutorActionPerformed
 
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
         comboLoc.setEnabled(false);
         comboNum.setEnabled(true);
-        //BETAPROYECTO.cojercalle();
+        //Arraylist = BETAPROYECTO.cojercalle();
+        Cvista.calles(/*Arraylist*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
-        //BETAPROYECTO.cogercentro();
+        
+        //ArrayList = BETAPROYECTO.cogercentro();
+        Cvista.centros(/*Arraylist*/);
+        
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
@@ -1200,11 +1200,11 @@ public class Formulario extends Pvirgen {
     private javax.swing.JComboBox comboMu;
     private javax.swing.JComboBox comboNum;
     private javax.swing.JComboBox comboPro;
+    private com.toedter.calendar.JDateChooser dcFecha;
     private javax.swing.JFormattedTextField ftCp;
     private javax.swing.JFormattedTextField ftDniNen;
     private javax.swing.JFormattedTextField ftDniTutor;
     private javax.swing.JFormattedTextField ftEscalera;
-    private javax.swing.JFormattedTextField ftFecha;
     private javax.swing.JFormattedTextField ftLetra;
     private javax.swing.JFormattedTextField ftMano;
     private javax.swing.JFormattedTextField ftPiso;
@@ -1249,8 +1249,8 @@ public class Formulario extends Pvirgen {
     private javax.swing.JRadioButton rModeloD;
     private javax.swing.JRadioButton rbHombre;
     private javax.swing.JRadioButton rbMujer;
-    private javax.swing.JTextField tfCalle;
-    private javax.swing.JTextField tfCentro;
+    public static javax.swing.JTextField tfCalle;
+    public static javax.swing.JTextField tfCentro;
     private javax.swing.JTextField tfNombreNen;
     private javax.swing.JTextField tfNombreTutor;
     private javax.swing.JTextField tfPrimerApellidoNen;
