@@ -1,23 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/betaproyecto/BETAPROYECTO.java</file>
-=======
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/betaproyecto/BETAPROYECTO.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Info.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Informacion.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Fase.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Formulario.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Detalles.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Listado.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Cvista.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Participante.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/BusquedaIndividual.java</file>
-            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/ValidarDni.java</file>
->>>>>>> martin/master
-        </group>
+        <group/>
     </open-files>
 </project-private>
