@@ -20,6 +20,8 @@ public class Cvista {
     private static Participante participante;
     private static BusquedaIndividual busquedaindividual;
     private static Boolean validacion;
+    private static SeleccionCalle seleccioncalle;
+    private static SeleccionCentro seleccioncentro;
     
     
     private static int esfase = 0;
@@ -63,6 +65,7 @@ public class Cvista {
         panel.setVisible(true);
     }
     
+    
     public static void estadofase(int i) { 
         
         esfase = i; 
@@ -81,7 +84,6 @@ public class Cvista {
         
     }
     
-    //public static void 
 
     public static void guardar() {
         
@@ -98,19 +100,32 @@ public class Cvista {
         busquedaindividual.dispose();
     }
 
-    public static void protecciondatos() {
-        
+    public static void protecciondatos() {        
         JOptionPane.showMessageDialog(null, "Proteccion de datos.");
-        
     }
 
     static boolean validardni(String DniTutor) {
         validacion = ValidarDni.ValidarDni(DniTutor);
-        return validacion;
-        
+        return validacion;        
     }
     
-    
+    public static void calles(){
+        seleccioncalle = new SeleccionCalle(/*Arraylist*/);
+        seleccioncalle.setVisible(true);
+    }
+
+    static void cerrarseleccioncalle() {
+        seleccioncalle.dispose();
+    }
+
+    static void centros() {
+        seleccioncentro = new SeleccionCentro(/*Arraylist*/);
+        seleccioncentro.setVisible(true);
+    }
+
+    static void cerrarseleccioncentro() {
+        seleccioncentro.dispose();
+    }
     
     
 }

@@ -174,7 +174,7 @@ public class Info extends javax.swing.JFrame {
     public static javax.swing.JMenuItem jmdetalles;
     public static javax.swing.JMenuItem jmfase;
     public static javax.swing.JMenuItem jmformulario;
-    private javax.swing.JMenuItem jminfo;
+    public static javax.swing.JMenuItem jminfo;
     public static javax.swing.JMenuItem jmlistado;
     // End of variables declaration//GEN-END:variables
 }
