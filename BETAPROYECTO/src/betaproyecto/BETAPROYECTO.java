@@ -13,6 +13,7 @@ import java.util.Date;
 import javax.swing.ButtonModel;
 import Conexion.*;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 public class BETAPROYECTO {
 
     
@@ -34,21 +35,57 @@ public class BETAPROYECTO {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
-public static void guardar(String dniTutor, String nombretutor, String primerapellidotutor, String segundoapellidotutor, String dninen, String nombrenen, String primerapellidonen, String segundoapellidonen, int sexo, Date fecha, int provincia, int municipio, String cp, int localidad, String calle, int numero, String letra, String escalera, String piso, String mano, String telefono1, String telefono2, String telefono3, String telefono4, String centro, ButtonModel modelo, int discapacidad) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+public static void guardar( String dniTutor, 
+                            String nombretutor, 
+                            String primerapellidotutor, 
+                            String segundoapellidotutor, 
+                            
+                            String dninen, 
+                            String nombrenen, 
+                            String primerapellidonen, 
+                            String segundoapellidonen, 
+                            int sexo,
+                            Calendar fecha,
+                            int provincia,
+                            int municipio,
+                            
+                            String cp, 
+                            int localidad,
+                            String calle, 
+                            int numero, 
+                            String letra, 
+                            String escalera,
+                            String piso, 
+                            String mano, 
+                            
+                            String telefono1,
+                            String telefono2, 
+                            String telefono3, 
+                            String telefono4, 
+                            
+                            String centro, 
+                            
+                            String modelo, 
+                            int discapacidad) {
+        
     }
     
-    public static Object buscartutor(String dni) {
-        Object busqueda = null;
-        return busqueda;
+    public static Tutor buscartutor(String dni) {
+        Tutor t=new Tutor(dni);
+        t=TutorBD.buscar(t);
+        System.out.print("");
+        return t;
+       
     }
 
     public static void finsolicitud() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ///volcamos el array de crios
+        //borramos el array
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates
     }
 
     public static void cogerprovincia() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
     public static void cogermunicipio() {
@@ -79,8 +116,12 @@ public static void guardar(String dniTutor, String nombretutor, String primerape
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public static void busquedaindividual() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public static ArrayList<Nen> busquedaindividual(Calendar c,String dnitutor) {
+        Nen n=new Nen(c);
+        Tutor t=new Tutor(dnitutor);
+        n.setT(t);
+        return NenDB.busquedaindividual(n);
+        
     }
 
     public static void cojercalle() {

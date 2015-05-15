@@ -17,6 +17,7 @@ public class ConexionOracle {
     private static Connection con = null;
     protected static PreparedStatement scon;
     protected  static  Statement sentencia;
+    protected static CallableStatement scall;
     protected  static ResultSet resultado;
     protected  static  String plantilla;
     

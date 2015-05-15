@@ -27,7 +27,8 @@ public class SorteoBD extends Conexion.ConexionOracle {
             scon = getCon().prepareStatement(plantilla);
             java.sql.Date sqlDate= new java.sql.Date(sor.getFecha().getTimeInMillis());
             scon.setDate(1,sqlDate);   
-            scon.executeUpdate();
+            scon.execute();
+            
             scon.close();
             desconectar();
             System.out.println("\nSorteo INSERTADO\n");
