@@ -3,11 +3,11 @@ package Conexion;
 
 import oracle.jdbc.OracleTypes;
 import java.sql.CallableStatement;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.sql.PreparedStatement;
 
 public class ConexionOracle {
     
@@ -15,6 +15,11 @@ public class ConexionOracle {
     private static String usuario ="daw12";
     private static String Contraseña ="daw12";
     private static Connection con = null;
+    protected static PreparedStatement scon;
+    protected  static  Statement sentencia;
+    protected  static ResultSet resultado;
+    protected  static  String plantilla;
+    
     
     public static void setCon () {
         
@@ -37,7 +42,7 @@ public class ConexionOracle {
     public static void desconectar () {
         
         try{
-            con.close();  
+         con.close();  
         }catch(Exception e){
         System.out.println("no se puede desconectar");
         }
