@@ -15,6 +15,13 @@ public class Participante extends javax.swing.JFrame {
     public Participante() {
         initComponents();
         this.setLocationRelativeTo(null);
+        //Hay que crear el metodo de cogerparticipantes-----------------------
+        //Object = BETAPROYECTO.cogersparticipantes();
+        
+        //int part = BETAPROYECTO.participantes();
+        //if(part >= 3){
+        //   bAnadir.setEnabled(false);
+        //}
     }
 
     /**

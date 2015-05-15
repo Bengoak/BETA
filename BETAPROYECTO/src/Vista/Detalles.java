@@ -14,18 +14,12 @@ public class Detalles extends Pvirgen {
     /**
      * Creates new form Detalles
      */
-    public Detalles() {
-        initComponents();
-        this.setSize(1151, 662);
-        Cvista.busquedaindividual();
-    }
+    
 
-    Detalles(int es) {
+    public Detalles(/*Object*/) {
         initComponents();
-        this.setSize(1151, 662);
-        if(es == 0){
-        Cvista.busquedaindividual();
-        }
+        this.setSize(1151, 662);     
+        
     }
 
     /**

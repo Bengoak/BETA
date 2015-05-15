@@ -25,7 +25,7 @@ public class Cvista {
     
     
     private static int esfase = 0;
-    private static int esdetalles = 0;
+    
     
     
     
@@ -35,7 +35,7 @@ public class Cvista {
     }
 
     public static void lanzar(int i) { 
-        
+        boolean x = true;
         if(panel != null){
             info.remove(panel);
         }
@@ -50,9 +50,10 @@ public class Cvista {
             case 2:
                 panel = new Formulario();
                 break;
-            case 3:
-                panel = new Detalles(esdetalles);
-                esdetalles = 0;
+            case 3:                
+                busquedaindividual = new BusquedaIndividual();
+                busquedaindividual.setVisible(true);
+                x = false;                
                 break;
             case 4:
                 panel = new Listado();
@@ -60,9 +61,11 @@ public class Cvista {
             
         } 
         
+        if(x){
         info.add(panel);
         info.pack();
         panel.setVisible(true);
+        }
     }
     
     
@@ -73,19 +76,7 @@ public class Cvista {
                 
     }
     
-    public static void estadodetalles(int i){
-        esdetalles = i;
-        Info.jmdetalles.doClick();
-    }
-    
-    public static void busquedaindividual(){
-        busquedaindividual = new BusquedaIndividual();
-        busquedaindividual.setVisible(true);
-        
-    }
-    
-
-    public static void guardar() {
+    public static void guardar(/*Object*/) {
         
         participante = new Participante();
         participante.setVisible(true);
@@ -110,7 +101,7 @@ public class Cvista {
     }
     
     public static void calles(){
-        seleccioncalle = new SeleccionCalle(/*Arraylist*/);
+        seleccioncalle = new SeleccionCalle(/*Object*/);
         seleccioncalle.setVisible(true);
     }
 
@@ -119,12 +110,20 @@ public class Cvista {
     }
 
     static void centros() {
-        seleccioncentro = new SeleccionCentro(/*Arraylist*/);
+        seleccioncentro = new SeleccionCentro(/*Object*/);
         seleccioncentro.setVisible(true);
     }
 
     static void cerrarseleccioncentro() {
         seleccioncentro.dispose();
+    }
+
+    static void detalles(/*Object*/) {
+        panel = new Detalles(/*Object*/);
+        info.add(panel);
+        info.pack();
+        panel.setVisible(true);
+        
     }
     
     

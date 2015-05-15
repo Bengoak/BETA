@@ -7,6 +7,9 @@ package Vista;
 
 import Exceptions.*;
 import betaproyecto.*;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Formulario extends Pvirgen {
@@ -17,10 +20,9 @@ public class Formulario extends Pvirgen {
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
+        //Rellenar provincia
         //comboPro.addItem(BETAPROYECTO.cogerprovincia());
         
-        //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
-        //comboNum.addItem(BETAPROYECTO.cogernumero());
     }
 
     /**
@@ -119,6 +121,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftDniNen.setEnabled(false);
         ftDniNen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftDniNenActionPerformed(evt);
@@ -162,6 +165,8 @@ public class Formulario extends Pvirgen {
         tfPrimerApellidoNen.setEnabled(false);
 
         tfSegundoApellidoNen.setEnabled(false);
+
+        dcFecha.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -531,7 +536,9 @@ public class Formulario extends Pvirgen {
                                         .addComponent(cTlfnoUno)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cTlfnoDos)
+                                        .addGap(22, 22, 22))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -540,9 +547,7 @@ public class Formulario extends Pvirgen {
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(107, 107, 107)))
-                                .addComponent(cTlfnoDos)
-                                .addGap(12, 12, 12)
+                                        .addGap(147, 147, 147)))
                                 .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cTlfnoTres)
@@ -867,13 +872,17 @@ public class Formulario extends Pvirgen {
         if(comboMu.getSelectedIndex() != -1){            
             ftCp.setEnabled(true);
         }
+        //Rellenar localidad
+        //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
     }//GEN-LAST:event_comboMuActionPerformed
 
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
         ftCp.setEnabled(false);
         if(comboLoc.getSelectedIndex() != -1){            
             bLupaCalle.setEnabled(true);
-        }       
+        } 
+        //Rellenar numero
+        //comboNum.addItem(BETAPROYECTO.cogernumero());
     }//GEN-LAST:event_comboLocActionPerformed
 
     private void tfCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCalleActionPerformed
@@ -888,29 +897,29 @@ public class Formulario extends Pvirgen {
             ftLetra.setEnabled(true);
             ftEscalera.setEnabled(true);
             ftPiso.setEnabled(true);
-            ftMano.setEnabled(true);
-            ftTlfnoUno.setEnabled(true);
-            cTlfnoUno.setEnabled(true);
-            ftTlfnoDos.setEnabled(true);
-            cTlfnoDos.setEnabled(true);
-            ftTlfnoTres.setEnabled(true);
-            cTlfnoTres.setEnabled(true);
-            ftTlfnoCuatro.setEnabled(true);
-            cTlfnoCuatro.setEnabled(true);
+            ftMano.setEnabled(true);            
         }
-        //BETAPROYECTO.cogernumeros();
     }//GEN-LAST:event_comboNumActionPerformed
 
     private void cTlfnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoUnoActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoUno.isSelected()){
+            ftTlfnoDos.setEnabled(true);
+            cTlfnoDos.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoUnoActionPerformed
 
     private void cTlfnoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoDosActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoDos.isSelected()){
+            ftTlfnoTres.setEnabled(true);
+            cTlfnoTres.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoDosActionPerformed
 
     private void cTlfnoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoTresActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoTres.isSelected()){
+            ftTlfnoCuatro.setEnabled(true);
+            cTlfnoCuatro.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoTresActionPerformed
 
     private void cTlfnoCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoCuatroActionPerformed
@@ -971,59 +980,6 @@ public class Formulario extends Pvirgen {
         
         Info.jmformulario.doClick();
         
-        /*ftDniTutor.setText(null);
-        tfNombreTutor.setText(null);
-        tfPrimerApellidoTutor.setText(null);
-        tfSegundoApellidoTutor.setText(null);
-        comboPro.setSelectedIndex(-1);
-        comboMu.setSelectedIndex(-1);
-        ftCp.setText(null);
-        comboLoc.setSelectedIndex(-1);
-        tfCalle.setText(null);
-        comboNum.setSelectedIndex(-1);
-        ftLetra.setText(null);
-        ftEscalera.setText(null);
-        ftPiso.setText(null);
-        ftMano.setText(null);
-        ftTlfnoUno.setText(null);
-        cTlfnoUno.setSelected(false);
-        ftTlfnoDos.setText(null);
-        cTlfnoDos.setSelected(false);
-        ftTlfnoTres.setText(null);
-        cTlfnoTres.setSelected(false);
-        ftTlfnoCuatro.setText(null);
-        cTlfnoCuatro.setSelected(false);
-        ftDniNen.setText(null);
-        tfNombreNen.setText(null);
-        tfPrimerApellidoNen.setText(null);
-        tfSegundoApellidoNen.setText(null);
-        rbHombre.setSelected(false);
-        rbMujer.setSelected(false);
-        ftFecha.setText(null);
-        rAlava.setSelected(false);
-        rFueraAlava.setSelected(false);
-        tfCentro.setText(null);
-        rModeloA.setSelected(false);
-        rModeloB.setSelected(false);
-        rModeloD.setSelected(false);
-        cDiscapacidad.setSelected(false);        
-        
-        
-        tfNombreTutor.setEnabled(false);
-        tfPrimerApellidoTutor.setEnabled(false);
-        tfSegundoApellidoTutor.setEnabled(false);
-        tfNombreNen.setEnabled(false);
-        tfPrimerApellidoNen.setEnabled(false);
-        tfSegundoApellidoNen.setEnabled(false);
-        rbHombre.setEnabled(false);
-        rbMujer.setEnabled(false);
-        ftFecha.setEnabled(false);
-        
-        bLupaCentro.setEnabled(false);
-        
-        borrardireccion();*/
-                
-        
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
@@ -1033,7 +989,7 @@ public class Formulario extends Pvirgen {
             rFueraAlava.setText("Fuera de " + comboPro.getSelectedItem().toString());
             comboMu.setEnabled(true);
         }
-        
+        //Rellenar municipio
         //comboMu.addItem(BETAPROYECTO.cogermunicipio(comboPro.getSelectedItem().toString()));
         
     }//GEN-LAST:event_comboProActionPerformed
@@ -1063,15 +1019,26 @@ public class Formulario extends Pvirgen {
             modelo = "D";
         } 
         
-        if(validardatos()){
-            /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
-            ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getDate(),
-            comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
-            comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
-            ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
-            tfCentro.getText(), bgModelo.getSelection(), discapacidad);*/
-            //BETAPROYECTO.cogerparticipantes();
-            Cvista.guardar();
+        try {
+            //Hay que crear en el constructor el metodo de buscarnen-------------------------
+            //Object busqueda = BETAPROYECTO.buscarnen(ftDniNen.getText());
+            //if(busqueda/*.getdni() */ == null){
+            if(validardatos()){
+                /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
+                ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getCalendar(),
+                comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
+                comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
+                ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
+                tfCentro.getText(), modelo, discapacidad);*/                
+                
+                Cvista.guardar();            
+            }
+            //}
+            //else{
+            //    javax.swing.JOptionPane.showMessageDialog(this, "El Dni del niño esta repetido");
+            //}
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMessage());
         }
     }//GEN-LAST:event_bGuardarActionPerformed
 
@@ -1079,41 +1046,20 @@ public class Formulario extends Pvirgen {
         Cvista.protecciondatos();
     }//GEN-LAST:event_bProtecciónActionPerformed
 
-    private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
-        
-        if(validarDni(ftDniTutor.getText())){
-            Object busqueda = BETAPROYECTO.buscartutor(ftDniTutor.getText());
-            if(busqueda == null){
-            tfNombreTutor.setEnabled(true);
-            tfPrimerApellidoTutor.setEnabled(true);
-            tfSegundoApellidoTutor.setEnabled(true);
-            tfNombreNen.setEnabled(true);
-            tfPrimerApellidoNen.setEnabled(true);
-            tfSegundoApellidoNen.setEnabled(true);
-            rbHombre.setEnabled(true);
-            rbMujer.setEnabled(true);
-            dcFecha.setEnabled(true);
-            }
-            tfNombreNen.setEnabled(true);
-            tfPrimerApellidoNen.setEnabled(true);
-            tfSegundoApellidoNen.setEnabled(true);
-            rbHombre.setEnabled(true);
-            rbMujer.setEnabled(true);
-            dcFecha.setEnabled(true);
-        }
-    }//GEN-LAST:event_ftDniTutorActionPerformed
-
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
         comboLoc.setEnabled(false);
         comboNum.setEnabled(true);
-        //Arraylist = BETAPROYECTO.cojercalle();
-        Cvista.calles(/*Arraylist*/);        
+        ftTlfnoUno.setEnabled(true);
+        cTlfnoUno.setEnabled(true);
+        
+        //Object = BETAPROYECTO.cojercalle();
+        Cvista.calles(/*Object*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
         
-        //ArrayList = BETAPROYECTO.cogercentro();
-        Cvista.centros(/*Arraylist*/);
+        //Object = BETAPROYECTO.cogercentro();
+        Cvista.centros(/*Object*/);
         
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
@@ -1143,7 +1089,7 @@ public class Formulario extends Pvirgen {
 
     private void ftDniNenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniNenActionPerformed
         
-        validarDni(ftDniNen.getText());
+        validarDni(ftDniNen.getText());        
         
     }//GEN-LAST:event_ftDniNenActionPerformed
 
@@ -1152,14 +1098,59 @@ public class Formulario extends Pvirgen {
         comboLoc.setEnabled(true);
     }//GEN-LAST:event_ftCpActionPerformed
 
+    private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
+
+        if(validarDni(ftDniTutor.getText())){
+            Object busqueda = BETAPROYECTO.buscartutor(ftDniTutor.getText());
+            if(busqueda/*.getdni() */== null){
+                tfNombreTutor.setEnabled(true);
+                tfPrimerApellidoTutor.setEnabled(true);
+                tfSegundoApellidoTutor.setEnabled(true);
+                ftDniNen.setEnabled(true);
+                tfNombreNen.setEnabled(true);
+                tfPrimerApellidoNen.setEnabled(true);
+                tfSegundoApellidoNen.setEnabled(true);
+                rbHombre.setEnabled(true);
+                rbMujer.setEnabled(true);
+                dcFecha.setEnabled(true);
+            }
+            else{
+                //tfNombreTutor.setText(busqueda.getnombre().toString());
+                //tfSegundoApellidoTutor.setText(busqueda.getape1().toString());
+                //tfPrimerApellidoTutor.setText(busqueda.getape2().toString());
+                ftDniNen.setEnabled(true);
+                tfNombreNen.setEnabled(true);
+                tfPrimerApellidoNen.setEnabled(true);
+                tfSegundoApellidoNen.setEnabled(true);
+                rbHombre.setEnabled(true);
+                rbMujer.setEnabled(true);
+                dcFecha.setEnabled(true);
+            }
+        }
+    }//GEN-LAST:event_ftDniTutorActionPerformed
+
     private Boolean validarDni(String DniTutor) {
         boolean validacion = Cvista.validardni(DniTutor);
         return validacion;
     }
     
-    private boolean validardatos() {
-        
-        return true;
+    private boolean validardatos() throws Exception {
+        try{
+            camposvacios();
+            validarFecha();
+            
+            return true;
+        }
+        catch(CampoVacio e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
+        catch(FechaNoValida e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
         
     }
     
@@ -1179,6 +1170,58 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro.setEnabled(false);
         cTlfnoCuatro.setEnabled(false);
     }
+    
+    private void validarFecha()throws Exception{
+        if (dcFecha.getDate() == null)
+            throw new CampoVacio("El fecha es un dato obligatorio"); 
+        
+        Calendar hoy = Calendar.getInstance();
+        Calendar fechaEvento = dcFecha.getCalendar();        
+        
+        if (fechaEvento.after(hoy))
+                throw new FechaNoValida("La fecha tiene que se inferior a la actual"); 
+        hoy.add(Calendar.YEAR, -16);
+        if (fechaEvento.before(hoy))
+                throw new FechaNoValida("El participante no puede ser mayor de 16 años");     
+    }
+    
+    private void camposvacios() throws Exception{
+        if (ftDniTutor.getValue() == null)
+           throw new CampoVacio("El Dni del tutor es un dato obligatorio");
+        if (tfNombreTutor.getText().equals("") == true)
+            throw new CampoVacio("El nombre del tutor es un dato obligatorio");
+        if (tfPrimerApellidoTutor.getText().equals("") == true)
+            throw new CampoVacio("El primer apellido del tutor es un dato obligatorio");
+        if (tfSegundoApellidoTutor.getText().equals("") == true)
+            throw new CampoVacio("El segundo apellido del tutor es un dato obligatorio");
+        if (tfNombreNen.getText().equals("") == true)
+            throw new CampoVacio("El nombre del niño es un dato obligatorio");
+        if (tfPrimerApellidoNen.getText().equals("") == true)
+            throw new CampoVacio("El primer apellido de niño es un dato obligatorio");
+        if (tfSegundoApellidoNen.getText().equals("") == true)
+            throw new CampoVacio("El segundo apellido del niño es un dato obligatorio");
+        if(bgSexo.isSelected(rbHombre.getModel()) == false && bgSexo.isSelected(rbMujer.getModel()) == false)
+            throw new CampoVacio("El sexo del niño es un dato obligatorio");
+        if(comboPro.getSelectedIndex() == -1)
+            throw new CampoVacio("La provincia es un dato obligatorio");
+        if(comboMu.getSelectedIndex() == -1)
+            throw new CampoVacio("El municipio es un dato obligatorio");
+        if(ftCp.getValue() == null)
+            throw new CampoVacio("El codigo postal es un dato obligatorio");
+        if(comboLoc.getSelectedIndex() == -1)
+            throw new CampoVacio("La localidad es un dato obligatorio");
+        if(tfCalle.getText().equals("") == true)
+            throw new CampoVacio("La calle es un dato obligatorio");
+        if(ftTlfnoUno.getValue() == null)
+            throw new CampoVacio("El primer telefono es un dato obligatorio");
+        if(cTlfnoUno.isSelected() == false)
+            throw new CampoVacio("Hay que activar el checkbox del primer telefono");
+        if(tfCentro.getText().equals("") == true)
+            throw new CampoVacio("El centro de enseñanza es un dato obligatorio");        
+        if(rModeloA.isSelected() == false && rModeloB.isSelected() == false && rModeloD.isSelected() == false)
+            throw new CampoVacio("El modelo es un dato obligatorio");
+    }
+    
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
