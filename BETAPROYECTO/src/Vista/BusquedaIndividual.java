@@ -46,10 +46,15 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         jLabel3.setText("DNI/NIF completo del padre/madre/tutor-a");
 
         try {
-            ftDniTutor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+            ftDniTutor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftDniTutor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ftDniTutorFocusLost(evt);
+            }
+        });
 
         bconsulta.setText("Consultar");
         bconsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -108,6 +113,16 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bconsultaActionPerformed
 
+    private void ftDniTutorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftDniTutorFocusLost
+        validarDni(ftDniTutor.getText());
+            
+        
+    }//GEN-LAST:event_ftDniTutorFocusLost
+
+    private Boolean validarDni(String DniTutor) {
+        boolean validacion = Cvista.validardni(DniTutor);
+        return validacion;
+    }
     /**
      * @param args the command line arguments
      */

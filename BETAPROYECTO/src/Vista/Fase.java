@@ -78,14 +78,16 @@ public class Fase extends Pvirgen {
         bFase3Detalles = new javax.swing.JButton();
         bFase2Listado = new javax.swing.JButton();
         bFase3Listado = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Fases");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fases del programa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Lucida Grande", 0, 13), new java.awt.Color(0, 0, 204))); // NOI18N
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Fases del programa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 11), new java.awt.Color(0, 0, 204))); // NOI18N
 
+        bCerrarInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/cerrar.png"))); // NOI18N
         bCerrarInscripcion.setText("Cerrar inscripciones");
         bCerrarInscripcion.setEnabled(false);
         bCerrarInscripcion.addActionListener(new java.awt.event.ActionListener() {
@@ -94,6 +96,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bEjecutarSorteo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ejecutar.png"))); // NOI18N
         bEjecutarSorteo.setText("Ejecutar sorteo");
         bEjecutarSorteo.setEnabled(false);
         bEjecutarSorteo.addActionListener(new java.awt.event.ActionListener() {
@@ -102,6 +105,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bAbrirInscripcion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/tick.png"))); // NOI18N
         bAbrirInscripcion.setText("Abrir inscripciones");
         bAbrirInscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -109,6 +113,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase1Informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Information-icon.png"))); // NOI18N
         bFase1Informacion.setText("Información");
         bFase1Informacion.setEnabled(false);
         bFase1Informacion.addActionListener(new java.awt.event.ActionListener() {
@@ -117,6 +122,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase2Informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Information-icon.png"))); // NOI18N
         bFase2Informacion.setText("Información");
         bFase2Informacion.setEnabled(false);
         bFase2Informacion.addActionListener(new java.awt.event.ActionListener() {
@@ -125,6 +131,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase3Informacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Information-icon.png"))); // NOI18N
         bFase3Informacion.setText("Información");
         bFase3Informacion.setEnabled(false);
         bFase3Informacion.addActionListener(new java.awt.event.ActionListener() {
@@ -133,6 +140,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFormulario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/formulario.png"))); // NOI18N
         bFormulario.setText("Formulario");
         bFormulario.setEnabled(false);
         bFormulario.addActionListener(new java.awt.event.ActionListener() {
@@ -141,6 +149,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase2Detalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gafas.png"))); // NOI18N
         bFase2Detalles.setText("Detalles situación Solicitud");
         bFase2Detalles.setEnabled(false);
         bFase2Detalles.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +158,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase3Detalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gafas.png"))); // NOI18N
         bFase3Detalles.setText("Detalles situación Solicitud");
         bFase3Detalles.setEnabled(false);
         bFase3Detalles.addActionListener(new java.awt.event.ActionListener() {
@@ -157,6 +167,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase2Listado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/listado.png"))); // NOI18N
         bFase2Listado.setText("Listado");
         bFase2Listado.setEnabled(false);
         bFase2Listado.addActionListener(new java.awt.event.ActionListener() {
@@ -165,6 +176,7 @@ public class Fase extends Pvirgen {
             }
         });
 
+        bFase3Listado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/listado.png"))); // NOI18N
         bFase3Listado.setText("Listado");
         bFase3Listado.setEnabled(false);
         bFase3Listado.addActionListener(new java.awt.event.ActionListener() {
@@ -222,27 +234,32 @@ public class Fase extends Pvirgen {
                 .addGap(38, 38, 38))
         );
 
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/udaleku.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(116, 116, 116)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
-                        .addComponent(jLabel1)))
-                .addContainerGap(147, Short.MAX_VALUE))
+                .addGap(444, 444, 444)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(26, 26, 26))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(67, 67, 67)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(236, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(78, 78, 78)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addGap(58, 58, 58)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
+                .addContainerGap(334, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -253,7 +270,9 @@ public class Fase extends Pvirgen {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -321,6 +340,7 @@ public class Fase extends Pvirgen {
     private javax.swing.JButton bFase3Listado;
     private javax.swing.JButton bFormulario;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
