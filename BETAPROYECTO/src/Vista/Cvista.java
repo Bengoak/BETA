@@ -20,10 +20,12 @@ public class Cvista {
     private static Participante participante;
     private static BusquedaIndividual busquedaindividual;
     private static Boolean validacion;
+    private static SeleccionCalle seleccioncalle;
+    private static SeleccionCentro seleccioncentro;
     
     
     private static int esfase = 0;
-    private static int esdetalles = 0;
+    
     
     
     
@@ -33,7 +35,7 @@ public class Cvista {
     }
 
     public static void lanzar(int i) { 
-        
+        boolean x = true;
         if(panel != null){
             info.remove(panel);
         }
@@ -48,9 +50,10 @@ public class Cvista {
             case 2:
                 panel = new Formulario();
                 break;
-            case 3:
-                panel = new Detalles(esdetalles);
-                esdetalles = 0;
+            case 3:                
+                busquedaindividual = new BusquedaIndividual();
+                busquedaindividual.setVisible(true);
+                x = false;                
                 break;
             case 4:
                 panel = new Listado();
@@ -58,10 +61,13 @@ public class Cvista {
             
         } 
         
+        if(x){
         info.add(panel);
         info.pack();
         panel.setVisible(true);
+        }
     }
+    
     
     public static void estadofase(int i) { 
         
@@ -70,20 +76,7 @@ public class Cvista {
                 
     }
     
-    public static void estadodetalles(int i){
-        esdetalles = i;
-        Info.jmdetalles.doClick();
-    }
-    
-    public static void busquedaindividual(){
-        busquedaindividual = new BusquedaIndividual();
-        busquedaindividual.setVisible(true);
-        
-    }
-    
-    //public static void 
-
-    public static void guardar() {
+    public static void guardar(/*Object*/) {
         
         participante = new Participante();
         participante.setVisible(true);
@@ -98,18 +91,40 @@ public class Cvista {
         busquedaindividual.dispose();
     }
 
-    public static void protecciondatos() {
-        
+    public static void protecciondatos() {        
         JOptionPane.showMessageDialog(null, "Proteccion de datos.");
-        
     }
 
     static boolean validardni(String DniTutor) {
         validacion = ValidarDni.ValidarDni(DniTutor);
-        return validacion;
-        
+        return validacion;        
     }
     
+    public static void calles(){
+        seleccioncalle = new SeleccionCalle(/*Object*/);
+        seleccioncalle.setVisible(true);
+    }
+
+    static void cerrarseleccioncalle() {
+        seleccioncalle.dispose();
+    }
+
+    static void centros() {
+        seleccioncentro = new SeleccionCentro(/*Object*/);
+        seleccioncentro.setVisible(true);
+    }
+
+    static void cerrarseleccioncentro() {
+        seleccioncentro.dispose();
+    }
+
+    static void detalles(/*Object*/) {
+        panel = new Detalles(/*Object*/);
+        info.add(panel);
+        info.pack();
+        panel.setVisible(true);
+        
+    }
     
     
 }

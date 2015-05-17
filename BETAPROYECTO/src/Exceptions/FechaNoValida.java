@@ -9,10 +9,10 @@ package Exceptions;
  *
  * @author newuser
  */
-public class CampoVacio extends Exception {
+public class FechaNoValida extends Exception{
     private String mensaje;
     
-    public CampoVacio(String mensaje)
+    public FechaNoValida(String mensaje)
     {
         this.mensaje = mensaje;
     }
@@ -20,6 +20,5 @@ public class CampoVacio extends Exception {
     public String getMensaje(){
         return mensaje;
     }
-   
     
 }

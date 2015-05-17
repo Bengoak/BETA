@@ -7,6 +7,9 @@ package Vista;
 
 import Exceptions.*;
 import betaproyecto.*;
+import java.util.Calendar;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Formulario extends Pvirgen {
@@ -17,6 +20,9 @@ public class Formulario extends Pvirgen {
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
+        //Rellenar provincia
+        //comboPro.addItem(BETAPROYECTO.cogerprovincia());
+        
     }
 
     /**
@@ -43,10 +49,10 @@ public class Formulario extends Pvirgen {
         rbMujer = new javax.swing.JRadioButton();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        ftFecha = new javax.swing.JFormattedTextField();
         tfNombreNen = new javax.swing.JTextField();
         tfPrimerApellidoNen = new javax.swing.JTextField();
         tfSegundoApellidoNen = new javax.swing.JTextField();
+        dcFecha = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -115,6 +121,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftDniNen.setEnabled(false);
         ftDniNen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftDniNenActionPerformed(evt);
@@ -153,14 +160,13 @@ public class Formulario extends Pvirgen {
 
         jLabel12.setText("dd/mm/aaaa");
 
-        ftFecha.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.DateFormatter(new java.text.SimpleDateFormat("dd/mm/aaaa"))));
-        ftFecha.setEnabled(false);
-
         tfNombreNen.setEnabled(false);
 
         tfPrimerApellidoNen.setEnabled(false);
 
         tfSegundoApellidoNen.setEnabled(false);
+
+        dcFecha.setEnabled(false);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -185,15 +191,9 @@ public class Formulario extends Pvirgen {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(ftFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jLabel12))
-                                    .addGroup(jPanel2Layout.createSequentialGroup()
-                                        .addComponent(rbHombre)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(rbMujer))))
+                                .addComponent(rbHombre)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rbMujer))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -203,7 +203,12 @@ public class Formulario extends Pvirgen {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel6)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(tfNombreNen, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(tfNombreNen, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(dcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12)))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -225,16 +230,16 @@ public class Formulario extends Pvirgen {
                     .addComponent(tfSegundoApellidoNen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel11)
-                            .addComponent(ftFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12)))
+                    .addComponent(jLabel10)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rbHombre)
                         .addComponent(rbMujer)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel11)
+                        .addComponent(jLabel12)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -332,6 +337,7 @@ public class Formulario extends Pvirgen {
 
         comboMu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adios", "adios" }));
         comboMu.setSelectedIndex(-1);
+        comboMu.setEnabled(false);
         comboMu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboMuActionPerformed(evt);
@@ -340,6 +346,7 @@ public class Formulario extends Pvirgen {
 
         comboLoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "epa", "Epa" }));
         comboLoc.setSelectedIndex(-1);
+        comboLoc.setEnabled(false);
         comboLoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboLocActionPerformed(evt);
@@ -358,9 +365,16 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftCp.setEnabled(false);
+        ftCp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ftCpActionPerformed(evt);
+            }
+        });
 
         comboNum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
         comboNum.setSelectedIndex(-1);
+        comboNum.setEnabled(false);
         comboNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboNumActionPerformed(evt);
@@ -372,7 +386,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoUno.setEnabled(false);
 
+        cTlfnoUno.setEnabled(false);
         cTlfnoUno.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoUnoActionPerformed(evt);
@@ -384,7 +400,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoDos.setEnabled(false);
 
+        cTlfnoDos.setEnabled(false);
         cTlfnoDos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoDosActionPerformed(evt);
@@ -396,7 +414,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoTres.setEnabled(false);
 
+        cTlfnoTres.setEnabled(false);
         cTlfnoTres.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoTresActionPerformed(evt);
@@ -408,7 +428,9 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftTlfnoCuatro.setEnabled(false);
 
+        cTlfnoCuatro.setEnabled(false);
         cTlfnoCuatro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cTlfnoCuatroActionPerformed(evt);
@@ -416,6 +438,7 @@ public class Formulario extends Pvirgen {
         });
 
         bLupaCalle.setText("lupa");
+        bLupaCalle.setEnabled(false);
         bLupaCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLupaCalleActionPerformed(evt);
@@ -427,6 +450,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftLetra.setEnabled(false);
         ftLetra.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftLetraActionPerformed(evt);
@@ -438,6 +462,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftEscalera.setEnabled(false);
         ftEscalera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftEscaleraActionPerformed(evt);
@@ -449,6 +474,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftPiso.setEnabled(false);
         ftPiso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftPisoActionPerformed(evt);
@@ -460,6 +486,7 @@ public class Formulario extends Pvirgen {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftMano.setEnabled(false);
         ftMano.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ftManoActionPerformed(evt);
@@ -468,7 +495,7 @@ public class Formulario extends Pvirgen {
 
         jLabel24.setText("*Povincia");
 
-        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Hola", "Ola" }));
+        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alava", "Gipuzkoa" }));
         comboPro.setSelectedIndex(-1);
         comboPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -509,7 +536,9 @@ public class Formulario extends Pvirgen {
                                         .addComponent(cTlfnoUno)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(28, 28, 28))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(cTlfnoDos)
+                                        .addGap(22, 22, 22))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -518,9 +547,7 @@ public class Formulario extends Pvirgen {
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(107, 107, 107)))
-                                .addComponent(cTlfnoDos)
-                                .addGap(12, 12, 12)
+                                        .addGap(147, 147, 147)))
                                 .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(cTlfnoTres)
@@ -639,6 +666,7 @@ public class Formulario extends Pvirgen {
         });
 
         bLupaCentro.setText("lupa");
+        bLupaCentro.setEnabled(false);
         bLupaCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLupaCentroActionPerformed(evt);
@@ -801,9 +829,9 @@ public class Formulario extends Pvirgen {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -815,7 +843,7 @@ public class Formulario extends Pvirgen {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bProtección))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addGap(30, 30, 30))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -839,40 +867,59 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_rbMujerActionPerformed
 
     private void comboMuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMuActionPerformed
-        if(comboMu.getSelectedIndex() != -1){
-            comboMu.setEnabled(false);
+        
+        comboPro.setEnabled(false);
+        if(comboMu.getSelectedIndex() != -1){            
+            ftCp.setEnabled(true);
         }
-        //BETAPROYECTO.cogermunicipio();
+        //Rellenar localidad
+        //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
     }//GEN-LAST:event_comboMuActionPerformed
 
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
-        if(comboLoc.getSelectedIndex() != -1){
-            comboLoc.setEnabled(false);
-        }
-        //BETAPROYECTO.cogerlocalidad();        
+        ftCp.setEnabled(false);
+        if(comboLoc.getSelectedIndex() != -1){            
+            bLupaCalle.setEnabled(true);
+        } 
+        //Rellenar numero
+        //comboNum.addItem(BETAPROYECTO.cogernumero());
     }//GEN-LAST:event_comboLocActionPerformed
 
     private void tfCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCalleActionPerformed
-        // TODO add your handling code here:
+   
     }//GEN-LAST:event_tfCalleActionPerformed
-
+    
+    
+    
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
+        bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
-            comboNum.setEnabled(false);
+            ftLetra.setEnabled(true);
+            ftEscalera.setEnabled(true);
+            ftPiso.setEnabled(true);
+            ftMano.setEnabled(true);            
         }
-        //BETAPROYECTO.cogernumeros();
     }//GEN-LAST:event_comboNumActionPerformed
 
     private void cTlfnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoUnoActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoUno.isSelected()){
+            ftTlfnoDos.setEnabled(true);
+            cTlfnoDos.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoUnoActionPerformed
 
     private void cTlfnoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoDosActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoDos.isSelected()){
+            ftTlfnoTres.setEnabled(true);
+            cTlfnoTres.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoDosActionPerformed
 
     private void cTlfnoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoTresActionPerformed
-        // TODO add your handling code here:
+        if(cTlfnoTres.isSelected()){
+            ftTlfnoCuatro.setEnabled(true);
+            cTlfnoCuatro.setEnabled(true);
+        }
     }//GEN-LAST:event_cTlfnoTresActionPerformed
 
     private void cTlfnoCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoCuatroActionPerformed
@@ -896,10 +943,16 @@ public class Formulario extends Pvirgen {
     }//GEN-LAST:event_ftManoActionPerformed
 
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
+        if(rAlava.isSelected()){
+            bLupaCentro.setEnabled(true);
+        }
         //BETAPROYECTO.centroalava();
     }//GEN-LAST:event_rAlavaActionPerformed
 
     private void rFueraAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraAlavaActionPerformed
+        if(rFueraAlava.isSelected()){
+            bLupaCentro.setEnabled(true);
+        }
         //BETAPROYECTO.centrofueraalava();
     }//GEN-LAST:event_rFueraAlavaActionPerformed
 
@@ -925,61 +978,20 @@ public class Formulario extends Pvirgen {
 
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         
-        ftDniTutor.setText(null);
-        tfNombreTutor.setText(null);
-        tfPrimerApellidoTutor.setText(null);
-        tfSegundoApellidoTutor.setText(null);
-        comboPro.setSelectedIndex(-1);
-        comboMu.setSelectedIndex(-1);
-        ftCp.setText(null);
-        comboLoc.setSelectedIndex(-1);
-        tfCalle.setText(null);
-        comboNum.setSelectedIndex(-1);
-        ftLetra.setText(null);
-        ftEscalera.setText(null);
-        ftPiso.setText(null);
-        ftMano.setText(null);
-        ftTlfnoUno.setText(null);
-        cTlfnoUno.setSelected(false);
-        ftTlfnoDos.setText(null);
-        cTlfnoDos.setSelected(false);
-        ftTlfnoTres.setText(null);
-        cTlfnoTres.setSelected(false);
-        ftTlfnoCuatro.setText(null);
-        cTlfnoCuatro.setSelected(false);
-        ftDniNen.setText(null);
-        tfNombreNen.setText(null);
-        tfPrimerApellidoNen.setText(null);
-        tfSegundoApellidoNen.setText(null);
-        rbHombre.setSelected(false);
-        rbMujer.setSelected(false);
-        ftFecha.setText(null);
-        rAlava.setSelected(false);
-        rFueraAlava.setSelected(false);
-        tfCentro.setText(null);
-        rModeloA.setSelected(false);
-        rModeloB.setSelected(false);
-        rModeloD.setSelected(false);
-        cDiscapacidad.setSelected(false);
-        
-        
-        comboPro.setEnabled(true);
-        comboMu.setEnabled(true);
-        comboLoc.setEnabled(true);
-        comboNum.setEnabled(true);
-                
+        Info.jmformulario.doClick();
         
     }//GEN-LAST:event_bBorrarActionPerformed
 
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
-            //BETAPROYECTO.cogerprovincia();
-        if(comboPro.getSelectedIndex() != -1){
-            comboPro.setEnabled(false);
-        }
+        
         if(comboPro.getSelectedIndex() != -1){
             rAlava.setText(comboPro.getSelectedItem().toString());
             rFueraAlava.setText("Fuera de " + comboPro.getSelectedItem().toString());
+            comboMu.setEnabled(true);
         }
+        //Rellenar municipio
+        //comboMu.addItem(BETAPROYECTO.cogermunicipio(comboPro.getSelectedItem().toString()));
+        
     }//GEN-LAST:event_comboProActionPerformed
 
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
@@ -1007,14 +1019,26 @@ public class Formulario extends Pvirgen {
             modelo = "D";
         } 
         
-        if(validardatos()){
-            /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
-            ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), sexo, ftFecha.getText(),
-            comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
-            comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
-            ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
-            tfCentro.getText(), bgModelo.getSelection(), discapacidad);*/
-            Cvista.guardar();
+        try {
+            //Hay que crear en el constructor el metodo de buscarnen-------------------------
+            //Object busqueda = BETAPROYECTO.buscarnen(ftDniNen.getText());
+            //if(busqueda/*.getdni() */ == null){
+            if(validardatos()){
+                /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
+                ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getCalendar(),
+                comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
+                comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
+                ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
+                tfCentro.getText(), modelo, discapacidad);*/                
+                
+                Cvista.guardar();            
+            }
+            //}
+            //else{
+            //    javax.swing.JOptionPane.showMessageDialog(this, "El Dni del niño esta repetido");
+            //}
+        } catch (Exception e) {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMessage());
         }
     }//GEN-LAST:event_bGuardarActionPerformed
 
@@ -1022,36 +1046,21 @@ public class Formulario extends Pvirgen {
         Cvista.protecciondatos();
     }//GEN-LAST:event_bProtecciónActionPerformed
 
-    private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
-        
-        if(validarDni(ftDniTutor.getText())){
-            Object busqueda = BETAPROYECTO.buscartutor(ftDniTutor.getText());
-            if(busqueda == null){
-            tfNombreTutor.setEnabled(true);
-            tfPrimerApellidoTutor.setEnabled(true);
-            tfSegundoApellidoTutor.setEnabled(true);
-            tfNombreNen.setEnabled(true);
-            tfPrimerApellidoNen.setEnabled(true);
-            tfSegundoApellidoNen.setEnabled(true);
-            rbHombre.setEnabled(true);
-            rbMujer.setEnabled(true);
-            ftFecha.setEnabled(true);
-            }
-            tfNombreNen.setEnabled(true);
-            tfPrimerApellidoNen.setEnabled(true);
-            tfSegundoApellidoNen.setEnabled(true);
-            rbHombre.setEnabled(true);
-            rbMujer.setEnabled(true);
-            ftFecha.setEnabled(true);
-        }
-    }//GEN-LAST:event_ftDniTutorActionPerformed
-
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
-        //BETAPROYECTO.cogercalle();
+        comboLoc.setEnabled(false);
+        comboNum.setEnabled(true);
+        ftTlfnoUno.setEnabled(true);
+        cTlfnoUno.setEnabled(true);
+        
+        //Object = BETAPROYECTO.cojercalle();
+        Cvista.calles(/*Object*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
-        //BETAPROYECTO.cogercentro();
+        
+        //Object = BETAPROYECTO.cogercentro();
+        Cvista.centros(/*Object*/);
+        
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
@@ -1074,27 +1083,143 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro.setText(null);
         cTlfnoCuatro.setSelected(false);
         
-        comboPro.setEnabled(true);
-        comboMu.setEnabled(true);
-        comboLoc.setEnabled(true);
-        comboNum.setEnabled(true);
+        borrardireccion();
+        
     }//GEN-LAST:event_bBorrarDireccionActionPerformed
 
     private void ftDniNenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniNenActionPerformed
         
-        validarDni(ftDniNen.getText());
+        validarDni(ftDniNen.getText());        
         
     }//GEN-LAST:event_ftDniNenActionPerformed
+
+    private void ftCpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftCpActionPerformed
+        comboMu.setEnabled(false);
+        comboLoc.setEnabled(true);
+    }//GEN-LAST:event_ftCpActionPerformed
+
+    private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
+
+        if(validarDni(ftDniTutor.getText())){
+            Object busqueda = BETAPROYECTO.buscartutor(ftDniTutor.getText());
+            if(busqueda/*.getdni() */== null){
+                tfNombreTutor.setEnabled(true);
+                tfPrimerApellidoTutor.setEnabled(true);
+                tfSegundoApellidoTutor.setEnabled(true);
+                ftDniNen.setEnabled(true);
+                tfNombreNen.setEnabled(true);
+                tfPrimerApellidoNen.setEnabled(true);
+                tfSegundoApellidoNen.setEnabled(true);
+                rbHombre.setEnabled(true);
+                rbMujer.setEnabled(true);
+                dcFecha.setEnabled(true);
+            }
+            else{
+                //tfNombreTutor.setText(busqueda.getnombre().toString());
+                //tfSegundoApellidoTutor.setText(busqueda.getape1().toString());
+                //tfPrimerApellidoTutor.setText(busqueda.getape2().toString());
+                ftDniNen.setEnabled(true);
+                tfNombreNen.setEnabled(true);
+                tfPrimerApellidoNen.setEnabled(true);
+                tfSegundoApellidoNen.setEnabled(true);
+                rbHombre.setEnabled(true);
+                rbMujer.setEnabled(true);
+                dcFecha.setEnabled(true);
+            }
+        }
+    }//GEN-LAST:event_ftDniTutorActionPerformed
 
     private Boolean validarDni(String DniTutor) {
         boolean validacion = Cvista.validardni(DniTutor);
         return validacion;
     }
     
-    private boolean validardatos() {
+    private boolean validardatos() throws Exception {
+        try{
+            camposvacios();
+            validarFecha();
+            
+            return true;
+        }
+        catch(CampoVacio e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
+        catch(FechaNoValida e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
         
-        return true;
+    }
+    
+    private void borrardireccion(){
+        comboPro.setEnabled(true);
+        comboNum.setEnabled(false);
+        ftLetra.setEnabled(false);
+        ftEscalera.setEnabled(false);
+        ftPiso.setEnabled(false);
+        ftMano.setEnabled(false);
+        ftTlfnoUno.setEnabled(false);
+        cTlfnoUno.setEnabled(false);
+        ftTlfnoDos.setEnabled(false);
+        cTlfnoDos.setEnabled(false);
+        ftTlfnoTres.setEnabled(false);
+        cTlfnoTres.setEnabled(false);
+        ftTlfnoCuatro.setEnabled(false);
+        cTlfnoCuatro.setEnabled(false);
+    }
+    
+    private void validarFecha()throws Exception{
+        if (dcFecha.getDate() == null)
+            throw new CampoVacio("El fecha es un dato obligatorio"); 
         
+        Calendar hoy = Calendar.getInstance();
+        Calendar fechaEvento = dcFecha.getCalendar();        
+        
+        if (fechaEvento.after(hoy))
+                throw new FechaNoValida("La fecha tiene que se inferior a la actual"); 
+        hoy.add(Calendar.YEAR, -16);
+        if (fechaEvento.before(hoy))
+                throw new FechaNoValida("El participante no puede ser mayor de 16 años");     
+    }
+    
+    private void camposvacios() throws Exception{
+        if (ftDniTutor.getValue() == null)
+           throw new CampoVacio("El Dni del tutor es un dato obligatorio");
+        if (tfNombreTutor.getText().equals("") == true)
+            throw new CampoVacio("El nombre del tutor es un dato obligatorio");
+        if (tfPrimerApellidoTutor.getText().equals("") == true)
+            throw new CampoVacio("El primer apellido del tutor es un dato obligatorio");
+        if (tfSegundoApellidoTutor.getText().equals("") == true)
+            throw new CampoVacio("El segundo apellido del tutor es un dato obligatorio");
+        if (tfNombreNen.getText().equals("") == true)
+            throw new CampoVacio("El nombre del niño es un dato obligatorio");
+        if (tfPrimerApellidoNen.getText().equals("") == true)
+            throw new CampoVacio("El primer apellido de niño es un dato obligatorio");
+        if (tfSegundoApellidoNen.getText().equals("") == true)
+            throw new CampoVacio("El segundo apellido del niño es un dato obligatorio");
+        if(bgSexo.isSelected(rbHombre.getModel()) == false && bgSexo.isSelected(rbMujer.getModel()) == false)
+            throw new CampoVacio("El sexo del niño es un dato obligatorio");
+        if(comboPro.getSelectedIndex() == -1)
+            throw new CampoVacio("La provincia es un dato obligatorio");
+        if(comboMu.getSelectedIndex() == -1)
+            throw new CampoVacio("El municipio es un dato obligatorio");
+        if(ftCp.getValue() == null)
+            throw new CampoVacio("El codigo postal es un dato obligatorio");
+        if(comboLoc.getSelectedIndex() == -1)
+            throw new CampoVacio("La localidad es un dato obligatorio");
+        if(tfCalle.getText().equals("") == true)
+            throw new CampoVacio("La calle es un dato obligatorio");
+        if(ftTlfnoUno.getValue() == null)
+            throw new CampoVacio("El primer telefono es un dato obligatorio");
+        if(cTlfnoUno.isSelected() == false)
+            throw new CampoVacio("Hay que activar el checkbox del primer telefono");
+        if(tfCentro.getText().equals("") == true)
+            throw new CampoVacio("El centro de enseñanza es un dato obligatorio");        
+        if(rModeloA.isSelected() == false && rModeloB.isSelected() == false && rModeloD.isSelected() == false)
+            throw new CampoVacio("El modelo es un dato obligatorio");
     }
     
     
@@ -1118,11 +1243,11 @@ public class Formulario extends Pvirgen {
     private javax.swing.JComboBox comboMu;
     private javax.swing.JComboBox comboNum;
     private javax.swing.JComboBox comboPro;
+    private com.toedter.calendar.JDateChooser dcFecha;
     private javax.swing.JFormattedTextField ftCp;
     private javax.swing.JFormattedTextField ftDniNen;
     private javax.swing.JFormattedTextField ftDniTutor;
     private javax.swing.JFormattedTextField ftEscalera;
-    private javax.swing.JFormattedTextField ftFecha;
     private javax.swing.JFormattedTextField ftLetra;
     private javax.swing.JFormattedTextField ftMano;
     private javax.swing.JFormattedTextField ftPiso;
@@ -1167,8 +1292,8 @@ public class Formulario extends Pvirgen {
     private javax.swing.JRadioButton rModeloD;
     private javax.swing.JRadioButton rbHombre;
     private javax.swing.JRadioButton rbMujer;
-    private javax.swing.JTextField tfCalle;
-    private javax.swing.JTextField tfCentro;
+    public static javax.swing.JTextField tfCalle;
+    public static javax.swing.JTextField tfCentro;
     private javax.swing.JTextField tfNombreNen;
     private javax.swing.JTextField tfNombreTutor;
     private javax.swing.JTextField tfPrimerApellidoNen;

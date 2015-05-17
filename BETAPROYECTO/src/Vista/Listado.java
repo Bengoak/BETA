@@ -15,7 +15,7 @@ public class Listado extends Pvirgen {
     public Listado() {
         initComponents();
         this.setSize(1151, 662);
-        BETAPROYECTO.listado();
+        //BETAPROYECTO.listado();
     }
 
     /**

@@ -7,6 +7,8 @@
 package betaproyecto;
 
 import Vista.*;
+import java.util.Calendar;
+import java.util.Date;
 import javax.swing.ButtonModel;
         
 public class BETAPROYECTO {
@@ -23,11 +25,11 @@ public class BETAPROYECTO {
     public static void listado() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
-    public static void guardar(String text, String text0, String text1, String text2, String text3, String text4, String text5, int sexo, String text6, int selectedIndex, int selectedIndex0, String text7, int selectedIndex1, String text8, int selectedIndex2, String text9, String text10, String text11, String text12, String text13, String text14, String text15, String text16, String text17, ButtonModel selection, int discapacidad) {
+    
+public static void guardar(String dniTutor, String nombretutor, String primerapellidotutor, String segundoapellidotutor, String dninen, String nombrenen, String primerapellidonen, String segundoapellidonen, int sexo, Date fecha, int provincia, int municipio, String cp, int localidad, String calle, int numero, String letra, String escalera, String piso, String mano, String telefono1, String telefono2, String telefono3, String telefono4, String centro, ButtonModel modelo, int discapacidad) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
     public static Object buscartutor(String dni) {
         Object busqueda = null;
         return busqueda;
@@ -72,6 +74,12 @@ public class BETAPROYECTO {
     public static void busquedaindividual() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    public static void cojercalle() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
     
     
     

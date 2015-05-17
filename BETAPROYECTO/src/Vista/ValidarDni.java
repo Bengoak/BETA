@@ -13,6 +13,10 @@ import Exceptions.*;
 
 public class ValidarDni {
     
+    public static void main(String[] args) {       
+        
+    }
+    
     public static boolean ValidarDni(String DniTutor) {
         
         char[] letras = new char[23];
@@ -69,60 +73,7 @@ public class ValidarDni {
         
     }
     
-    public static void main(String[] args) {
-        // TODO code application logic here
-        /*char[] letras = new char[23];
-        valoresletras(letras);
-        
-        boolean repetir = true;
-        do
-        {
-            try
-            {
-                String dni = JOptionPane.showInputDialog(null, "Introduce el DNI con este formato: 12345678A");
-                dni = dni.toUpperCase();
-
-                Pattern cadena = Pattern.compile("^[0-9]{8}[A-Z]{1}$");
-                Matcher comprobar = cadena.matcher(dni);
-
-                if(comprobar.matches())
-                {
-                    String numerostring = dni.substring(0,8);
-                    int numeroint = Integer.parseInt(numerostring);
-                    int posicionletra = numeroint % 23;
-                    char letradni = dni.charAt(8);
-                    if(letras[posicionletra] == letradni )
-                    {
-                        JOptionPane.showMessageDialog(null, "El DNI: " + dni + " es correcto.");
-                    }
-                    else
-                    {
-                        throw new DniException();
-                    }
-                    repetir = false;
-                }
-                else
-                {
-                    throw new FormatoException();                    
-                }
-            } 
-            catch(FormatoException e){
-               JOptionPane.showMessageDialog(null, "Sintaxis del DNI incorrecta");
-            }
-            catch(DniException e){
-               JOptionPane.showMessageDialog(null, "La letra del DNI no es correcta.");
-            }
-            catch(Exception e){
-               JOptionPane.showMessageDialog(null, "Problemas "+e.getClass() + " " + e.getMessage());
-            }
-            finally{
-                 //JOptionPane.showMessageDialog(null, "Ejercicio terminado");
-            }
-        }
-        while(repetir);*/
-        
-        
-    }
+    
     
     public static void valoresletras(char[] letras){
         
