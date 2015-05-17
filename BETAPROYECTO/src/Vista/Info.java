@@ -19,7 +19,7 @@ public class Info extends javax.swing.JFrame {
         this.setSize(1151, 662);
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,6 +42,7 @@ public class Info extends javax.swing.JFrame {
 
         jMenu1.setText("Menu");
 
+        jminfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Information-icon.png"))); // NOI18N
         jminfo.setText("Información");
         jminfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +51,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jminfo);
 
+        jmfase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reloj.png"))); // NOI18N
         jmfase.setText("Fase");
         jmfase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +60,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmfase);
 
+        jmformulario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/formulario.png"))); // NOI18N
         jmformulario.setText("Formulario");
         jmformulario.setEnabled(false);
         jmformulario.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +70,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmformulario);
 
+        jmdetalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gafas.png"))); // NOI18N
         jmdetalles.setText("Detalles situación solicitud");
         jmdetalles.setEnabled(false);
         jmdetalles.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +80,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmdetalles);
 
+        jmlistado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/listado.png"))); // NOI18N
         jmlistado.setText("Listado del sorteo");
         jmlistado.setEnabled(false);
         jmlistado.addActionListener(new java.awt.event.ActionListener() {
@@ -93,11 +98,11 @@ public class Info extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGap(0, 1141, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 558, Short.MAX_VALUE)
+            .addGap(0, 634, Short.MAX_VALUE)
         );
 
         pack();
@@ -177,4 +182,4 @@ public class Info extends javax.swing.JFrame {
     public static javax.swing.JMenuItem jminfo;
     public static javax.swing.JMenuItem jmlistado;
     // End of variables declaration//GEN-END:variables
-}
+ }
