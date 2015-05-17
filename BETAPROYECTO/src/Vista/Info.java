@@ -36,6 +36,7 @@ public class Info extends javax.swing.JFrame {
         jmformulario = new javax.swing.JMenuItem();
         jmdetalles = new javax.swing.JMenuItem();
         jmlistado = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1151, 662));
@@ -90,6 +91,15 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmlistado);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salirrpog.png"))); // NOI18N
+        jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -138,6 +148,10 @@ public class Info extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jmlistadoActionPerformed
 
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -176,6 +190,7 @@ public class Info extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     public static javax.swing.JMenuItem jmdetalles;
     public static javax.swing.JMenuItem jmfase;
     public static javax.swing.JMenuItem jmformulario;

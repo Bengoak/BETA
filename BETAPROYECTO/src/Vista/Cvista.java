@@ -31,7 +31,11 @@ public class Cvista {
     
     public static void start (){
         info = new Info();
-        info.setVisible(true);        
+        info.setVisible(true);       
+        panel = new Informacion();
+        info.add(panel);
+        info.pack();
+        panel.setVisible(true);
     }
 
     public static void lanzar(int i) { 
