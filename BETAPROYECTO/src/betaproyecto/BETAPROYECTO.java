@@ -20,13 +20,13 @@ public class BETAPROYECTO {
     
     
     public static void main(String[] args) {
-        System.out.print("Prueba conexion");
+        /*System.out.print("Prueba conexion");
         ConexionOracle.setCon();
         ConexionOracle.desconectar();
         Calendar c = Calendar.getInstance();
         System.out.print(c);
         Sorteo s= new Sorteo(c);
-        SorteoBD.alta(s);
+        SorteoBD.alta(s);*/
         Cvista.start();
         
     }
