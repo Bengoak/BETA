@@ -35,6 +35,8 @@ public class Listado extends Pvirgen {
 
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+
         taListado.setColumns(20);
         taListado.setRows(5);
         jScrollPane1.setViewportView(taListado);

@@ -40,6 +40,7 @@ public class Participante extends javax.swing.JFrame {
         bAnadir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         tpParticipantes.setEditable(false);
         jScrollPane1.setViewportView(tpParticipantes);

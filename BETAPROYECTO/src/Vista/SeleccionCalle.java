@@ -34,9 +34,10 @@ public class SeleccionCalle extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         lCalles.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            String[] strings = { "Item 1", "012345678901234567890123456789012340123456789012345678901234567890123401234567890123456789012345678901234", "Item 3", "Item 4", "Item 5", "Item 1", "0123456789", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public Object getElementAt(int i) { return strings[i]; }
         });
@@ -84,7 +85,7 @@ public class SeleccionCalle extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
-        Formulario.tfCalle.setText(lCalles.getSelectedValue().toString());
+        Formulario.calle(lCalles.getSelectedValue().toString().substring(0, 5), lCalles.getSelectedValue().toString().substring(6));
         Cvista.cerrarseleccioncalle();
         
     }//GEN-LAST:event_jButton1ActionPerformed

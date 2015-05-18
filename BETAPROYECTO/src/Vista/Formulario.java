@@ -11,12 +11,21 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+
+         * Descripción de lo que hace la clase
+
+         * @author
+
+         */
 
 public class Formulario extends Pvirgen {
 
-    /**
-     * Creates new form Formulario
-     */
+    private static String centro;
+    private static String indexcentro;
+    private static String calle;
+    private static String via;
+    
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
@@ -87,13 +96,13 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro = new javax.swing.JFormattedTextField();
         cTlfnoCuatro = new javax.swing.JCheckBox();
         bLupaCalle = new javax.swing.JButton();
-        ftLetra = new javax.swing.JFormattedTextField();
-        ftEscalera = new javax.swing.JFormattedTextField();
-        ftPiso = new javax.swing.JFormattedTextField();
-        ftMano = new javax.swing.JFormattedTextField();
         jLabel24 = new javax.swing.JLabel();
         comboPro = new javax.swing.JComboBox();
         bBorrarDireccion = new javax.swing.JButton();
+        tfMano = new javax.swing.JTextField();
+        tfPiso = new javax.swing.JTextField();
+        tfEscalera = new javax.swing.JTextField();
+        tfLetra = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         rAlava = new javax.swing.JRadioButton();
@@ -112,8 +121,10 @@ public class Formulario extends Pvirgen {
 
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
         jPanel5.setPreferredSize(new java.awt.Dimension(1151, 662));
 
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del participante", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
 
         jLabel5.setText("Dni");
@@ -243,6 +254,7 @@ public class Formulario extends Pvirgen {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del padre/madre o tutor/a", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 204))); // NOI18N
 
         jLabel7.setText("*Dni");
@@ -312,6 +324,7 @@ public class Formulario extends Pvirgen {
                 .addGap(25, 25, 25))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dirección", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -447,54 +460,6 @@ public class Formulario extends Pvirgen {
             }
         });
 
-        try {
-            ftLetra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftLetra.setEnabled(false);
-        ftLetra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftLetraActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftEscalera.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftEscalera.setEnabled(false);
-        ftEscalera.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftEscaleraActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftPiso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftPiso.setEnabled(false);
-        ftPiso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftPisoActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftMano.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftMano.setEnabled(false);
-        ftMano.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftManoActionPerformed(evt);
-            }
-        });
-
         jLabel24.setText("*Povincia");
 
         comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alava", "Gipuzkoa" }));
@@ -512,6 +477,15 @@ public class Formulario extends Pvirgen {
             }
         });
 
+        tfMano.setEnabled(false);
+
+        tfPiso.setEnabled(false);
+
+        tfEscalera.setEnabled(false);
+
+        tfLetra.setEnabled(false);
+        tfLetra.setSize(new java.awt.Dimension(20, 20));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -526,21 +500,33 @@ public class Formulario extends Pvirgen {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel15))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ftTlfnoUno, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoUno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cTlfnoDos)
+                        .addGap(22, 22, 22)
+                        .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoTres)
+                        .addGap(18, 18, 18)
+                        .addComponent(ftTlfnoCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoCuatro))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
+                                .addComponent(jLabel24)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboPro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel21)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftTlfnoUno, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cTlfnoUno)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cTlfnoDos)
-                                        .addGap(22, 22, 22))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -548,48 +534,31 @@ public class Formulario extends Pvirgen {
                                         .addGap(28, 28, 28)
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(147, 147, 147)))
-                                .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cTlfnoTres)
-                                .addGap(18, 18, 18)
-                                .addComponent(ftTlfnoCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cTlfnoCuatro))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(85, 85, 85)
+                                        .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jLabel18))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel16)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel24)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(comboPro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel18)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel14)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel16)))
+                                        .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(bLupaCalle))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(ftEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(34, 34, 34)
-                                                .addComponent(jLabel20)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ftPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(31, 31, 31)
-                                                .addComponent(jLabel99)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ftMano, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addComponent(bLupaCalle))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel20)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel99)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bBorrarDireccion)
@@ -599,7 +568,7 @@ public class Formulario extends Pvirgen {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jLabel15)
@@ -623,15 +592,17 @@ public class Formulario extends Pvirgen {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel17)
-                            .addComponent(jLabel18)
                             .addComponent(jLabel19)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel99)
                             .addComponent(comboNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel18)
+                            .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel20)
+                                .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(jLabel99)
+                                    .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -649,6 +620,7 @@ public class Formulario extends Pvirgen {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Otros datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
 
         jLabel22.setText("*Centro de Enseñanza");
@@ -760,7 +732,7 @@ public class Formulario extends Pvirgen {
                             .addComponent(rAlava)
                             .addComponent(rFueraAlava)
                             .addComponent(tfCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 4, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel23)
@@ -844,18 +816,18 @@ public class Formulario extends Pvirgen {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bProtección))
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 1172, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1172, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -895,10 +867,10 @@ public class Formulario extends Pvirgen {
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
         bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
-            ftLetra.setEnabled(true);
-            ftEscalera.setEnabled(true);
-            ftPiso.setEnabled(true);
-            ftMano.setEnabled(true);            
+            tfLetra.setEnabled(true);
+            tfEscalera.setEnabled(true);
+            tfPiso.setEnabled(true);
+            tfMano.setEnabled(true);            
         }
     }//GEN-LAST:event_comboNumActionPerformed
 
@@ -927,34 +899,18 @@ public class Formulario extends Pvirgen {
         // TODO add your handling code here:
     }//GEN-LAST:event_cTlfnoCuatroActionPerformed
 
-    private void ftLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftLetraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftLetraActionPerformed
-
-    private void ftEscaleraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftEscaleraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftEscaleraActionPerformed
-
-    private void ftPisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftPisoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftPisoActionPerformed
-
-    private void ftManoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftManoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftManoActionPerformed
-
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
         if(rAlava.isSelected()){
             bLupaCentro.setEnabled(true);
         }
-        //BETAPROYECTO.centroalava();
+        //BETAPROYECTO.cogercentroprovincia();
     }//GEN-LAST:event_rAlavaActionPerformed
 
     private void rFueraAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraAlavaActionPerformed
         if(rFueraAlava.isSelected()){
             bLupaCentro.setEnabled(true);
         }
-        //BETAPROYECTO.centrofueraalava();
+        //BETAPROYECTO.cogercentroprovincias();
     }//GEN-LAST:event_rFueraAlavaActionPerformed
 
     private void tfCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCentroActionPerformed
@@ -1027,10 +983,12 @@ public class Formulario extends Pvirgen {
             if(validardatos()){
                 /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
                 ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getCalendar(),
-                comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
-                comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
+                String.valueOf(comboPro.getSelectedIndex()), comboPro.getSelectedItem().toString(), 
+                String.valueOf(comboMu.getSelectedIndex()), comboMu.getSelectedItem().toString(),
+                ftCp.getText(), String.valueOf(comboLoc.getSelectedIndex()), comboLoc.getSelectedItem().toString(), calle, via,
+                comboNum.getSelectedIndex(), tfLetra.getText(), tfEscalera.getText(), tfPiso.getText(), tfMano.getText(),
                 ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
-                tfCentro.getText(), modelo, discapacidad);*/                
+                centro, indecentro, modelo, discapacidad);*/
                 
                 Cvista.guardar();            
             }
@@ -1053,17 +1011,29 @@ public class Formulario extends Pvirgen {
         ftTlfnoUno.setEnabled(true);
         cTlfnoUno.setEnabled(true);
         
-        //Object = BETAPROYECTO.cojercalle();
-        Cvista.calles(/*Object*/);        
+        //ArrayList = BETAPROYECTO.cojercalle();
+        Cvista.calles(/*ArrayList*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
+    public static void calle(String c1, String c2){
+        calle = c1;
+        via = c2; 
+        tfCalle.setText(calle + " " + via);
+    }
+    
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
         
-        //Object = BETAPROYECTO.cogercentro();
-        Cvista.centros(/*Object*/);
+        //ArrayList = BETAPROYECTO.cogercentro();
+        Cvista.centros(/*ArrayList*/);
         
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
+    public static void cogercentro(String value, String index){
+        centro = value;
+        indexcentro = index;
+        tfCentro.setText(centro);
+    }
+    
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
         comboPro.setSelectedIndex(-1);
         comboMu.setSelectedIndex(-1);
@@ -1071,10 +1041,10 @@ public class Formulario extends Pvirgen {
         comboLoc.setSelectedIndex(-1);
         tfCalle.setText(null);
         comboNum.setSelectedIndex(-1);
-        ftLetra.setText(null);
-        ftEscalera.setText(null);
-        ftPiso.setText(null);
-        ftMano.setText(null);
+        tfLetra.setText(null);
+        tfEscalera.setText(null);
+        tfPiso.setText(null);
+        tfMano.setText(null);
         ftTlfnoUno.setText(null);
         cTlfnoUno.setSelected(false);
         ftTlfnoDos.setText(null);
@@ -1136,9 +1106,10 @@ public class Formulario extends Pvirgen {
     }
     
     private boolean validardatos() throws Exception {
-        try{
+        try{limitecaracteres();
             camposvacios();
             validarFecha();
+            
             
             return true;
         }
@@ -1152,16 +1123,21 @@ public class Formulario extends Pvirgen {
             javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
             return false;
         }
+        catch(LimiteCaracteres e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
         
     }
     
     private void borrardireccion(){
         comboPro.setEnabled(true);
         comboNum.setEnabled(false);
-        ftLetra.setEnabled(false);
-        ftEscalera.setEnabled(false);
-        ftPiso.setEnabled(false);
-        ftMano.setEnabled(false);
+        tfLetra.setEnabled(false);
+        tfEscalera.setEnabled(false);
+        tfPiso.setEnabled(false);
+        tfMano.setEnabled(false);
         ftTlfnoUno.setEnabled(false);
         cTlfnoUno.setEnabled(false);
         ftTlfnoDos.setEnabled(false);
@@ -1224,7 +1200,38 @@ public class Formulario extends Pvirgen {
             throw new CampoVacio("El modelo es un dato obligatorio");
     }
     
-    
+    public void limitecaracteres() throws Exception{
+        if(tfNombreTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El nombre del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfPrimerApellidoTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El primer apellido del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfSegundoApellidoTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El segundo apellido del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfNombreNen.getText().length() > 30){
+            throw new LimiteCaracteres("El nombre del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfPrimerApellidoNen.getText().length() > 30){
+            throw new LimiteCaracteres("El primer apellido del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfSegundoApellidoNen.getText().length() > 30){
+            throw new LimiteCaracteres("El segundo apellido del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfLetra.getText().length() > 20){
+            throw new LimiteCaracteres("El campo letra no puede tener mas de 20 caracteres");
+        }
+        if(tfEscalera.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Escalera no puede tener mas de 20 caracteres");
+        }
+        if(tfPiso.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Piso no puede tener mas de 20 caracteres");
+        }
+        if(tfMano.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Mano no puede tener mas de 20 caracteres");
+        }        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBorrar;
@@ -1249,10 +1256,6 @@ public class Formulario extends Pvirgen {
     private javax.swing.JFormattedTextField ftCp;
     private javax.swing.JFormattedTextField ftDniNen;
     private javax.swing.JFormattedTextField ftDniTutor;
-    private javax.swing.JFormattedTextField ftEscalera;
-    private javax.swing.JFormattedTextField ftLetra;
-    private javax.swing.JFormattedTextField ftMano;
-    private javax.swing.JFormattedTextField ftPiso;
     private javax.swing.JFormattedTextField ftTlfnoCuatro;
     private javax.swing.JFormattedTextField ftTlfnoDos;
     private javax.swing.JFormattedTextField ftTlfnoTres;
@@ -1294,15 +1297,19 @@ public class Formulario extends Pvirgen {
     private javax.swing.JRadioButton rModeloD;
     private javax.swing.JRadioButton rbHombre;
     private javax.swing.JRadioButton rbMujer;
-    public static javax.swing.JTextField tfCalle;
-    public static javax.swing.JTextField tfCentro;
+    private static javax.swing.JTextField tfCalle;
+    private static javax.swing.JTextField tfCentro;
+    private javax.swing.JTextField tfEscalera;
+    private javax.swing.JTextField tfLetra;
+    private javax.swing.JTextField tfMano;
     private javax.swing.JTextField tfNombreNen;
     private javax.swing.JTextField tfNombreTutor;
+    private javax.swing.JTextField tfPiso;
     private javax.swing.JTextField tfPrimerApellidoNen;
     private javax.swing.JTextField tfPrimerApellidoTutor;
     private javax.swing.JTextField tfSegundoApellidoNen;
     private javax.swing.JTextField tfSegundoApellidoTutor;
     // End of variables declaration//GEN-END:variables
 
-    
+   
 }
