@@ -39,7 +39,7 @@ public class NenDB extends Conexion.ConexionOracle {
                 c=new Centro(resultado.getInt(10));
                 s=new Solicitud(resultado.getInt(1));
                 tu=new Tutor(resultado.getString(12));
-                dir=new Direccion(13);
+                dir=new Direccion(resultado.getInt(13));
                 n = new Nen(resultado.getString(4),
                         resultado.getString(5), 
                         resultado.getString(6),

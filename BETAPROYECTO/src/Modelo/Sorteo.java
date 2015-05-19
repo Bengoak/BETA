@@ -11,11 +11,23 @@ package Modelo;
  */
 import java.util.Calendar;
 public class Sorteo {
-    
     private int codSorteo;
     private int nSorteo;
     private int cadencia;
     private Calendar fecha;
+    
+    public Sorteo(int codSorteo) {
+        this.codSorteo = codSorteo;
+    }
+
+    public Sorteo(int codSorteo, int nSorteo, int cadencia, Calendar fecha) {
+        this.codSorteo = codSorteo;
+        this.nSorteo = nSorteo;
+        this.cadencia = cadencia;
+        this.fecha = fecha;
+    }
+    
+   
     public Sorteo(){
     }
     public Sorteo(Calendar f){

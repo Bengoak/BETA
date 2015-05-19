@@ -32,7 +32,7 @@ public class TutorBD extends Conexion.ConexionOracle {
         }
     }
 
-    public static Tutor buscar(Tutor t) {
+    public static Tutor getByMyPk(Tutor t) {
         
         try {
            

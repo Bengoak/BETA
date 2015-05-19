@@ -25,6 +25,21 @@ public class Nen extends Persona{
     public Nen(Calendar fec){
     this.setFecha(fec);
     }
+        public Nen(String nNen,String apeUno, String apeDos,int sex,  Calendar fec,int dis, String mod, Centro cent,Tutor tu,Direccion di,String dni){
+        this.setNombre(nNen);
+        this.setApellidoUno(apeUno);
+        this.setApellidoDos(apeDos);
+        //no num nen todavía trigger
+        this.setSexo(sex);
+        this.setFecha(fec);
+        this.setDiscapacidad(dis);
+        this.setModelo(mod);
+        this.setCentro(cent);
+        //this.setSol(s); trigger
+        this.setT(tu);
+        this.setCentro(cent);
+        this.setDni(dni);
+        }
     public Nen(String nNen,String apeUno, String apeDos,int nuNen,int sex,  Calendar fec,int dis, String mod, Centro cent, Solicitud s,Tutor tu,Direccion di,String dni){
         this.setNombre(nNen);
         this.setApellidoUno(apeUno);

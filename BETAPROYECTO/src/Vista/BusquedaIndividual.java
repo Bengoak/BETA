@@ -46,7 +46,7 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         jLabel3.setText("DNI/NIF completo del padre/madre/tutor-a");
 
         try {
-            ftDniTutor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("")));
+            ftDniTutor.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("########U")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }

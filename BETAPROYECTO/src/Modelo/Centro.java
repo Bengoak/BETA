@@ -9,8 +9,11 @@ package Modelo;
  *
  * @author Iñigo
  */
-class Centro {
-
+public class Centro {
+    
+   private int  idCentro;
+   private String nCentro;
+   
     public Centro(int idCentro) {
         this.idCentro = idCentro;
     }
@@ -22,6 +25,19 @@ class Centro {
     public void setIdCentro(int idCentro) {
         this.idCentro = idCentro;
     }
-   private int  idCentro;
+
+    public Centro(int idCentro, String nCentro) {
+        this.idCentro = idCentro;
+        this.nCentro = nCentro;
+    }
+  
+    public String getnCentro() {
+        return nCentro;
+    }
+
+    public void setnCentro(String nCentro) {
+        this.nCentro = nCentro;
+    }
+   
    
 }
