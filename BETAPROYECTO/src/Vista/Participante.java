@@ -5,16 +5,13 @@
  */
 package Vista;
 
-/**
-
-         * Vista Particpantes: Muestra los participantes de la solicitud y eliges si finalizar la solicitud o añadir otro participante.
-
-         * @author Proyecto
-
-*/
 
 import betaproyecto.*;
 
+/**
+ * Vista Particpantes: Muestra los participantes de la solicitud y eliges si finalizar la solicitud o añadir otro participante.
+ * @author Pryecto
+ */
 public class Participante extends javax.swing.JFrame {
 
     /**
@@ -26,11 +23,17 @@ public class Participante extends javax.swing.JFrame {
          * @Param Objeto, Recibe un Objeto para rellenar el campo con los participantes.
 
     */
-    public Participante(/*Objeto*/) {
+    /**
+     * Ajustal la vista en el centro.
+     * Llama al metodo cogerparticipantes() de BETAPROYECTO.
+     * Comprueba cuantos participantes tiene la solicitud, para no añadir mas de 3.
+     * Falta el ArrayList que recibe un ArraList para rellenar el campo con los participantes.
+     */
+    public Participante(/*Arralist*/) {
         initComponents();
         this.setLocationRelativeTo(null);
         //Hay que crear el metodo de cogerparticipantes-----------------------
-        //Object = BETAPROYECTO.cogersparticipantes();
+        //ArrayList = BETAPROYECTO.cogersparticipantes();
         
         //int part = BETAPROYECTO.participantes();
         //if(part >= 3){
@@ -111,29 +114,19 @@ public class Participante extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-
-         * Hace doClick en el formulario de Info.
-         * Llama el metodo cerrarparticipante() de Cvista.
-
-         * @Param Nombre del Parametro, desc. y para que se usa, (uno por parametro)
-
-         *@Param  s1 Texto que guarda....
-
-         * @return (si el metodo no es void) Desc. de lo que devuelve
-
-         * @Exception - @throws: Nombre de las excepciones que pueden lanzarse
-
-    */
+     * Hace doClick en el formulario de Info.
+     * Llama el metodo cerrarparticipante() de Cvista.
+     * @param evt 
+     */
     private void bAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAnadirActionPerformed
         Info.jmformulario.doClick();
         Cvista.cerrarparticipante();
     }//GEN-LAST:event_bAnadirActionPerformed
 
     /**
-
-         * Finaliza la solicitud llamndo al metodo finsolicitud() de BETAPROYECTO.
-
-    */
+     * Finaliza la solicitud llamndo al metodo finsolicitud() de BETAPROYECTO.
+     * @param evt 
+     */
     private void bFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFinActionPerformed
         
         //BETAPROYECTO.finsolicitud();

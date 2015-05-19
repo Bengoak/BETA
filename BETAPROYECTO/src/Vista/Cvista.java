@@ -136,59 +136,45 @@ public class Cvista {
         return validacion;        
     }
     
-    
     /**
-
-         * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
-
-         * @Param ArrayList, Recibe un ArrayList con las calles, para pasarselo a la clase seleccionarcalle.
-
-    */
+     * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
+     * Falsta el ArrayList que recibe las calles, para pasarselo a la clase seleccionarcalle.
+     */
     public static void calles(/*ArrayList*/){
         seleccioncalle = new SeleccionCalle(/*ArrayList*/);
         seleccioncalle.setVisible(true);
     }
 
     /**
-
-         * Cierra la clase seleccionarcalle.
-
-    */
+     * Cierra la clase seleccionarcalle.
+     */
     static void cerrarseleccioncalle() {
         seleccioncalle.dispose();
     }
 
-    
+
     /**
-
-         * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
-
-         * @Param ArrayList, Recibe un ArrayList con los centros, para pasarselo a la clase seleccionarcentro.
-
-    */
+     * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
+     * Falsta el ArrayList que recibe con los centros, para pasarselo a la clase seleccionarcentro.
+     */
     static void centros(/*ArrayList*/) {
         seleccioncentro = new SeleccionCentro(/*ArrayList*/);
         seleccioncentro.setVisible(true);
     }
 
     /**
-
-         * Cierra la clase seleccionarcentro.
-         
-    */
+     * Cierra la clase seleccionarcentro.
+     */
     static void cerrarseleccioncentro() {
         seleccioncentro.dispose();
     }
 
     /**
-
-         * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
-
-         * @Param Objeto, Recibe un objeto con los detalles a mostrar en el panel detalles.
-
-    */
-    static void detalles(/*Object*/) {
-        panel = new Detalles(/*Object*/);
+     * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
+     * Falta el ArrayList que recive con los detalles a mostrar en el panel detalles.
+     */
+    static void detalles(/*ArrayList*/) {
+        panel = new Detalles(/*ArriList*/);
         info.add(panel);
         info.pack();
         panel.setVisible(true);

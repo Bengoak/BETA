@@ -6,19 +6,14 @@
 package Vista;
 
 /**
-
-         * JPanel Informacion: Contiene información sobre Udalekuak.
-
-         * @author Proyecto
-
-*/
+ * JPanel Informacion: Contiene información sobre Udalekuak.
+ * @author Proyecto
+ */
 public class Informacion extends Pvirgen {
 
     /**
-
-         * Define el tamaño del panel.
-
-    */
+     * Define el tamaño del panel.
+     */
     public Informacion() {
         initComponents();
         this.setSize(1151, 662);

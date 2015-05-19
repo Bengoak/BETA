@@ -6,21 +6,15 @@
 package Vista;
 
 /**
-
-         * Clase SeleccionCalle: Muestra las calles de la base de datos.
-
-         * @author Proyecto
-
-*/
+ * Clase SeleccionCalle: Muestra las calles de la base de datos.
+ * @author Proyecto
+ */
 public class SeleccionCalle extends javax.swing.JFrame {
 
     /**
-
-         * Centra la clase y recive un ArrayList
-
-         * @Param ArrayList, recibe un ArrayList con las calles. 
-
-         */
+     * Centra la clase y recive un ArrayList.
+     * Falta el ArrayList que recive las calles/
+     */
     public SeleccionCalle(/*Arraylist*/) {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -91,15 +85,12 @@ public class SeleccionCalle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-
-         * Llama al metodo calle() de Formulario y le pasa la calle seleccionada pasandole los 5 primeros caracteres y despues del 6 en adelante.
-
-         */
+     * Llama al metodo calle() de Formulario y le pasa la calle seleccionada pasandole los 5 primeros caracteres y despues del 6 en adelante.
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         Formulario.calle(lCalles.getSelectedValue().toString().substring(0, 5), lCalles.getSelectedValue().toString().substring(6));
-        Cvista.cerrarseleccioncalle();
-        
+        Cvista.cerrarseleccioncalle();        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

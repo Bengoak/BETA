@@ -6,19 +6,14 @@
 package Vista;
 
 /**
-
-         * JPanel Pvirgen: Es un panel vacio que utiliza el Cvista parra mostrar los paneles.
-
-         * @author Proyecto
-
-*/
+ * JPanel Pvirgen: Es un panel vacio que utiliza el Cvista parra mostrar los paneles.
+ * @author Proyecto
+ */
 abstract class Pvirgen extends javax.swing.JPanel {
 
     /**
-
-         * Ajusta el tamaño del JPanel.
-
-    */
+     * Ajusta el tamaño del JPanel.
+     */
     public Pvirgen() {
         initComponents();
         this.setSize(1151, 662);
