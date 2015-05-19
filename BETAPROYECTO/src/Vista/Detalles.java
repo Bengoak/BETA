@@ -6,16 +6,23 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * JPanel Detalles: Muestra la informacion del participante señalado en la vista de Busqueda Individual.
+
+         * @author Proyecto
+
+*/
 public class Detalles extends Pvirgen {
 
-    /**
-     * Creates new form Detalles
-     */
     
+    
+/**
 
+         * Ajusta el tamaño del JPanel y recibe un Objeto para rellenar los campos
+
+         * @Param Objeto, Objeto con los datos necesarios para rellenar los campos.
+
+    */
     public Detalles(/*Object*/) {
         initComponents();
         this.setSize(1151, 662);     

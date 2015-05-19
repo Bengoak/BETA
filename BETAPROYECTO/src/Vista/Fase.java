@@ -6,13 +6,22 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * JPanel Fase: Contiene los botones para controlar el estado del programa.
+
+         * @author Proyecto
+
+*/
 public class Fase extends Pvirgen {
 
    
+    /**
 
+         * Define el tamaño del panel, y dependiendo del parametro que recibe hace una cosa u otra en el switch.
+
+         * @Param i, Es un int que puede tener los valores 0, 1, 2, 3. Dependiendo de su valor ira por una rama del switch o por otra.
+
+    */
     Fase(int i) {
         initComponents();
         this.setSize(1151, 662);
@@ -279,52 +288,109 @@ public class Fase extends Pvirgen {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Llama al metodo estadofase() de Cvista pasandole un 1. 
+        
+    */
     private void bAbrirInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAbrirInscripcionActionPerformed
 
         Cvista.estadofase(1);
         
     }//GEN-LAST:event_bAbrirInscripcionActionPerformed
 
+    
+    /**
+
+         * Llama al metodo estadofase() de Cvista pasandole un 2. 
+        
+    */
     private void bCerrarInscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bCerrarInscripcionActionPerformed
 
         Cvista.estadofase(2);
         
     }//GEN-LAST:event_bCerrarInscripcionActionPerformed
 
+    
+    /**
+
+         * Llama al metodo estadofase() de Cvista pasandole un 3. 
+        
+    */
     private void bEjecutarSorteoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEjecutarSorteoActionPerformed
 
         Cvista.estadofase(3);
         
     }//GEN-LAST:event_bEjecutarSorteoActionPerformed
+    
+    /**
 
+         * Hace doClick en el Información del menú de Info. 
+        
+    */
     private void bFase1InformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase1InformacionActionPerformed
         Info.jminfo.doClick();
     }//GEN-LAST:event_bFase1InformacionActionPerformed
+   
+    /**
 
+         * Hace doClick en el Información del menú de Info. 
+        
+    */
     private void bFase2InformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase2InformacionActionPerformed
         Info.jminfo.doClick();
     }//GEN-LAST:event_bFase2InformacionActionPerformed
 
+    /**
+
+         * Hace doClick en el Información del menú de Info. 
+        
+    */
     private void bFase3InformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase3InformacionActionPerformed
         Info.jminfo.doClick();
     }//GEN-LAST:event_bFase3InformacionActionPerformed
 
+    /**
+
+         * Hace doClick en el Formulario del menú de Info. 
+        
+    */
     private void bFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFormularioActionPerformed
         Info.jmformulario.doClick();
     }//GEN-LAST:event_bFormularioActionPerformed
 
+    /**
+
+         * Hace doClick en el Detalles del menú de Info. 
+        
+    */
     private void bFase2DetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase2DetallesActionPerformed
         Info.jmdetalles.doClick();
     }//GEN-LAST:event_bFase2DetallesActionPerformed
 
+    /**
+
+         * Hace doClick en el Detalles del menú de Info. 
+        
+    */
     private void bFase3DetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase3DetallesActionPerformed
         Info.jmdetalles.doClick();
     }//GEN-LAST:event_bFase3DetallesActionPerformed
 
+    /**
+
+         * Hace doClick en el Listado del menú de Info. 
+        
+    */
     private void bFase2ListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase2ListadoActionPerformed
         Info.jmlistado.doClick();
     }//GEN-LAST:event_bFase2ListadoActionPerformed
 
+    /**
+
+         * Hace doClick en el Listado del menú de Info. 
+        
+    */
     private void bFase3ListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFase3ListadoActionPerformed
         Info.jmlistado.doClick();
     }//GEN-LAST:event_bFase3ListadoActionPerformed

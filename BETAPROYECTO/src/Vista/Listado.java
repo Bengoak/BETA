@@ -5,13 +5,23 @@
  */
 package Vista;
 
+/**
+
+         * JPanel Listado: Muestra una lista con todos los participantes.
+
+         * @author Proyecto
+
+*/
+
 import betaproyecto.*;
 
 public class Listado extends Pvirgen {
 
     /**
-     * Creates new form Listado
-     */
+
+         * Ajusta el tamaño del JPanel y llama al metodo listado() de la clase BETAPROYECTO.
+
+    */
     public Listado() {
         initComponents();
         this.setSize(1151, 662);

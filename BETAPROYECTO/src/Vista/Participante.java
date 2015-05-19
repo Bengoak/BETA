@@ -5,14 +5,28 @@
  */
 package Vista;
 
+/**
+
+         * Vista Particpantes: Muestra los participantes de la solicitud y eliges si finalizar la solicitud o añadir otro participante.
+
+         * @author Proyecto
+
+*/
+
 import betaproyecto.*;
 
 public class Participante extends javax.swing.JFrame {
 
     /**
-     * Creates new form Participante
-     */
-    public Participante() {
+
+         * Ajustal la vista en el centro.
+         * Llama al metodo cogerparticipantes() de BETAPROYECTO.
+         * Comprueba cuantos participantes tiene la solicitud, para no añadir mas de 3.
+
+         * @Param Objeto, Recibe un Objeto para rellenar el campo con los participantes.
+
+    */
+    public Participante(/*Objeto*/) {
         initComponents();
         this.setLocationRelativeTo(null);
         //Hay que crear el metodo de cogerparticipantes-----------------------
@@ -96,11 +110,30 @@ public class Participante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Hace doClick en el formulario de Info.
+         * Llama el metodo cerrarparticipante() de Cvista.
+
+         * @Param Nombre del Parametro, desc. y para que se usa, (uno por parametro)
+
+         *@Param  s1 Texto que guarda....
+
+         * @return (si el metodo no es void) Desc. de lo que devuelve
+
+         * @Exception - @throws: Nombre de las excepciones que pueden lanzarse
+
+    */
     private void bAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAnadirActionPerformed
         Info.jmformulario.doClick();
         Cvista.cerrarparticipante();
     }//GEN-LAST:event_bAnadirActionPerformed
 
+    /**
+
+         * Finaliza la solicitud llamndo al metodo finsolicitud() de BETAPROYECTO.
+
+    */
     private void bFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFinActionPerformed
         
         //BETAPROYECTO.finsolicitud();

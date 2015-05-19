@@ -12,13 +12,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
-
-         * Descripción de lo que hace la clase
-
-         * @author
-
-         */
-
+ * JPanel Formulario: Contiene todos los capors del Tutor, del Niño, de la direccion y de los centros nacesaria.
+ * @author Proyecto
+ */
 public class Formulario extends Pvirgen {
 
     private static String centro;
@@ -26,6 +22,9 @@ public class Formulario extends Pvirgen {
     private static String calle;
     private static String via;
     
+    /**
+     * Ajusta el tamaño del panel y rellena el combobox de las provincias.
+     */
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
@@ -152,20 +151,10 @@ public class Formulario extends Pvirgen {
         bgSexo.add(rbHombre);
         rbHombre.setText("Hombre");
         rbHombre.setEnabled(false);
-        rbHombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbHombreActionPerformed(evt);
-            }
-        });
 
         bgSexo.add(rbMujer);
         rbMujer.setText("Mujer");
         rbMujer.setEnabled(false);
-        rbMujer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbMujerActionPerformed(evt);
-            }
-        });
 
         jLabel11.setText("Fecha de nacimiento");
 
@@ -367,11 +356,6 @@ public class Formulario extends Pvirgen {
         });
 
         tfCalle.setEditable(false);
-        tfCalle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCalleActionPerformed(evt);
-            }
-        });
 
         try {
             ftCp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
@@ -444,11 +428,6 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro.setEnabled(false);
 
         cTlfnoCuatro.setEnabled(false);
-        cTlfnoCuatro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cTlfnoCuatroActionPerformed(evt);
-            }
-        });
 
         bLupaCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
         bLupaCalle.setBorder(null);
@@ -590,19 +569,20 @@ public class Formulario extends Pvirgen {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel19)
-                            .addComponent(comboNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel18)
-                            .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel99)
+                                .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jLabel20)
-                                .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel99)
-                                    .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel17)
+                                .addComponent(jLabel19)
+                                .addComponent(comboNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel18)
+                                .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -651,45 +631,20 @@ public class Formulario extends Pvirgen {
         });
 
         tfCentro.setEditable(false);
-        tfCentro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCentroActionPerformed(evt);
-            }
-        });
 
         jLabel23.setText("*Modelo");
 
         bgModelo.add(rModeloB);
         rModeloB.setText("B");
-        rModeloB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloBActionPerformed(evt);
-            }
-        });
 
         bgModelo.add(rModeloA);
         rModeloA.setText("A");
         rModeloA.setToolTipText("");
-        rModeloA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloAActionPerformed(evt);
-            }
-        });
 
         bgModelo.add(rModeloD);
         rModeloD.setText("D");
-        rModeloD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloDActionPerformed(evt);
-            }
-        });
 
         cDiscapacidad.setText("Discapacidad");
-        cDiscapacidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cDiscapacidadActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -831,14 +786,12 @@ public class Formulario extends Pvirgen {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rbHombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbHombreActionPerformed
-
-    private void rbMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMujerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbMujerActionPerformed
-
+    /**
+     * Deshabilita el comboPro.
+     * Si el SelectIndex de comboMu es diferente a -1 habilita el ftCp.
+     * Rellena el combobox de las localidades.
+     * @param evt 
+     */
     private void comboMuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMuActionPerformed
         
         comboPro.setEnabled(false);
@@ -849,6 +802,12 @@ public class Formulario extends Pvirgen {
         //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
     }//GEN-LAST:event_comboMuActionPerformed
 
+    /**
+     * Deshabilita ftCp.
+     * Si el selectIndex de comboLoc es diferente a -1 se habilita el bLipaCalle.
+     * Rellena el combobox de los numeros.
+     * @param evt 
+     */
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
         ftCp.setEnabled(false);
         if(comboLoc.getSelectedIndex() != -1){            
@@ -858,12 +817,11 @@ public class Formulario extends Pvirgen {
         //comboNum.addItem(BETAPROYECTO.cogernumero());
     }//GEN-LAST:event_comboLocActionPerformed
 
-    private void tfCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCalleActionPerformed
-   
-    }//GEN-LAST:event_tfCalleActionPerformed
-    
-    
-    
+    /**
+     * Deshabilita el bLupaCalle.
+     * Si el selectIndex de comboNum es diferente a -1 habilita tfLetra, tfEscalera, tfPiso y tfMano.
+     * @param evt 
+     */
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
         bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
@@ -874,6 +832,10 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_comboNumActionPerformed
 
+    /**
+     * Si se selecciona el checkBox del telefono uno, se habilita el ftTlfnodos y el cTlfnodos.
+     * @param evt 
+     */
     private void cTlfnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoUnoActionPerformed
         if(cTlfnoUno.isSelected()){
             ftTlfnoDos.setEnabled(true);
@@ -881,6 +843,10 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoUnoActionPerformed
 
+    /**
+     * Si se selecciona el checkBox del telefono dos, se habilita el ftTlfnotres y el cTlfnotres.
+     * @param evt 
+     */
     private void cTlfnoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoDosActionPerformed
         if(cTlfnoDos.isSelected()){
             ftTlfnoTres.setEnabled(true);
@@ -888,6 +854,11 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoDosActionPerformed
 
+
+    /**
+     * Si se selecciona el checkBox del telefono tres, se habilita el ftTlfnocuatro y el cTlfnocuatro.
+     * @param evt 
+     */
     private void cTlfnoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoTresActionPerformed
         if(cTlfnoTres.isSelected()){
             ftTlfnoCuatro.setEnabled(true);
@@ -895,10 +866,12 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoTresActionPerformed
 
-    private void cTlfnoCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoCuatroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cTlfnoCuatroActionPerformed
 
+    /**
+     * Si se selecciona el radiobuttom de rAlava, se habilita bLupaCentro.
+     * Se llama al metodo cogercentroprobincia de BETAPROYECTO.
+     * @param evt 
+     */
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
         if(rAlava.isSelected()){
             bLupaCentro.setEnabled(true);
@@ -906,6 +879,11 @@ public class Formulario extends Pvirgen {
         //BETAPROYECTO.cogercentroprovincia();
     }//GEN-LAST:event_rAlavaActionPerformed
 
+    /**
+     * Si se selecciona el radiobuttom de rFueraAlava, se habilita bLupaCentro.
+     * Se llama al metodo cogercentroprobincia de BETAPROYECTO.
+     * @param evt 
+     */
     private void rFueraAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraAlavaActionPerformed
         if(rFueraAlava.isSelected()){
             bLupaCentro.setEnabled(true);
@@ -913,32 +891,22 @@ public class Formulario extends Pvirgen {
         //BETAPROYECTO.cogercentroprovincias();
     }//GEN-LAST:event_rFueraAlavaActionPerformed
 
-    private void tfCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCentroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCentroActionPerformed
-
-    private void rModeloBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloBActionPerformed
-
-    private void rModeloAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloAActionPerformed
-
-    private void rModeloDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloDActionPerformed
-
-    private void cDiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cDiscapacidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cDiscapacidadActionPerformed
-
+    /**
+     * Hace doClick en el formulario de Info.
+     * @param evt 
+     */
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         
         Info.jmformulario.doClick();
         
     }//GEN-LAST:event_bBorrarActionPerformed
 
+    /**
+     * Si el selectIndex de comboPro es diferente a -1, sustitulle el texto de rAlava y rFueraAlava por el selectItem del comboPro.
+     * Deshabilita el combobox de Municipio.
+     * Rellena los municipios.
+     * @param evt 
+     */
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
         
         if(comboPro.getSelectedIndex() != -1){
@@ -951,6 +919,16 @@ public class Formulario extends Pvirgen {
         
     }//GEN-LAST:event_comboProActionPerformed
 
+    /**
+     * Si cDiscapacidad esta seleccionada, la variable discapacidad sera 1, sino 0.
+     * Si se selecciona rHombre, la variable sexo sera 0, si selecciona rMujer, sea 1.
+     * Si selecciona rModeloA, la variable modelo sera A.
+     * Si selecciona rModeloB, la variable modelo sera B.
+     * Si selecciona rModeloD, la variable midelo sera D.
+     * Comprobamos que el Dni de Niño no este repetudo.
+     * Si los datos introducidos en el formulario son correctos, se los mandamos a BETAPROYECTO con el metodo gurdar(),  con todos los parametros.
+     * @param evt 
+     */
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
         int discapacidad = 0;        
         if(cDiscapacidad.isSelected()){
@@ -1001,10 +979,19 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_bGuardarActionPerformed
 
+    /**
+     * Llama al metodo protecciondatos de Cvista.
+     * @param evt 
+     */
     private void bProtecciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProtecciónActionPerformed
         Cvista.protecciondatos();
     }//GEN-LAST:event_bProtecciónActionPerformed
 
+    /**
+     * Deshabilita el combobox de localidad, habilita el combobox de Num, habilita el combobox de numero, el telefono uno y el chackbox det telefono no.
+     * Llama al metodocojercalle de BETAPROYECTO y lo guarda en un Arraylist y se lo pasa a calles de Cvista.
+     * @param evt 
+     */
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
         comboLoc.setEnabled(false);
         comboNum.setEnabled(true);
@@ -1015,12 +1002,22 @@ public class Formulario extends Pvirgen {
         Cvista.calles(/*ArrayList*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
+    /**
+     * Recibe dos parametros que se guardan en dos variables y rellena el campo de tfCalle.
+     * @param c1 String Recibe la variable c1, que contiene parte de la calle. 
+     * @param c2 String Contiene el resto de la calle.
+     */
     public static void calle(String c1, String c2){
         calle = c1;
         via = c2; 
         tfCalle.setText(calle + " " + via);
     }
     
+    /**
+     * Llama al metodo cogercentro de BETAPROYECTO y los guarda en un ArrayList.
+     * Llama al metodo centros de Cvista y le pasa el ArrayList.
+     * @param evt 
+     */
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
         
         //ArrayList = BETAPROYECTO.cogercentro();
@@ -1028,12 +1025,22 @@ public class Formulario extends Pvirgen {
         
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
+    /**
+     * Recibe dos parametros que se guardan en dos variables y rellena el campo de tfCalle.
+     * @param value value String Recibe la variable c1, que contiene parte de la calle.
+     * @param index index String Recibe c2, que contiene el resto de la calle.
+     */
     public static void cogercentro(String value, String index){
         centro = value;
         indexcentro = index;
         tfCentro.setText(centro);
     }
     
+    /**
+     * Borra el contenido de los campos de la cireccion.
+     * Llama al metodo borrardireccion.
+     * @param evt 
+     */
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
         comboPro.setSelectedIndex(-1);
         comboMu.setSelectedIndex(-1);
@@ -1058,17 +1065,30 @@ public class Formulario extends Pvirgen {
         
     }//GEN-LAST:event_bBorrarDireccionActionPerformed
 
+    /**
+     * Llama al metodo validarDni pasandole el Dni del niño.
+     * @param evt 
+     */
     private void ftDniNenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniNenActionPerformed
         
         validarDni(ftDniNen.getText());        
         
     }//GEN-LAST:event_ftDniNenActionPerformed
 
+    /**
+     * Deshabilita el combobox de municipio y habilita el combobox de localidad.
+     * @param evt 
+     */
     private void ftCpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftCpActionPerformed
         comboMu.setEnabled(false);
         comboLoc.setEnabled(true);
     }//GEN-LAST:event_ftCpActionPerformed
 
+    /**
+     * Comprueba si esl Dni del tutor es correcto pasandoselo al metodo validarDni.
+     * Comprueba si el dni existe en la base de datos y si existe rellena los capos solo y sino habilita los campos para rellenarlos.
+     * @param evt 
+     */
     private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
 
         if(validarDni(ftDniTutor.getText())){
@@ -1100,16 +1120,26 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_ftDniTutorActionPerformed
 
+    /**
+     * Llama al metodo validardni de Cvista pasndole el Dni del tutor que recibe y lo guarda en un boolean.
+     * @param DniTutor Recibe el Dni del tutor para validarlo.
+     * @return Retorna un boolean, depandiendo de si el Dni es correcto o no.
+     */
     private Boolean validarDni(String DniTutor) {
         boolean validacion = Cvista.validardni(DniTutor);
         return validacion;
     }
     
+    /**
+     * Llama a los metodos para controlar las excepciones.
+     * @return Retora un boolean, dependiendo de si han saltado las exceptiones o no.
+     * @throws Exceptio
+     */
     private boolean validardatos() throws Exception {
-        try{limitecaracteres();
+        try{
+            limitecaracteres();
             camposvacios();
-            validarFecha();
-            
+            validarFecha();            
             
             return true;
         }
@@ -1131,6 +1161,9 @@ public class Formulario extends Pvirgen {
         
     }
     
+    /**
+     * Deshabilita los campos de la direccion.
+     */
     private void borrardireccion(){
         comboPro.setEnabled(true);
         comboNum.setEnabled(false);
@@ -1148,6 +1181,10 @@ public class Formulario extends Pvirgen {
         cTlfnoCuatro.setEnabled(false);
     }
     
+    /**
+     * Comprueba que la edad del niño este entre 7 y 13 años.
+     * @throws Exceptio
+     */
     private void validarFecha()throws Exception{
         if (dcFecha.getDate() == null)
             throw new CampoVacio("El fecha es un dato obligatorio"); 
@@ -1163,6 +1200,10 @@ public class Formulario extends Pvirgen {
                 throw new FechaNoValida("El participante no puede ser mayor de 13 años");     
     }
     
+    /**
+     * Comprueba que se han introducido todos los datos que son obligatorios.
+     * @throws Exception 
+     */
     private void camposvacios() throws Exception{
         if (ftDniTutor.getValue() == null)
            throw new CampoVacio("El Dni del tutor es un dato obligatorio");
@@ -1199,7 +1240,11 @@ public class Formulario extends Pvirgen {
         if(rModeloA.isSelected() == false && rModeloB.isSelected() == false && rModeloD.isSelected() == false)
             throw new CampoVacio("El modelo es un dato obligatorio");
     }
-    
+
+    /**
+     * Comprueba el limite de caracteres que pueden tener los campos.
+     * @throws Exception 
+     */
     public void limitecaracteres() throws Exception{
         if(tfNombreTutor.getText().length() > 30){
             throw new LimiteCaracteres("El nombre del tutor no puede tener mas de 30 caracteres");

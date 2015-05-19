@@ -6,14 +6,19 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * Vista Info: Contiene la barra de menú para acceder a los paneles del programa.
+
+         * @author Proyecto
+
+*/
 public class Info extends javax.swing.JFrame {
 
     /**
-     * Creates new form Info
-     */
+
+         * Ajusta el tamaño de la clase y lo posiciona e el centro.
+
+    */
     public Info() {        
         initComponents();
         this.setSize(1151, 662);
@@ -118,36 +123,66 @@ public class Info extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 0.
+
+    */
     private void jminfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminfoActionPerformed
         
         Cvista.lanzar(0);
         
     }//GEN-LAST:event_jminfoActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 1.
+
+    */
     private void jmfaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmfaseActionPerformed
         
         Cvista.lanzar(1);
         
     }//GEN-LAST:event_jmfaseActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 2.
+
+    */
     private void jmformularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmformularioActionPerformed
         
         Cvista.lanzar(2);
         
     }//GEN-LAST:event_jmformularioActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 3.
+
+    */
     private void jmdetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmdetallesActionPerformed
         
         Cvista.lanzar(3);
         
     }//GEN-LAST:event_jmdetallesActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 4.
+
+    */
     private void jmlistadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlistadoActionPerformed
         
         Cvista.lanzar(4);
         
     }//GEN-LAST:event_jmlistadoActionPerformed
 
+    /**
+
+         * Finaliza el programa.
+
+    */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
