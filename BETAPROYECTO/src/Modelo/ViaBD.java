@@ -26,16 +26,16 @@ public class ViaBD extends ConexionOracle{
             scall.registerOutParameter(1, OracleTypes.CURSOR);
             scall.execute();
             resultado= (ResultSet) scall.getObject(1);
-            scon.close();
-            desconectar();
+           
             if(resultado.next()==true) {
                 vi =new Via(resultado.getString(1),resultado.getString(2));
                 
             } 
-
+            scon.close();
+            desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+            System.out.printf(e.getMessage()+"ViaBD"+"CogerVia");
         }
     return vi;
     }

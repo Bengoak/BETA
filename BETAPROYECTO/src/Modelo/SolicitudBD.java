@@ -23,7 +23,7 @@ public class SolicitudBD extends Conexion.ConexionOracle{
  * @return Objeto solicitud full
  * 
  */
-    public static Solicitud getByMyPk(Solicitud sol) {
+    public static Solicitud getMeByPk(Solicitud sol) {
         Solicitud s=new Solicitud();
                 
         try {
@@ -45,7 +45,7 @@ public class SolicitudBD extends Conexion.ConexionOracle{
             desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+            System.out.printf(e.getMessage()+"SolicitudBD.getMeByMyPk");
         }
     return s;
     }

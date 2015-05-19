@@ -30,16 +30,16 @@ public class MunicipioBD extends ConexionOracle{
             scall.registerOutParameter(1, OracleTypes.CURSOR);
             scall.execute();
             resultado= (ResultSet) scall.getObject(1);
-            scon.close();
-            desconectar();
+           
             while(resultado.next()==true) {
                 Municipio m=new Municipio(resultado.getString(2),resultado.getString(3),p);
                 muns.add(m);
             } 
-
+            scon.close();
+            desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+            System.out.printf(e.getMessage()+"MunicipioBD.cogerMunicipios");
         }
     return muns;
 }
@@ -58,16 +58,44 @@ public class MunicipioBD extends ConexionOracle{
             scall.registerOutParameter(1, OracleTypes.CURSOR);
             scall.execute();
             resultado= (ResultSet) scall.getObject(1);
-            scon.close();
-            desconectar();
+           
             if(resultado.next()==true) {
                 mu=new Municipio(resultado.getString(1),m.getnMu(),m.getProv());
                 
             } 
-
+             scon.close();
+            desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+           System.out.printf(e.getMessage()+"MunicipioBD.cogerMunicipio");
+        }
+    return mu;
+    }
+
+    public static Municipio getMeByPk(Municipio m) {
+                Municipio mu=new Municipio();
+                
+        try {
+           
+            
+            setCon();
+            plantilla = "call DB.QMUNBYPK(?)";
+            scall = getCon().prepareCall(plantilla);
+            scall.setString(1, m.getIdMu());
+            scall.registerOutParameter(1, OracleTypes.CURSOR);
+            scall.execute();
+            resultado= (ResultSet) scall.getObject(1);
+        
+            if(resultado.next()==true) {
+                Provincia p=new Provincia(resultado.getString(1),"");
+                //no se puede sobrecargar el constructor se pasa String vacio
+                mu=new Municipio(m.getIdMu(),resultado.getString(2),p);
+            } 
+            scon.close();
+            desconectar();
+            
+        } catch (Exception e) {
+            System.out.printf(e.getMessage()+"MunicipioBD.getMeByMyPk");
         }
     return mu;
     }

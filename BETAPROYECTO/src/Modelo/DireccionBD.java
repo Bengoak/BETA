@@ -17,7 +17,7 @@ import oracle.jdbc.OracleTypes;
  */
 public class DireccionBD extends Conexion.ConexionOracle{
 
-    public static Direccion getByMyPK(Direccion dir) {
+    public static Direccion getMeByPK(Direccion dir) {
         Direccion d=new Direccion();
         try{
         setCon();
@@ -38,9 +38,38 @@ public class DireccionBD extends Conexion.ConexionOracle{
             desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+             System.out.printf(e.getMessage()+"Direccion.getMeByMyPk");
         }
     return d;
+    }
+
+    public static Direccion Alta(Direccion dir) {
+           
+        try{
+            setCon();
+            plantilla = "call DB.ALTADIR(?,?,?,?,?,?)";
+            scall = getCon().prepareCall(plantilla);
+            scall.setInt(1,dir.getCa().getIdTramo());
+            scall.setInt(2,dir.getNu());
+            scall.setString(3,dir.getEscalera());
+            scall.setString(4, dir.getLetra());
+            scall.setString(5,dir.getPiso());
+            scall.setString(6, dir.getMano());
+            scall.registerOutParameter(1, OracleTypes.CURSOR);
+            scall.execute();
+            resultado= (ResultSet) scall.getObject(1);
+            
+            if(resultado.next()==true) {
+                
+                dir.setIdDireccion(resultado.getInt(1));
+            } 
+            scon.close();
+            desconectar();
+            
+        } catch (Exception e) {
+             System.out.printf(e.getMessage()+"Direccion.alta");
+        }
+    return dir;
     }
     
 }

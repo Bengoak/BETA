@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package Modelo;
+import java.util.ArrayList;
 import java.util.Calendar;
 /**
  *
  * @author Iñigo
  */
 public class Nen extends Persona{
+
     
     private int numNen;
     private int sexo;
@@ -20,12 +22,25 @@ public class Nen extends Persona{
     private Solicitud sol;
     private Tutor t;
     private Direccion Dir;
+    private ArrayList<Tlfn>Tlfns;
+    private ArrayList<Nen>Amigos;
+    
     public Nen(){
+        Tlfns=new ArrayList();
+        Amigos=new ArrayList();
     };
     public Nen(Calendar fec){
+    Tlfns=new ArrayList();
+    Amigos=new ArrayList();
     this.setFecha(fec);
     }
+    public Nen (String dni){
+    this.setDni(dni);
+    }
+
         public Nen(String nNen,String apeUno, String apeDos,int sex,  Calendar fec,int dis, String mod, Centro cent,Tutor tu,Direccion di,String dni){
+        Tlfns=new ArrayList();
+        Amigos=new ArrayList();
         this.setNombre(nNen);
         this.setApellidoUno(apeUno);
         this.setApellidoDos(apeDos);
@@ -41,6 +56,8 @@ public class Nen extends Persona{
         this.setDni(dni);
         }
     public Nen(String nNen,String apeUno, String apeDos,int nuNen,int sex,  Calendar fec,int dis, String mod, Centro cent, Solicitud s,Tutor tu,Direccion di,String dni){
+        Tlfns=new ArrayList();
+        Amigos=new ArrayList();
         this.setNombre(nNen);
         this.setApellidoUno(apeUno);
         this.setApellidoDos(apeDos);
@@ -55,7 +72,57 @@ public class Nen extends Persona{
         this.setCentro(cent);
         this.setDni(dni);
     }
+        public Nen(String nNen,String apeUno, String apeDos,int nuNen,int sex,  Calendar fec,int dis, String mod, Centro cent, Solicitud s,Tutor tu,Direccion di,String dni,ArrayList<Tlfn> tlfns){
+        Amigos=new ArrayList();
+        Tlfns=new ArrayList();
+        this.setTlfns(Tlfns);
+        this.setNombre(nNen);
+        this.setApellidoUno(apeUno);
+        this.setApellidoDos(apeDos);
+        this.setNumNen(nuNen);
+        this.setSexo(sex);
+        this.setFecha(fec);
+        this.setDiscapacidad(dis);
+        this.setModelo(mod);
+        this.setCentro(cent);
+        this.setSol(s);
+        this.setT(tu);
+        this.setCentro(cent);
+        this.setDni(dni);
+    }
+        public Nen(String nNen,String apeUno, String apeDos,int nuNen,int sex,  Calendar fec,int dis, String mod, Centro cent, Solicitud s,Tutor tu,Direccion di,String dni,ArrayList<Tlfn> tlfns,ArrayList<Nen>amigos){
+        Amigos=new ArrayList();
+        this.Amigos=amigos;
+        Tlfns=new ArrayList();
+        this.setTlfns(Tlfns);
+        this.setNombre(nNen);
+        this.setApellidoUno(apeUno);
+        this.setApellidoDos(apeDos);
+        this.setNumNen(nuNen);
+        this.setSexo(sex);
+        this.setFecha(fec);
+        this.setDiscapacidad(dis);
+        this.setModelo(mod);
+        this.setCentro(cent);
+        this.setSol(s);
+        this.setT(tu);
+        this.setCentro(cent);
+        this.setDni(dni);
+    }
+     public ArrayList<Nen> getAmigos() {
+     return Amigos;
+    }
 
+    public void setAmigos(ArrayList<Nen> Amigos) {
+        this.Amigos = Amigos;
+    }
+     public ArrayList<Tlfn> getTlfns() {
+        return Tlfns;
+    }
+
+    public void setTlfns(ArrayList<Tlfn> Tlfns) {
+        this.Tlfns = Tlfns;
+    }
     public Centro getCentro() {
         return Centro;
     }

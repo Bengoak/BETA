@@ -42,7 +42,7 @@ public class SorteoBD extends Conexion.ConexionOracle {
             System.out.println("\nSorteo INSERTADO\n");
             return true;
             }catch(Exception e){
-            System.out.printf(e.getMessage());
+            System.out.printf(e.getMessage()+"SorteoBD.Alta");
             return false;
             }
     }
@@ -57,17 +57,19 @@ public class SorteoBD extends Conexion.ConexionOracle {
         try{
         
         setCon();
-        plantilla="DB.QSORT";
+        plantilla="DB.QSORTEO";
         scall=getCon().prepareCall(plantilla);
         scall.registerOutParameter(1, OracleTypes.CURSOR);
         scall.execute();
         resultado= (ResultSet) scall.getObject(1);
-        scon.close();
-        desconectar();
+       
         if(resultado.next()==true){
             s = new Sorteo( resultado.getInt(1),resultado.getInt(2), resultado.getInt(3), Convertidor.sqlDateToCalendar(resultado.getDate(4)));
         }
+         scon.close();
+        desconectar();
         }catch(Exception e){
+            System.out.printf(e.getMessage()+"SorteoBD.getLast");
         }
     return s;
     }
@@ -78,13 +80,14 @@ public class SorteoBD extends Conexion.ConexionOracle {
     public static void executeSorteo() {
         try{       
         setCon();
-        plantilla="DB.SORTEO";
+        plantilla="DB.PSORTEO";
         scall=getCon().prepareCall(plantilla);
         scall.execute();
         resultado= (ResultSet) scall.getObject(1);
         scon.close();
         desconectar();
         }catch(Exception e){
+                System.out.printf(e.getMessage()+"SorteoBD.executeSorteo");
         }
     }
 }

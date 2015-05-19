@@ -5,11 +5,18 @@
  */
 package Modelo;
 
+import java.util.logging.Logger;
+
 /**
  *
  * @author Iñigo
  */
 public class Municipio {
+
+    public Municipio(String idMu) {
+        this.idMu = idMu;
+    }
+    
     private String idMu;
     private String nMu;
     private Provincia Prov;

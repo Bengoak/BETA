@@ -32,8 +32,7 @@ public class CalleBD extends ConexionOracle {
             scall.registerOutParameter(1, OracleTypes.CURSOR);
             scall.execute();
             resultado= (ResultSet) scall.getObject(1);
-            scon.close();
-            desconectar();
+          
             if(resultado.next()==true) {
                 c.setIdTramo(resultado.getInt(1));
                 c.setnMinPar(resultado.getInt(9));
@@ -42,10 +41,11 @@ public class CalleBD extends ConexionOracle {
                 c.setnMaxImpar(resultado.getInt(12));
 
             } 
-
+            scon.close();
+            desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+            System.out.printf(e.getMessage()+"CalleBD.buscarcalle");
         }
     return c;
     }
@@ -79,10 +79,11 @@ public class CalleBD extends ConexionOracle {
                 Calle c=new Calle(resultado.getInt(1),l,cp,resultado.getString(5),resultado.getString(7),v,resultado.getInt(9),resultado.getInt(10),resultado.getInt(11),resultado.getInt(12));   
                 calles.add(c);
             } 
-
+              scon.close();
+            desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+                System.out.printf(e.getMessage()+"CalleBD.buscarcalle");
         }
     return calles;
     }
@@ -91,7 +92,7 @@ public class CalleBD extends ConexionOracle {
      * @param calle con único atributo de idtramo(pk)
      * @return calle full
      */
-    public static Calle getByMyPk(Calle calle){
+    public static Calle getMeByPk(Calle calle){
             Calle c=new Calle();
         try{
         setCon();
@@ -112,7 +113,7 @@ public class CalleBD extends ConexionOracle {
             desconectar();
             
         } catch (Exception e) {
-            System.out.printf(e.getMessage());
+              System.out.printf(e.getMessage()+"CalleBD.buscarcalle");
         }
     return c;
     
