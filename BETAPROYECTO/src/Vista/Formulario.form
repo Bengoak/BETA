@@ -668,12 +668,10 @@
             <Component class="javax.swing.JComboBox" name="comboMu">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Adios"/>
-                    <StringItem index="1" value="adios"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="-Selecciona-"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -683,12 +681,10 @@
             <Component class="javax.swing.JComboBox" name="comboLoc">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="epa"/>
-                    <StringItem index="1" value="Epa"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="-Seleccionar-"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
@@ -717,16 +713,13 @@
             <Component class="javax.swing.JComboBox" name="comboNum">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="0"/>
-                    <StringItem index="1" value="1"/>
-                    <StringItem index="2" value="2"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
                 <Property name="selectedIndex" type="int" value="-1"/>
                 <Property name="enabled" type="boolean" value="false"/>
               </Properties>
               <Events>
+                <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="comboNumFocusGained"/>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboNumActionPerformed"/>
               </Events>
             </Component>
@@ -814,12 +807,10 @@
             <Component class="javax.swing.JComboBox" name="comboPro">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="2">
-                    <StringItem index="0" value="Alava"/>
-                    <StringItem index="1" value="Gipuzkoa"/>
+                  <StringArray count="1">
+                    <StringItem index="0" value="-Selecciona-"/>
                   </StringArray>
                 </Property>
-                <Property name="selectedIndex" type="int" value="-1"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboProActionPerformed"/>

@@ -7,9 +7,11 @@ package Vista;
 
 import Exceptions.*;
 import betaproyecto.*;
+import Modelo.*;
 import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.ArrayList;
 
 /**
  * JPanel Formulario: Contiene todos los capors del Tutor, del Niño, de la direccion y de los centros nacesaria.
@@ -21,6 +23,8 @@ public class Formulario extends Pvirgen {
     private static String indexcentro;
     private static String calle;
     private static String via;
+    private static Provincia provincia;
+    private static Municipio municipio;
     
     /**
      * Ajusta el tamaño del panel y rellena el combobox de las provincias.
@@ -28,9 +32,16 @@ public class Formulario extends Pvirgen {
     public Formulario() {
         initComponents();
         this.setSize(1151, 662);
-        //Rellenar provincia
-        //comboPro.addItem(BETAPROYECTO.cogerProvincias());
         
+        ArrayList<String> prov = new ArrayList<String>();
+        //ArrayList prov = BETAPROYECTO.cogerProvincias();
+        prov.add("Alava");
+        prov.add("Bizkaia");
+        prov.add("Gipuzkoa");
+        
+        for(int x = 0; x < prov.size(); x++){
+        comboPro.addItem(prov.get(x));
+        }
     }
 
     /**
@@ -337,8 +348,7 @@ public class Formulario extends Pvirgen {
 
         jLabel21.setText("Teléfono");
 
-        comboMu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Adios", "adios" }));
-        comboMu.setSelectedIndex(-1);
+        comboMu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Selecciona-" }));
         comboMu.setEnabled(false);
         comboMu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -346,8 +356,7 @@ public class Formulario extends Pvirgen {
             }
         });
 
-        comboLoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "epa", "Epa" }));
-        comboLoc.setSelectedIndex(-1);
+        comboLoc.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Seleccionar-" }));
         comboLoc.setEnabled(false);
         comboLoc.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -369,9 +378,13 @@ public class Formulario extends Pvirgen {
             }
         });
 
-        comboNum.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "0", "1", "2" }));
         comboNum.setSelectedIndex(-1);
         comboNum.setEnabled(false);
+        comboNum.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                comboNumFocusGained(evt);
+            }
+        });
         comboNum.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboNumActionPerformed(evt);
@@ -441,8 +454,7 @@ public class Formulario extends Pvirgen {
 
         jLabel24.setText("*Povincia");
 
-        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Alava", "Gipuzkoa" }));
-        comboPro.setSelectedIndex(-1);
+        comboPro.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "-Selecciona-" }));
         comboPro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 comboProActionPerformed(evt);
@@ -794,27 +806,37 @@ public class Formulario extends Pvirgen {
      */
     private void comboMuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMuActionPerformed
         
-        comboPro.setEnabled(false);
-        if(comboMu.getSelectedIndex() != -1){            
+        
+        if(comboMu.getSelectedIndex() != 0){
+            comboPro.setEnabled(false);
             ftCp.setEnabled(true);
         }
         //Rellenar localidad
-        //comboLoc.addItem(BETAPROYECTO.cogerLocalidades());
+        
+        ArrayList<String> loc = new ArrayList<String>();
+        //ArrayList loc = BETAPROYECTO.cogerLocalidades(comboPro.getSelectedItem().toString(), comboMu.getSelectedItem().toString()));        
+        loc.add("Ali");
+        loc.add("Abechuco");
+        loc.add("Arcaute");
+        
+        for(int x = 0; x < loc.size(); x++){
+        comboLoc.addItem(loc.get(x));
+        }
+        
     }//GEN-LAST:event_comboMuActionPerformed
 
     /**
      * Deshabilita ftCp.
      * Si el selectIndex de comboLoc es diferente a -1 se habilita el bLipaCalle.
-     * Rellena el combobox de los numeros.
      * @param evt 
      */
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
-        ftCp.setEnabled(false);
-        if(comboLoc.getSelectedIndex() != -1){            
+        
+        if(comboLoc.getSelectedIndex() != 0){  
+            ftCp.setEnabled(false);          
             bLupaCalle.setEnabled(true);
-        } 
-        //Rellenar numero
-        //comboNum.addItem(BETAPROYECTO.cogernumero());
+        }
+        
     }//GEN-LAST:event_comboLocActionPerformed
 
     /**
@@ -829,7 +851,7 @@ public class Formulario extends Pvirgen {
             tfEscalera.setEnabled(true);
             tfPiso.setEnabled(true);
             tfMano.setEnabled(true);            
-        }
+        }      
     }//GEN-LAST:event_comboNumActionPerformed
 
     /**
@@ -909,13 +931,22 @@ public class Formulario extends Pvirgen {
      */
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
         
-        if(comboPro.getSelectedIndex() != -1){
+        if(comboPro.getSelectedIndex() != 0){
             rAlava.setText(comboPro.getSelectedItem().toString());
             rFueraAlava.setText("Fuera de " + comboPro.getSelectedItem().toString());
             comboMu.setEnabled(true);
         }
         //Rellenar municipio
-        //comboMu.addItem(BETAPROYECTO.cogerMunicipios(comboPro.getSelectedItem().toString()));
+        ArrayList<String> mun = new ArrayList<String>();
+        //ArrayList mun= BETAPROYECTO.cogerMunicipios(comboPro.getSelectedItem().toString());        
+        mun.add("Vitoria");
+        mun.add("Llodio");
+        mun.add("Samaniego");
+        
+        for(int x = 0; x < mun.size(); x++){
+        comboMu.addItem(mun.get(x));
+        }
+        
         
     }//GEN-LAST:event_comboProActionPerformed
 
@@ -955,7 +986,6 @@ public class Formulario extends Pvirgen {
         } 
         
         try {
-            //Hay que crear en el constructor el metodo de buscarnen-------------------------
             //Object busqueda = BETAPROYECTO.buscarnen(ftDniNen.getText());
             //if(busqueda/*.getdni() */ == null){
             if(validardatos()){
@@ -998,8 +1028,8 @@ public class Formulario extends Pvirgen {
         ftTlfnoUno.setEnabled(true);
         cTlfnoUno.setEnabled(true);
         
-        //ArrayList = BETAPROYECTO.cojercalle();
-        Cvista.calles(/*ArrayList*/);        
+        //ArrayList cal = BETAPROYECTO.cojercalle(comboPro.getSelectedItem().toString(), comboMu.getSelectedItem().toString(), ftCp.getText(), comboLoc.getSelectedItem().toString());       
+        Cvista.calles(/*cal*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
     /**
@@ -1008,9 +1038,10 @@ public class Formulario extends Pvirgen {
      * @param c2 String Contiene el resto de la calle.
      */
     public static void calle(String c1, String c2){
-        calle = c1;
-        via = c2; 
-        tfCalle.setText(calle + " " + via);
+        calle = c2;
+        via = c1; 
+        tfCalle.setText(via + " " + calle);
+        
     }
     
     /**
@@ -1020,8 +1051,8 @@ public class Formulario extends Pvirgen {
      */
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
         
-        //ArrayList = BETAPROYECTO.cogercentro();
-        Cvista.centros(/*ArrayList*/);
+        //ArrayList cent= BETAPROYECTO.cogercentro( comboPro.getSelectedItem().toString());      
+        Cvista.centros(/*cent*/);
         
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
@@ -1042,12 +1073,12 @@ public class Formulario extends Pvirgen {
      * @param evt 
      */
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
-        comboPro.setSelectedIndex(-1);
-        comboMu.setSelectedIndex(-1);
+        comboPro.setSelectedIndex(0);
+        comboMu.setSelectedIndex(0);
         ftCp.setText(null);
-        comboLoc.setSelectedIndex(-1);
+        comboLoc.setSelectedIndex(0);
         tfCalle.setText(null);
-        comboNum.setSelectedIndex(-1);
+        comboNum.setSelectedIndex(0);
         tfLetra.setText(null);
         tfEscalera.setText(null);
         tfPiso.setText(null);
@@ -1119,6 +1150,19 @@ public class Formulario extends Pvirgen {
             }
         }
     }//GEN-LAST:event_ftDniTutorActionPerformed
+
+    private void comboNumFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_comboNumFocusGained
+        ArrayList<Integer> num = new ArrayList<Integer>();
+        //ArrayList mun= BETAPROYECTO.cogerMunicipios(comboPro.getSelectedItem().toString(), comboMu.getSelectedItem().toString(), ftCp.getText(), comboLoc.getSelectedItem().toString(), via, calle);  
+        
+        num.add(0);
+        num.add(1);
+        num.add(2);
+        num.add(3);        
+        for(int x = 0; x < num.size(); x++){
+        comboNum.addItem(num.get(x));
+        }
+    }//GEN-LAST:event_comboNumFocusGained
 
     /**
      * Llama al metodo validardni de Cvista pasndole el Dni del tutor que recibe y lo guarda en un boolean.
@@ -1221,13 +1265,13 @@ public class Formulario extends Pvirgen {
             throw new CampoVacio("El segundo apellido del niño es un dato obligatorio");
         if(bgSexo.isSelected(rbHombre.getModel()) == false && bgSexo.isSelected(rbMujer.getModel()) == false)
             throw new CampoVacio("El sexo del niño es un dato obligatorio");
-        if(comboPro.getSelectedIndex() == -1)
+        if(comboPro.getSelectedIndex() == 0)
             throw new CampoVacio("La provincia es un dato obligatorio");
-        if(comboMu.getSelectedIndex() == -1)
+        if(comboMu.getSelectedIndex() == 0)
             throw new CampoVacio("El municipio es un dato obligatorio");
         if(ftCp.getValue() == null)
             throw new CampoVacio("El codigo postal es un dato obligatorio");
-        if(comboLoc.getSelectedIndex() == -1)
+        if(comboLoc.getSelectedIndex() == 0)
             throw new CampoVacio("La localidad es un dato obligatorio");
         if(tfCalle.getText().equals("") == true)
             throw new CampoVacio("La calle es un dato obligatorio");

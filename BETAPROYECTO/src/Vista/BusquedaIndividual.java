@@ -5,7 +5,7 @@
  */
 package Vista;
 
-
+import java.util.ArrayList;
 import betaproyecto.*;
 
 /**
@@ -118,8 +118,8 @@ public class BusquedaIndividual extends javax.swing.JFrame {
      */
     private void bconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bconsultaActionPerformed
         
-        //Object = BETAPROYECTO.busquedaindividual(dcFecha.getCalendar(), ftDniTutor.getText());        
-        Cvista.detalles(/*Object*/);
+        //ArralyList  datos= BETAPROYECTO.busquedaindividual(dcFecha.getCalendar(), ftDniTutor.getText());        
+        Cvista.detalles(/*datos*/);
         Cvista.cerrarbusquedaIndividual();
         
     }//GEN-LAST:event_bconsultaActionPerformed

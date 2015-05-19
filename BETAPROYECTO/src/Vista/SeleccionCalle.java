@@ -5,26 +5,33 @@
  */
 package Vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 /**
-
-         * Clase SeleccionCalle: Muestra las calles de la base de datos.
-
-         * @author Proyecto
-
-*/
+ * Clase SeleccionCalle: Muestra las calles de la base de datos.
+ * @author Proyecto
+ */
 public class SeleccionCalle extends javax.swing.JFrame {
 
     /**
-
-         * Centra la clase y recive un ArrayList
-
-         * @Param ArrayList, recibe un ArrayList con las calles. 
-
-         */
-    public SeleccionCalle(/*Arraylist*/) {
+     * Centra la clase y recive un ArrayList.
+     * Falta el ArrayList que recive las calles/
+     */
+    public SeleccionCalle(/*cal*/) {
         initComponents();
         this.setLocationRelativeTo(null);
+        DefaultListModel<String> modelo = new DefaultListModel<>();
+        ArrayList cal = new ArrayList();
+        cal.add("CU/AL Mar del norte");
+        cal.add("CT/KA Avenida Gazteis");
+        cal.add("CM/BD Adriano VI");
+        for(int x = 0; x < cal.size(); x++){
+           modelo.addElement(cal.get(x).toString());
+        }
+        lCalles.setModel(modelo);
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -43,11 +50,6 @@ public class SeleccionCalle extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
 
-        lCalles.setModel(new javax.swing.AbstractListModel() {
-            String[] strings = { "Item 1", "012345678901234567890123456789012340123456789012345678901234567890123401234567890123456789012345678901234", "Item 3", "Item 4", "Item 5", "Item 1", "0123456789", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5", "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public Object getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(lCalles);
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -91,15 +93,12 @@ public class SeleccionCalle extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-
-         * Llama al metodo calle() de Formulario y le pasa la calle seleccionada pasandole los 5 primeros caracteres y despues del 6 en adelante.
-
-         */
+     * Llama al metodo calle() de Formulario y le pasa la calle seleccionada pasandole los 5 primeros caracteres y despues del 6 en adelante.
+     * @param evt 
+     */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        
         Formulario.calle(lCalles.getSelectedValue().toString().substring(0, 5), lCalles.getSelectedValue().toString().substring(6));
-        Cvista.cerrarseleccioncalle();
-        
+          Cvista.cerrarseleccioncalle();             
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**

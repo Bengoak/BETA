@@ -98,11 +98,9 @@ public class Cvista {
      * Muestra la clase participante y le pasa el objeto con los participantes de la solicitud.
      * Falsta el ArrayList del parametro que recibe que contiene los participantes de la solicitud.
      */
-    public static void guardar(/*ArrayList*/) {
-        
-        participante = new Participante(/*ArrayList*/);
-        participante.setVisible(true);
-        
+    public static void guardar() {        
+        participante = new Participante();
+        participante.setVisible(true);       
     }
     
     /**
@@ -136,59 +134,45 @@ public class Cvista {
         return validacion;        
     }
     
-    
     /**
-
-         * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
-
-         * @Param ArrayList, Recibe un ArrayList con las calles, para pasarselo a la clase seleccionarcalle.
-
-    */
-    public static void calles(/*ArrayList*/){
-        seleccioncalle = new SeleccionCalle(/*ArrayList*/);
+     * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
+     * Falsta el ArrayList que recibe las calles, para pasarselo a la clase seleccionarcalle.
+     */
+    public static void calles(/*ArrayList cal*/){
+        seleccioncalle = new SeleccionCalle(/*cal*/);
         seleccioncalle.setVisible(true);
     }
 
     /**
-
-         * Cierra la clase seleccionarcalle.
-
-    */
+     * Cierra la clase seleccionarcalle.
+     */
     static void cerrarseleccioncalle() {
         seleccioncalle.dispose();
     }
 
-    
+
     /**
-
-         * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
-
-         * @Param ArrayList, Recibe un ArrayList con los centros, para pasarselo a la clase seleccionarcentro.
-
-    */
-    static void centros(/*ArrayList*/) {
-        seleccioncentro = new SeleccionCentro(/*ArrayList*/);
+     * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
+     * Falsta el ArrayList que recibe con los centros, para pasarselo a la clase seleccionarcentro.
+     */
+    static void centros(/*ArrayList cent*/) {
+        seleccioncentro = new SeleccionCentro(/*cent*/);
         seleccioncentro.setVisible(true);
     }
 
     /**
-
-         * Cierra la clase seleccionarcentro.
-         
-    */
+     * Cierra la clase seleccionarcentro.
+     */
     static void cerrarseleccioncentro() {
         seleccioncentro.dispose();
     }
 
     /**
-
-         * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
-
-         * @Param Objeto, Recibe un objeto con los detalles a mostrar en el panel detalles.
-
-    */
-    static void detalles(/*Object*/) {
-        panel = new Detalles(/*Object*/);
+     * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
+     * Falta el ArrayList que recive con los detalles a mostrar en el panel detalles.
+     */
+    static void detalles(/*ArrayList datos*/) {
+        panel = new Detalles(/*datos*/);
         info.add(panel);
         info.pack();
         panel.setVisible(true);

@@ -6,19 +6,14 @@
 package Vista;
 
 /**
-
-         * Vista Info: Contiene la barra de menú para acceder a los paneles del programa.
-
-         * @author Proyecto
-
-*/
+ * Vista Info: Contiene la barra de menú para acceder a los paneles del programa.
+ * @author Proyecto
+ */
 public class Info extends javax.swing.JFrame {
 
     /**
-
-         * Ajusta el tamaño de la clase y lo posiciona e el centro.
-
-    */
+     * Ajusta el tamaño de la clase y lo posiciona e el centro.
+     */
     public Info() {        
         initComponents();
         this.setSize(1151, 662);
@@ -124,47 +119,35 @@ public class Info extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     /**
-
-         * Llama al metodo lanzar de Cvista pasandole un 0.
-
-    */
+     * Llama al metodo lanzar de Cvista pasandole un 0.
+     * @param evt 
+     */
     private void jminfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminfoActionPerformed
-        
-        Cvista.lanzar(0);
-        
+        Cvista.lanzar(0);        
     }//GEN-LAST:event_jminfoActionPerformed
 
     /**
-
-         * Llama al metodo lanzar de Cvista pasandole un 1.
-
-    */
+     * Llama al metodo lanzar de Cvista pasandole un 1.
+     * @param evt 
+     */
     private void jmfaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmfaseActionPerformed
-        
-        Cvista.lanzar(1);
-        
+        Cvista.lanzar(1);        
     }//GEN-LAST:event_jmfaseActionPerformed
 
     /**
-
-         * Llama al metodo lanzar de Cvista pasandole un 2.
-
-    */
+     * Llama al metodo lanzar de Cvista pasandole un 2.
+     * @param evt 
+     */
     private void jmformularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmformularioActionPerformed
-        
-        Cvista.lanzar(2);
-        
+        Cvista.lanzar(2);        
     }//GEN-LAST:event_jmformularioActionPerformed
 
     /**
-
-         * Llama al metodo lanzar de Cvista pasandole un 3.
-
-    */
+     * Llama al metodo lanzar de Cvista pasandole un 3.
+     * @param evt 
+     */
     private void jmdetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmdetallesActionPerformed
-        
-        Cvista.lanzar(3);
-        
+        Cvista.lanzar(3);        
     }//GEN-LAST:event_jmdetallesActionPerformed
 
     /**
@@ -173,16 +156,13 @@ public class Info extends javax.swing.JFrame {
 
     */
     private void jmlistadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlistadoActionPerformed
-        
-        Cvista.lanzar(4);
-        
+        Cvista.lanzar(4);        
     }//GEN-LAST:event_jmlistadoActionPerformed
 
     /**
-
-         * Finaliza el programa.
-
-    */
+     * Llama al metodo lanzar de Cvista pasandole un 3.
+     * @param evt 
+     */
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         System.exit(0);
     }//GEN-LAST:event_jMenuItem1ActionPerformed

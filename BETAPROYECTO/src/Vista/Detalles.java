@@ -5,28 +5,24 @@
  */
 package Vista;
 
+import java.util.ArrayList;
 /**
-
-         * JPanel Detalles: Muestra la informacion del participante señalado en la vista de Busqueda Individual.
-
-         * @author Proyecto
-
-*/
+ * JPanel Detalles: Muestra la informacion del participante señalado en la vista de Busqueda Individual.
+ * @author Proyecto
+ */
 public class Detalles extends Pvirgen {
 
     
-    
-/**
-
-         * Ajusta el tamaño del JPanel y recibe un Objeto para rellenar los campos
-
-         * @Param Objeto, Objeto con los datos necesarios para rellenar los campos.
-
-    */
-    public Detalles(/*Object*/) {
+    /**
+     * Ajusta el tamaño del JPanel y recibe un Objeto para rellenar los campos.
+     * Falta el ArrayList con los datos necesarios para rellenar los campos.
+     */
+    public Detalles(/*ArrayList datos*/) {
         initComponents();
-        this.setSize(1151, 662);     
-        
+        this.setSize(1151, 662);
+        ArrayList datos = new ArrayList();
+        datos.add("Mikel");
+        tfParticipante.setText(datos.get(0).toString());
     }
 
     /**
