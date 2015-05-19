@@ -5,6 +5,9 @@
  */
 package Vista;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
+
 /**
  * Clase SeleccionCentro: Mustra los centros de la base de datos.
  * @author Proyecto
@@ -12,19 +15,21 @@ package Vista;
 public class SeleccionCentro extends javax.swing.JFrame {
 
     /**
-
-         * Centra la clase y recive un ArrayList.
-
-         * @Param ArrayList, recibe un ArrayList con los centros.
-
-         */
-    /**
      * Centra la clase y recive un ArrayList.
      * Falta el ArrayList con los centros.
      */
-    public SeleccionCentro(/*Arraylist*/) {
+    public SeleccionCentro(/*cent*/) {
         initComponents();
         this.setLocationRelativeTo(null);
+        DefaultListModel<String> modelo = new DefaultListModel<>();
+        ArrayList cal = new ArrayList();
+        cal.add("Egibide Arriaga");
+        cal.add("Egibide Nieves Cano");
+        cal.add("Egibide Molinuevo");
+        for(int x = 0; x < cal.size(); x++){
+           modelo.addElement(cal.get(x).toString());
+        }
+        lCentros.setModel(modelo);
     }
 
     /**
@@ -99,7 +104,7 @@ public class SeleccionCentro extends javax.swing.JFrame {
      */
     private void bSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSeleccionActionPerformed
         Formulario.cogercentro(lCentros.getSelectedValue().toString(), String.valueOf(lCentros.getSelectedIndex()));
-        Cvista.cerrarseleccioncentro();        
+          Cvista.cerrarseleccioncentro();        
     }//GEN-LAST:event_bSeleccionActionPerformed
     
     /**

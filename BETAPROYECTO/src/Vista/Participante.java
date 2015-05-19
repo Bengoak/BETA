@@ -5,8 +5,9 @@
  */
 package Vista;
 
-
+import java.util.ArrayList;
 import betaproyecto.*;
+import javax.swing.DefaultListModel;
 
 /**
  * Vista Particpantes: Muestra los participantes de la solicitud y eliges si finalizar la solicitud o añadir otro participante.
@@ -15,30 +16,29 @@ import betaproyecto.*;
 public class Participante extends javax.swing.JFrame {
 
     /**
-
-         * Ajustal la vista en el centro.
-         * Llama al metodo cogerparticipantes() de BETAPROYECTO.
-         * Comprueba cuantos participantes tiene la solicitud, para no añadir mas de 3.
-
-         * @Param Objeto, Recibe un Objeto para rellenar el campo con los participantes.
-
-    */
-    /**
-     * Ajustal la vista en el centro.
+     * Ajusta la vista en el centro.
      * Llama al metodo cogerparticipantes() de BETAPROYECTO.
      * Comprueba cuantos participantes tiene la solicitud, para no añadir mas de 3.
      * Falta el ArrayList que recibe un ArraList para rellenar el campo con los participantes.
      */
-    public Participante(/*Arralist*/) {
+    public Participante() {
         initComponents();
         this.setLocationRelativeTo(null);
-        //Hay que crear el metodo de cogerparticipantes-----------------------
-        //ArrayList = BETAPROYECTO.cogersparticipantes();
-        
-        //int part = BETAPROYECTO.participantes();
-        //if(part >= 3){
-        //   bAnadir.setEnabled(false);
-        //}
+        DefaultListModel<String> modelo = new DefaultListModel<>();
+        ArrayList<String> part = new ArrayList<String>();
+        //ArrayList par= BETAPROYECTO.cogersparticipantes();
+    
+        part.add("Asier");
+        part.add("Iñigo");
+        //part.add("Martin");
+        for(int x = 0; x < part.size(); x++){
+           modelo.addElement(part.get(x).toString());
+        }
+        lParticipantes.setModel(modelo);
+        //int part = BETAPROYECTO.numeroparticipantes();
+        if(part.size() >= 3){
+           bAnadir.setEnabled(false);
+        }
     }
 
     /**
@@ -50,17 +50,14 @@ public class Participante extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tpParticipantes = new javax.swing.JTextPane();
         jLabel1 = new javax.swing.JLabel();
         bFin = new javax.swing.JButton();
         bAnadir = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        lParticipantes = new javax.swing.JList();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
-
-        tpParticipantes.setEditable(false);
-        jScrollPane1.setViewportView(tpParticipantes);
 
         jLabel1.setText("Participantes");
 
@@ -78,6 +75,8 @@ public class Participante extends javax.swing.JFrame {
             }
         });
 
+        jScrollPane2.setViewportView(lParticipantes);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -88,22 +87,22 @@ public class Participante extends javax.swing.JFrame {
                         .addGap(149, 149, 149)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(bFin)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(bAnadir))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 289, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(63, Short.MAX_VALUE))
+                        .addGap(37, 37, 37)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 318, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(bFin)
+                        .addGap(187, 187, 187)
+                        .addComponent(bAnadir)))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bFin)
                     .addComponent(bAnadir))
@@ -172,7 +171,7 @@ public class Participante extends javax.swing.JFrame {
     private javax.swing.JButton bAnadir;
     private javax.swing.JButton bFin;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextPane tpParticipantes;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JList lParticipantes;
     // End of variables declaration//GEN-END:variables
 }

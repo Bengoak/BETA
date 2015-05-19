@@ -98,11 +98,9 @@ public class Cvista {
      * Muestra la clase participante y le pasa el objeto con los participantes de la solicitud.
      * Falsta el ArrayList del parametro que recibe que contiene los participantes de la solicitud.
      */
-    public static void guardar(/*ArrayList*/) {
-        
-        participante = new Participante(/*ArrayList*/);
-        participante.setVisible(true);
-        
+    public static void guardar() {        
+        participante = new Participante();
+        participante.setVisible(true);       
     }
     
     /**
@@ -140,8 +138,8 @@ public class Cvista {
      * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
      * Falsta el ArrayList que recibe las calles, para pasarselo a la clase seleccionarcalle.
      */
-    public static void calles(/*ArrayList*/){
-        seleccioncalle = new SeleccionCalle(/*ArrayList*/);
+    public static void calles(/*ArrayList cal*/){
+        seleccioncalle = new SeleccionCalle(/*cal*/);
         seleccioncalle.setVisible(true);
     }
 
@@ -157,8 +155,8 @@ public class Cvista {
      * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
      * Falsta el ArrayList que recibe con los centros, para pasarselo a la clase seleccionarcentro.
      */
-    static void centros(/*ArrayList*/) {
-        seleccioncentro = new SeleccionCentro(/*ArrayList*/);
+    static void centros(/*ArrayList cent*/) {
+        seleccioncentro = new SeleccionCentro(/*cent*/);
         seleccioncentro.setVisible(true);
     }
 
@@ -173,8 +171,8 @@ public class Cvista {
      * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
      * Falta el ArrayList que recive con los detalles a mostrar en el panel detalles.
      */
-    static void detalles(/*ArrayList*/) {
-        panel = new Detalles(/*ArriList*/);
+    static void detalles(/*ArrayList datos*/) {
+        panel = new Detalles(/*datos*/);
         info.add(panel);
         info.pack();
         panel.setVisible(true);
