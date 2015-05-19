@@ -29,7 +29,7 @@ public class Formulario extends Pvirgen {
         initComponents();
         this.setSize(1151, 662);
         //Rellenar provincia
-        //comboPro.addItem(BETAPROYECTO.cogerprovincia());
+        //comboPro.addItem(BETAPROYECTO.cogerProvincias());
         
     }
 
@@ -799,7 +799,7 @@ public class Formulario extends Pvirgen {
             ftCp.setEnabled(true);
         }
         //Rellenar localidad
-        //comboLoc.addItem(BETAPROYECTO.cogerlocalidad());
+        //comboLoc.addItem(BETAPROYECTO.cogerLocalidades());
     }//GEN-LAST:event_comboMuActionPerformed
 
     /**
@@ -915,7 +915,7 @@ public class Formulario extends Pvirgen {
             comboMu.setEnabled(true);
         }
         //Rellenar municipio
-        //comboMu.addItem(BETAPROYECTO.cogermunicipio(comboPro.getSelectedItem().toString()));
+        //comboMu.addItem(BETAPROYECTO.cogerMunicipios(comboPro.getSelectedItem().toString()));
         
     }//GEN-LAST:event_comboProActionPerformed
 

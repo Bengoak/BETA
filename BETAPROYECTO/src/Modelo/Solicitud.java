@@ -14,6 +14,18 @@ public class Solicitud {
     private int orden;
     private Calendar fecha;
     private Sorteo s;
+    
+    public Solicitud(int idSolicitud, int orden, Calendar fecha, Sorteo s) {
+        this.idSolicitud = idSolicitud;
+        this.orden = orden;
+        this.fecha = fecha;
+        this.s = s;
+    }
+  
+    
+    public Solicitud() {
+    }
+    
 
     public Solicitud(int id){
     this.idSolicitud=id;
