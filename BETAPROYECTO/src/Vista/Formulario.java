@@ -11,11 +11,19 @@ import java.util.Calendar;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-
+/**
+ * JPanel Formulario: Contiene todos los capors del Tutor, del Niño, de la direccion y de los centros nacesaria.
+ * @author Proyecto
+ */
 public class Formulario extends Pvirgen {
 
+    private static String centro;
+    private static String indexcentro;
+    private static String calle;
+    private static String via;
+    
     /**
-     * Creates new form Formulario
+     * Ajusta el tamaño del panel y rellena el combobox de las provincias.
      */
     public Formulario() {
         initComponents();
@@ -87,13 +95,13 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro = new javax.swing.JFormattedTextField();
         cTlfnoCuatro = new javax.swing.JCheckBox();
         bLupaCalle = new javax.swing.JButton();
-        ftLetra = new javax.swing.JFormattedTextField();
-        ftEscalera = new javax.swing.JFormattedTextField();
-        ftPiso = new javax.swing.JFormattedTextField();
-        ftMano = new javax.swing.JFormattedTextField();
         jLabel24 = new javax.swing.JLabel();
         comboPro = new javax.swing.JComboBox();
         bBorrarDireccion = new javax.swing.JButton();
+        tfMano = new javax.swing.JTextField();
+        tfPiso = new javax.swing.JTextField();
+        tfEscalera = new javax.swing.JTextField();
+        tfLetra = new javax.swing.JTextField();
         jPanel4 = new javax.swing.JPanel();
         jLabel22 = new javax.swing.JLabel();
         rAlava = new javax.swing.JRadioButton();
@@ -112,6 +120,10 @@ public class Formulario extends Pvirgen {
 
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setPreferredSize(new java.awt.Dimension(1151, 662));
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del participante", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
 
         jLabel5.setText("Dni");
@@ -136,25 +148,13 @@ public class Formulario extends Pvirgen {
 
         jLabel10.setText("*Sexo");
 
-        rbHombre.setBackground(new java.awt.Color(255, 255, 255));
         bgSexo.add(rbHombre);
         rbHombre.setText("Hombre");
         rbHombre.setEnabled(false);
-        rbHombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbHombreActionPerformed(evt);
-            }
-        });
 
-        rbMujer.setBackground(new java.awt.Color(255, 255, 255));
         bgSexo.add(rbMujer);
         rbMujer.setText("Mujer");
         rbMujer.setEnabled(false);
-        rbMujer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rbMujerActionPerformed(evt);
-            }
-        });
 
         jLabel11.setText("Fecha de nacimiento");
 
@@ -243,6 +243,7 @@ public class Formulario extends Pvirgen {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del padre/madre o tutor/a", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 204))); // NOI18N
 
         jLabel7.setText("*Dni");
@@ -312,6 +313,7 @@ public class Formulario extends Pvirgen {
                 .addGap(25, 25, 25))
         );
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Dirección", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
@@ -354,11 +356,6 @@ public class Formulario extends Pvirgen {
         });
 
         tfCalle.setEditable(false);
-        tfCalle.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCalleActionPerformed(evt);
-            }
-        });
 
         try {
             ftCp.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####")));
@@ -431,65 +428,14 @@ public class Formulario extends Pvirgen {
         ftTlfnoCuatro.setEnabled(false);
 
         cTlfnoCuatro.setEnabled(false);
-        cTlfnoCuatro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cTlfnoCuatroActionPerformed(evt);
-            }
-        });
 
-        bLupaCalle.setText("lupa");
+        bLupaCalle.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
+        bLupaCalle.setBorder(null);
+        bLupaCalle.setBorderPainted(false);
         bLupaCalle.setEnabled(false);
         bLupaCalle.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bLupaCalleActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftLetra.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftLetra.setEnabled(false);
-        ftLetra.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftLetraActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftEscalera.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftEscalera.setEnabled(false);
-        ftEscalera.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftEscaleraActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftPiso.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftPiso.setEnabled(false);
-        ftPiso.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftPisoActionPerformed(evt);
-            }
-        });
-
-        try {
-            ftMano.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("U")));
-        } catch (java.text.ParseException ex) {
-            ex.printStackTrace();
-        }
-        ftMano.setEnabled(false);
-        ftMano.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ftManoActionPerformed(evt);
             }
         });
 
@@ -510,6 +456,15 @@ public class Formulario extends Pvirgen {
             }
         });
 
+        tfMano.setEnabled(false);
+
+        tfPiso.setEnabled(false);
+
+        tfEscalera.setEnabled(false);
+
+        tfLetra.setEnabled(false);
+        tfLetra.setSize(new java.awt.Dimension(20, 20));
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -524,21 +479,33 @@ public class Formulario extends Pvirgen {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel15))
                     .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(91, 91, 91)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ftTlfnoUno, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoUno)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(cTlfnoDos)
+                        .addGap(22, 22, 22)
+                        .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoTres)
+                        .addGap(18, 18, 18)
+                        .addComponent(ftTlfnoCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(cTlfnoCuatro))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(91, 91, 91)
+                                .addComponent(jLabel24)
+                                .addGap(18, 18, 18)
+                                .addComponent(comboPro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel21)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftTlfnoUno, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(cTlfnoUno)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftTlfnoDos, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(cTlfnoDos)
-                                        .addGap(22, 22, 22))
                                     .addGroup(jPanel3Layout.createSequentialGroup()
                                         .addComponent(jLabel17)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -546,48 +513,31 @@ public class Formulario extends Pvirgen {
                                         .addGap(28, 28, 28)
                                         .addComponent(jLabel19)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(147, 147, 147)))
-                                .addComponent(ftTlfnoTres, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cTlfnoTres)
-                                .addGap(18, 18, 18)
-                                .addComponent(ftTlfnoCuatro, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(cTlfnoCuatro))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(85, 85, 85)
+                                        .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(12, 12, 12)
+                                        .addComponent(jLabel18))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(jLabel14)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jLabel16)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addComponent(jLabel24)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(comboPro, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel3Layout.createSequentialGroup()
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jLabel18)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(jLabel14)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(18, 18, 18)
-                                                .addComponent(jLabel16)))
+                                        .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(bLupaCalle))
-                                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                                .addComponent(ftEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(34, 34, 34)
-                                                .addComponent(jLabel20)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ftPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(31, 31, 31)
-                                                .addComponent(jLabel99)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(ftMano, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                                        .addComponent(bLupaCalle))
+                                    .addGroup(jPanel3Layout.createSequentialGroup()
+                                        .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel20)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jLabel99)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(bBorrarDireccion)
@@ -597,7 +547,7 @@ public class Formulario extends Pvirgen {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(26, 26, 26)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(jLabel15)
@@ -605,27 +555,34 @@ public class Formulario extends Pvirgen {
                     .addComponent(ftCp, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24)
                     .addComponent(comboPro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel14)
-                    .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16)
-                    .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bLupaCalle))
-                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel14)
+                            .addComponent(comboLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel16)
+                            .addComponent(tfCalle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(bLupaCalle)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel17)
-                            .addComponent(jLabel18)
-                            .addComponent(jLabel19)
-                            .addComponent(jLabel20)
-                            .addComponent(jLabel99)
-                            .addComponent(comboNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ftLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel99)
+                                .addComponent(tfMano, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel20)
+                                .addComponent(tfPiso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel17)
+                                .addComponent(jLabel19)
+                                .addComponent(comboNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(tfLetra, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabel18)
+                                .addComponent(tfEscalera, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -643,11 +600,11 @@ public class Formulario extends Pvirgen {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Otros datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Gulim", 0, 14), new java.awt.Color(0, 0, 153))); // NOI18N
 
         jLabel22.setText("*Centro de Enseñanza");
 
-        rAlava.setBackground(new java.awt.Color(255, 255, 255));
         bgCentroEnsenanza.add(rAlava);
         rAlava.setText("Álava");
         rAlava.addActionListener(new java.awt.event.ActionListener() {
@@ -656,7 +613,6 @@ public class Formulario extends Pvirgen {
             }
         });
 
-        rFueraAlava.setBackground(new java.awt.Color(255, 255, 255));
         bgCentroEnsenanza.add(rFueraAlava);
         rFueraAlava.setText("Fuera de Álava");
         rFueraAlava.addActionListener(new java.awt.event.ActionListener() {
@@ -665,7 +621,8 @@ public class Formulario extends Pvirgen {
             }
         });
 
-        bLupaCentro.setText("lupa");
+        bLupaCentro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/lupa.png"))); // NOI18N
+        bLupaCentro.setBorder(null);
         bLupaCentro.setEnabled(false);
         bLupaCentro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -674,48 +631,20 @@ public class Formulario extends Pvirgen {
         });
 
         tfCentro.setEditable(false);
-        tfCentro.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfCentroActionPerformed(evt);
-            }
-        });
 
         jLabel23.setText("*Modelo");
 
-        rModeloB.setBackground(new java.awt.Color(255, 255, 255));
         bgModelo.add(rModeloB);
         rModeloB.setText("B");
-        rModeloB.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloBActionPerformed(evt);
-            }
-        });
 
-        rModeloA.setBackground(new java.awt.Color(255, 255, 255));
         bgModelo.add(rModeloA);
         rModeloA.setText("A");
         rModeloA.setToolTipText("");
-        rModeloA.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloAActionPerformed(evt);
-            }
-        });
 
-        rModeloD.setBackground(new java.awt.Color(255, 255, 255));
         bgModelo.add(rModeloD);
         rModeloD.setText("D");
-        rModeloD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                rModeloDActionPerformed(evt);
-            }
-        });
 
         cDiscapacidad.setText("Discapacidad");
-        cDiscapacidad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cDiscapacidadActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -725,58 +654,58 @@ public class Formulario extends Pvirgen {
                 .addGap(66, 66, 66)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rAlava)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rFueraAlava))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel23)
                         .addGap(18, 18, 18)
                         .addComponent(rModeloA)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(rModeloB)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(rModeloD)))
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(rModeloD)
+                        .addGap(198, 198, 198)
+                        .addComponent(cDiscapacidad))
                     .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel22)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rAlava)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(rFueraAlava)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(tfCentro, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bLupaCentro))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(cDiscapacidad)))
-                .addContainerGap(131, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bLupaCentro)))
+                .addContainerGap(139, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel22)
-                    .addComponent(rAlava)
-                    .addComponent(rFueraAlava)
-                    .addComponent(tfCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bLupaCentro))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel23)
-                    .addComponent(rModeloA)
-                    .addComponent(rModeloB)
-                    .addComponent(rModeloD)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bLupaCentro)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(rAlava)
+                            .addComponent(rFueraAlava)
+                            .addComponent(tfCentro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel23)
+                        .addComponent(rModeloA)
+                        .addComponent(rModeloB)
+                        .addComponent(rModeloD))
                     .addComponent(cDiscapacidad))
-                .addGap(32, 32, 32))
+                .addGap(18, 18, 18))
         );
 
-        bBorrar.setText("Borrar");
+        bBorrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/borrar.png"))); // NOI18N
         bBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bBorrarActionPerformed(evt);
             }
         });
 
-        bGuardar.setText("Guardar");
+        bGuardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/guardar.png"))); // NOI18N
         bGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bGuardarActionPerformed(evt);
@@ -810,15 +739,14 @@ public class Formulario extends Pvirgen {
                         .addGap(157, 157, 157))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
                                 .addComponent(bBorrar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(bGuardar)
-                                .addGap(48, 48, 48))
-                            .addComponent(bProtección, javax.swing.GroupLayout.Alignment.TRAILING))
-                        .addGap(91, 91, 91))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(bGuardar))
+                            .addComponent(bProtección))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(524, 524, 524)
                 .addComponent(jLabel1)
@@ -831,41 +759,39 @@ public class Formulario extends Pvirgen {
                 .addGap(28, 28, 28)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(bBorrar)
-                            .addComponent(bGuardar))
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bGuardar)
+                            .addComponent(bBorrar))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(bProtección))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(30, 30, 30))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1172, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 665, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void rbHombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbHombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbHombreActionPerformed
-
-    private void rbMujerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rbMujerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rbMujerActionPerformed
-
+    /**
+     * Deshabilita el comboPro.
+     * Si el SelectIndex de comboMu es diferente a -1 habilita el ftCp.
+     * Rellena el combobox de las localidades.
+     * @param evt 
+     */
     private void comboMuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboMuActionPerformed
         
         comboPro.setEnabled(false);
@@ -876,6 +802,12 @@ public class Formulario extends Pvirgen {
         //comboLoc.addItem(BETAPROYECTO.cogerLocalidades());
     }//GEN-LAST:event_comboMuActionPerformed
 
+    /**
+     * Deshabilita ftCp.
+     * Si el selectIndex de comboLoc es diferente a -1 se habilita el bLipaCalle.
+     * Rellena el combobox de los numeros.
+     * @param evt 
+     */
     private void comboLocActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboLocActionPerformed
         ftCp.setEnabled(false);
         if(comboLoc.getSelectedIndex() != -1){            
@@ -885,22 +817,25 @@ public class Formulario extends Pvirgen {
         //comboNum.addItem(BETAPROYECTO.cogernumero());
     }//GEN-LAST:event_comboLocActionPerformed
 
-    private void tfCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCalleActionPerformed
-   
-    }//GEN-LAST:event_tfCalleActionPerformed
-    
-    
-    
+    /**
+     * Deshabilita el bLupaCalle.
+     * Si el selectIndex de comboNum es diferente a -1 habilita tfLetra, tfEscalera, tfPiso y tfMano.
+     * @param evt 
+     */
     private void comboNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboNumActionPerformed
         bLupaCalle.setEnabled(false);
         if(comboNum.getSelectedIndex() != -1){
-            ftLetra.setEnabled(true);
-            ftEscalera.setEnabled(true);
-            ftPiso.setEnabled(true);
-            ftMano.setEnabled(true);            
+            tfLetra.setEnabled(true);
+            tfEscalera.setEnabled(true);
+            tfPiso.setEnabled(true);
+            tfMano.setEnabled(true);            
         }
     }//GEN-LAST:event_comboNumActionPerformed
 
+    /**
+     * Si se selecciona el checkBox del telefono uno, se habilita el ftTlfnodos y el cTlfnodos.
+     * @param evt 
+     */
     private void cTlfnoUnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoUnoActionPerformed
         if(cTlfnoUno.isSelected()){
             ftTlfnoDos.setEnabled(true);
@@ -908,6 +843,10 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoUnoActionPerformed
 
+    /**
+     * Si se selecciona el checkBox del telefono dos, se habilita el ftTlfnotres y el cTlfnotres.
+     * @param evt 
+     */
     private void cTlfnoDosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoDosActionPerformed
         if(cTlfnoDos.isSelected()){
             ftTlfnoTres.setEnabled(true);
@@ -915,6 +854,11 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoDosActionPerformed
 
+
+    /**
+     * Si se selecciona el checkBox del telefono tres, se habilita el ftTlfnocuatro y el cTlfnocuatro.
+     * @param evt 
+     */
     private void cTlfnoTresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoTresActionPerformed
         if(cTlfnoTres.isSelected()){
             ftTlfnoCuatro.setEnabled(true);
@@ -922,66 +866,47 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_cTlfnoTresActionPerformed
 
-    private void cTlfnoCuatroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cTlfnoCuatroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cTlfnoCuatroActionPerformed
 
-    private void ftLetraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftLetraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftLetraActionPerformed
-
-    private void ftEscaleraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftEscaleraActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftEscaleraActionPerformed
-
-    private void ftPisoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftPisoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftPisoActionPerformed
-
-    private void ftManoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftManoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ftManoActionPerformed
-
+    /**
+     * Si se selecciona el radiobuttom de rAlava, se habilita bLupaCentro.
+     * Se llama al metodo cogercentroprobincia de BETAPROYECTO.
+     * @param evt 
+     */
     private void rAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rAlavaActionPerformed
         if(rAlava.isSelected()){
             bLupaCentro.setEnabled(true);
         }
-        //BETAPROYECTO.centroalava();
+        //BETAPROYECTO.cogercentroprovincia();
     }//GEN-LAST:event_rAlavaActionPerformed
 
+    /**
+     * Si se selecciona el radiobuttom de rFueraAlava, se habilita bLupaCentro.
+     * Se llama al metodo cogercentroprobincia de BETAPROYECTO.
+     * @param evt 
+     */
     private void rFueraAlavaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rFueraAlavaActionPerformed
         if(rFueraAlava.isSelected()){
             bLupaCentro.setEnabled(true);
         }
-        //BETAPROYECTO.centrofueraalava();
+        //BETAPROYECTO.cogercentroprovincias();
     }//GEN-LAST:event_rFueraAlavaActionPerformed
 
-    private void tfCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfCentroActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_tfCentroActionPerformed
-
-    private void rModeloBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloBActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloBActionPerformed
-
-    private void rModeloAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloAActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloAActionPerformed
-
-    private void rModeloDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rModeloDActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_rModeloDActionPerformed
-
-    private void cDiscapacidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cDiscapacidadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cDiscapacidadActionPerformed
-
+    /**
+     * Hace doClick en el formulario de Info.
+     * @param evt 
+     */
     private void bBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarActionPerformed
         
         Info.jmformulario.doClick();
         
     }//GEN-LAST:event_bBorrarActionPerformed
 
+    /**
+     * Si el selectIndex de comboPro es diferente a -1, sustitulle el texto de rAlava y rFueraAlava por el selectItem del comboPro.
+     * Deshabilita el combobox de Municipio.
+     * Rellena los municipios.
+     * @param evt 
+     */
     private void comboProActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboProActionPerformed
         
         if(comboPro.getSelectedIndex() != -1){
@@ -994,6 +919,16 @@ public class Formulario extends Pvirgen {
         
     }//GEN-LAST:event_comboProActionPerformed
 
+    /**
+     * Si cDiscapacidad esta seleccionada, la variable discapacidad sera 1, sino 0.
+     * Si se selecciona rHombre, la variable sexo sera 0, si selecciona rMujer, sea 1.
+     * Si selecciona rModeloA, la variable modelo sera A.
+     * Si selecciona rModeloB, la variable modelo sera B.
+     * Si selecciona rModeloD, la variable midelo sera D.
+     * Comprobamos que el Dni de Niño no este repetudo.
+     * Si los datos introducidos en el formulario son correctos, se los mandamos a BETAPROYECTO con el metodo gurdar(),  con todos los parametros.
+     * @param evt 
+     */
     private void bGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bGuardarActionPerformed
         int discapacidad = 0;        
         if(cDiscapacidad.isSelected()){
@@ -1026,10 +961,12 @@ public class Formulario extends Pvirgen {
             if(validardatos()){
                 /*BETAPROYECTO.guardar(ftDniTutor.getText(), tfNombreTutor.getText(), tfPrimerApellidoTutor.getText(), tfSegundoApellidoTutor.getText(),
                 ftDniNen.getText(), tfNombreNen.getText(), tfPrimerApellidoNen.getText(), tfSegundoApellidoNen.getText(), sexo, dcFecha.getCalendar(),
-                comboPro.getSelectedIndex(), comboMu.getSelectedIndex(), ftCp.getText(), comboLoc.getSelectedIndex(), tfCalle.getText(),
-                comboNum.getSelectedIndex(), ftLetra.getText(), ftEscalera.getText(), ftPiso.getText(), ftMano.getText(),
+                String.valueOf(comboPro.getSelectedIndex()), comboPro.getSelectedItem().toString(), 
+                String.valueOf(comboMu.getSelectedIndex()), comboMu.getSelectedItem().toString(),
+                ftCp.getText(), String.valueOf(comboLoc.getSelectedIndex()), comboLoc.getSelectedItem().toString(), calle, via,
+                comboNum.getSelectedIndex(), tfLetra.getText(), tfEscalera.getText(), tfPiso.getText(), tfMano.getText(),
                 ftTlfnoUno.getText(), ftTlfnoDos.getText(), ftTlfnoTres.getText(), ftTlfnoCuatro.getText(),
-                tfCentro.getText(), modelo, discapacidad);*/                
+                centro, indecentro, modelo, discapacidad);*/
                 
                 Cvista.guardar();            
             }
@@ -1042,27 +979,68 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_bGuardarActionPerformed
 
+    /**
+     * Llama al metodo protecciondatos de Cvista.
+     * @param evt 
+     */
     private void bProtecciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bProtecciónActionPerformed
         Cvista.protecciondatos();
     }//GEN-LAST:event_bProtecciónActionPerformed
 
+    /**
+     * Deshabilita el combobox de localidad, habilita el combobox de Num, habilita el combobox de numero, el telefono uno y el chackbox det telefono no.
+     * Llama al metodocojercalle de BETAPROYECTO y lo guarda en un Arraylist y se lo pasa a calles de Cvista.
+     * @param evt 
+     */
     private void bLupaCalleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCalleActionPerformed
         comboLoc.setEnabled(false);
         comboNum.setEnabled(true);
         ftTlfnoUno.setEnabled(true);
         cTlfnoUno.setEnabled(true);
         
-        //Object = BETAPROYECTO.cojercalle();
-        Cvista.calles(/*Object*/);        
+        //ArrayList = BETAPROYECTO.cojercalle();
+        Cvista.calles(/*ArrayList*/);        
     }//GEN-LAST:event_bLupaCalleActionPerformed
 
+    /**
+     * Recibe dos parametros que se guardan en dos variables y rellena el campo de tfCalle.
+     * @param c1 String Recibe la variable c1, que contiene parte de la calle. 
+     * @param c2 String Contiene el resto de la calle.
+     */
+    public static void calle(String c1, String c2){
+        calle = c1;
+        via = c2; 
+        tfCalle.setText(calle + " " + via);
+    }
+    
+    /**
+     * Llama al metodo cogercentro de BETAPROYECTO y los guarda en un ArrayList.
+     * Llama al metodo centros de Cvista y le pasa el ArrayList.
+     * @param evt 
+     */
     private void bLupaCentroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bLupaCentroActionPerformed
         
-        //Object = BETAPROYECTO.cogercentro();
-        Cvista.centros(/*Object*/);
+        //ArrayList = BETAPROYECTO.cogercentro();
+        Cvista.centros(/*ArrayList*/);
         
     }//GEN-LAST:event_bLupaCentroActionPerformed
 
+    /**
+     * Recibe dos parametros que se guardan en dos variables y rellena el campo de tfCalle.
+     * @param value value String Recibe la variable c1, que contiene parte de la calle.
+     * @param index index String Recibe c2, que contiene el resto de la calle.
+     */
+    public static void cogercentro(String value, String index){
+        centro = value;
+        indexcentro = index;
+        tfCentro.setText(centro);
+    }
+    
+    /**
+     * Borra el contenido de los campos de la cireccion.
+     * Llama al metodo borrardireccion.
+     * @param evt 
+     */
     private void bBorrarDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bBorrarDireccionActionPerformed
         comboPro.setSelectedIndex(-1);
         comboMu.setSelectedIndex(-1);
@@ -1070,10 +1048,10 @@ public class Formulario extends Pvirgen {
         comboLoc.setSelectedIndex(-1);
         tfCalle.setText(null);
         comboNum.setSelectedIndex(-1);
-        ftLetra.setText(null);
-        ftEscalera.setText(null);
-        ftPiso.setText(null);
-        ftMano.setText(null);
+        tfLetra.setText(null);
+        tfEscalera.setText(null);
+        tfPiso.setText(null);
+        tfMano.setText(null);
         ftTlfnoUno.setText(null);
         cTlfnoUno.setSelected(false);
         ftTlfnoDos.setText(null);
@@ -1087,17 +1065,30 @@ public class Formulario extends Pvirgen {
         
     }//GEN-LAST:event_bBorrarDireccionActionPerformed
 
+    /**
+     * Llama al metodo validarDni pasandole el Dni del niño.
+     * @param evt 
+     */
     private void ftDniNenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniNenActionPerformed
         
         validarDni(ftDniNen.getText());        
         
     }//GEN-LAST:event_ftDniNenActionPerformed
 
+    /**
+     * Deshabilita el combobox de municipio y habilita el combobox de localidad.
+     * @param evt 
+     */
     private void ftCpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftCpActionPerformed
         comboMu.setEnabled(false);
         comboLoc.setEnabled(true);
     }//GEN-LAST:event_ftCpActionPerformed
 
+    /**
+     * Comprueba si esl Dni del tutor es correcto pasandoselo al metodo validarDni.
+     * Comprueba si el dni existe en la base de datos y si existe rellena los capos solo y sino habilita los campos para rellenarlos.
+     * @param evt 
+     */
     private void ftDniTutorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ftDniTutorActionPerformed
 
         if(validarDni(ftDniTutor.getText())){
@@ -1129,15 +1120,26 @@ public class Formulario extends Pvirgen {
         }
     }//GEN-LAST:event_ftDniTutorActionPerformed
 
+    /**
+     * Llama al metodo validardni de Cvista pasndole el Dni del tutor que recibe y lo guarda en un boolean.
+     * @param DniTutor Recibe el Dni del tutor para validarlo.
+     * @return Retorna un boolean, depandiendo de si el Dni es correcto o no.
+     */
     private Boolean validarDni(String DniTutor) {
         boolean validacion = Cvista.validardni(DniTutor);
         return validacion;
     }
     
+    /**
+     * Llama a los metodos para controlar las excepciones.
+     * @return Retora un boolean, dependiendo de si han saltado las exceptiones o no.
+     * @throws Exceptio
+     */
     private boolean validardatos() throws Exception {
         try{
+            limitecaracteres();
             camposvacios();
-            validarFecha();
+            validarFecha();            
             
             return true;
         }
@@ -1151,16 +1153,24 @@ public class Formulario extends Pvirgen {
             javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
             return false;
         }
+        catch(LimiteCaracteres e)
+        {
+            javax.swing.JOptionPane.showMessageDialog(this,e.getMensaje());
+            return false;
+        }
         
     }
     
+    /**
+     * Deshabilita los campos de la direccion.
+     */
     private void borrardireccion(){
         comboPro.setEnabled(true);
         comboNum.setEnabled(false);
-        ftLetra.setEnabled(false);
-        ftEscalera.setEnabled(false);
-        ftPiso.setEnabled(false);
-        ftMano.setEnabled(false);
+        tfLetra.setEnabled(false);
+        tfEscalera.setEnabled(false);
+        tfPiso.setEnabled(false);
+        tfMano.setEnabled(false);
         ftTlfnoUno.setEnabled(false);
         cTlfnoUno.setEnabled(false);
         ftTlfnoDos.setEnabled(false);
@@ -1171,20 +1181,29 @@ public class Formulario extends Pvirgen {
         cTlfnoCuatro.setEnabled(false);
     }
     
+    /**
+     * Comprueba que la edad del niño este entre 7 y 13 años.
+     * @throws Exceptio
+     */
     private void validarFecha()throws Exception{
         if (dcFecha.getDate() == null)
             throw new CampoVacio("El fecha es un dato obligatorio"); 
         
-        Calendar hoy = Calendar.getInstance();
+        Calendar ano = Calendar.getInstance();
+        Calendar ano1 = Calendar.getInstance();
         Calendar fechaEvento = dcFecha.getCalendar();        
-        
-        if (fechaEvento.after(hoy))
-                throw new FechaNoValida("La fecha tiene que se inferior a la actual"); 
-        hoy.add(Calendar.YEAR, -16);
-        if (fechaEvento.before(hoy))
-                throw new FechaNoValida("El participante no puede ser mayor de 16 años");     
+        ano.add(Calendar.YEAR, -7);
+        if (fechaEvento.after(ano))
+                throw new FechaNoValida("El participante no puede ser menor de 7 años"); 
+        ano1.add(Calendar.YEAR, -13);
+        if (fechaEvento.before(ano1))
+                throw new FechaNoValida("El participante no puede ser mayor de 13 años");     
     }
     
+    /**
+     * Comprueba que se han introducido todos los datos que son obligatorios.
+     * @throws Exception 
+     */
     private void camposvacios() throws Exception{
         if (ftDniTutor.getValue() == null)
            throw new CampoVacio("El Dni del tutor es un dato obligatorio");
@@ -1221,8 +1240,43 @@ public class Formulario extends Pvirgen {
         if(rModeloA.isSelected() == false && rModeloB.isSelected() == false && rModeloD.isSelected() == false)
             throw new CampoVacio("El modelo es un dato obligatorio");
     }
-    
-    
+
+    /**
+     * Comprueba el limite de caracteres que pueden tener los campos.
+     * @throws Exception 
+     */
+    public void limitecaracteres() throws Exception{
+        if(tfNombreTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El nombre del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfPrimerApellidoTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El primer apellido del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfSegundoApellidoTutor.getText().length() > 30){
+            throw new LimiteCaracteres("El segundo apellido del tutor no puede tener mas de 30 caracteres");
+        }
+        if(tfNombreNen.getText().length() > 30){
+            throw new LimiteCaracteres("El nombre del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfPrimerApellidoNen.getText().length() > 30){
+            throw new LimiteCaracteres("El primer apellido del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfSegundoApellidoNen.getText().length() > 30){
+            throw new LimiteCaracteres("El segundo apellido del niño no puede tener mas de 30 caracteres");
+        }
+        if(tfLetra.getText().length() > 20){
+            throw new LimiteCaracteres("El campo letra no puede tener mas de 20 caracteres");
+        }
+        if(tfEscalera.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Escalera no puede tener mas de 20 caracteres");
+        }
+        if(tfPiso.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Piso no puede tener mas de 20 caracteres");
+        }
+        if(tfMano.getText().length() > 20){
+            throw new LimiteCaracteres("El campo Mano no puede tener mas de 20 caracteres");
+        }        
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bBorrar;
@@ -1247,10 +1301,6 @@ public class Formulario extends Pvirgen {
     private javax.swing.JFormattedTextField ftCp;
     private javax.swing.JFormattedTextField ftDniNen;
     private javax.swing.JFormattedTextField ftDniTutor;
-    private javax.swing.JFormattedTextField ftEscalera;
-    private javax.swing.JFormattedTextField ftLetra;
-    private javax.swing.JFormattedTextField ftMano;
-    private javax.swing.JFormattedTextField ftPiso;
     private javax.swing.JFormattedTextField ftTlfnoCuatro;
     private javax.swing.JFormattedTextField ftTlfnoDos;
     private javax.swing.JFormattedTextField ftTlfnoTres;
@@ -1292,15 +1342,19 @@ public class Formulario extends Pvirgen {
     private javax.swing.JRadioButton rModeloD;
     private javax.swing.JRadioButton rbHombre;
     private javax.swing.JRadioButton rbMujer;
-    public static javax.swing.JTextField tfCalle;
-    public static javax.swing.JTextField tfCentro;
+    private static javax.swing.JTextField tfCalle;
+    private static javax.swing.JTextField tfCentro;
+    private javax.swing.JTextField tfEscalera;
+    private javax.swing.JTextField tfLetra;
+    private javax.swing.JTextField tfMano;
     private javax.swing.JTextField tfNombreNen;
     private javax.swing.JTextField tfNombreTutor;
+    private javax.swing.JTextField tfPiso;
     private javax.swing.JTextField tfPrimerApellidoNen;
     private javax.swing.JTextField tfPrimerApellidoTutor;
     private javax.swing.JTextField tfSegundoApellidoNen;
     private javax.swing.JTextField tfSegundoApellidoTutor;
     // End of variables declaration//GEN-END:variables
 
-    
+   
 }

@@ -5,13 +5,17 @@
  */
 package Vista;
 
+
 import betaproyecto.*;
 
-
+/**
+ * Clase Busqueda Individual: Pide la fecha de nacimiento y el DNI del tutor necesarios para mostrar los detalles del participante.
+ * @author Proyecto
+ */
 public class BusquedaIndividual extends javax.swing.JFrame {
 
     /**
-     * Creates new form BusquedaIndividual
+     * Ajusta el tamaño de la clase y la posiciona en el centro.
      */
     public BusquedaIndividual() {
         initComponents();
@@ -36,6 +40,7 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         dcFecha = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
@@ -50,6 +55,11 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        ftDniTutor.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                ftDniTutorFocusLost(evt);
+            }
+        });
 
         bconsulta.setText("Consultar");
         bconsulta.addActionListener(new java.awt.event.ActionListener() {
@@ -100,6 +110,12 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Llama al metodo busquedaindividual() de BETAPROYECTO, pasandole la fecha y el DNI y lo guarda en un Objeto.
+     * Llama al metodo detalles() de Cvista y le pasa el Objeto.
+     * Llama al metodo cerrarbusquedaindividual() de Cvista.
+     * @param evt 
+     */
     private void bconsultaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bconsultaActionPerformed
         
         //Object = BETAPROYECTO.busquedaindividual(dcFecha.getCalendar(), ftDniTutor.getText());        
@@ -108,6 +124,25 @@ public class BusquedaIndividual extends javax.swing.JFrame {
         
     }//GEN-LAST:event_bconsultaActionPerformed
 
+    /**
+     * Llama al metodo validarDni pasandole un DNI para validarlo.
+     * @param evt 
+     */
+    private void ftDniTutorFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ftDniTutorFocusLost
+        validarDni(ftDniTutor.getText());
+            
+        
+    }//GEN-LAST:event_ftDniTutorFocusLost
+
+    /**
+     * Llama al metodo validardni de Cvista al que le pasa el Dni del tutor y lo guarda en un boolean que luego retorna.
+     * @param DniTutor Contiene el DNI del tutor para validar.
+     * @return Retorna un boolean dependiendo de la validacion de l DNI. 
+     */
+    private Boolean validarDni(String DniTutor) {
+        boolean validacion = Cvista.validardni(DniTutor);
+        return validacion;
+    }
     /**
      * @param args the command line arguments
      */

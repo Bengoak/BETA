@@ -5,14 +5,28 @@
  */
 package Vista;
 
+/**
+
+         * Vista Particpantes: Muestra los participantes de la solicitud y eliges si finalizar la solicitud o añadir otro participante.
+
+         * @author Proyecto
+
+*/
+
 import betaproyecto.*;
 
 public class Participante extends javax.swing.JFrame {
 
     /**
-     * Creates new form Participante
-     */
-    public Participante() {
+
+         * Ajustal la vista en el centro.
+         * Llama al metodo cogerparticipantes() de BETAPROYECTO.
+         * Comprueba cuantos participantes tiene la solicitud, para no añadir mas de 3.
+
+         * @Param Objeto, Recibe un Objeto para rellenar el campo con los participantes.
+
+    */
+    public Participante(/*Objeto*/) {
         initComponents();
         this.setLocationRelativeTo(null);
         //Hay que crear el metodo de cogerparticipantes-----------------------
@@ -40,20 +54,21 @@ public class Participante extends javax.swing.JFrame {
         bAnadir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         tpParticipantes.setEditable(false);
         jScrollPane1.setViewportView(tpParticipantes);
 
         jLabel1.setText("Participantes");
 
-        bFin.setText("Fin");
+        bFin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salir.png"))); // NOI18N
         bFin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bFinActionPerformed(evt);
             }
         });
 
-        bAnadir.setText("Añadir");
+        bAnadir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/anadir.png"))); // NOI18N
         bAnadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bAnadirActionPerformed(evt);
@@ -85,7 +100,7 @@ public class Participante extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(bFin)
                     .addComponent(bAnadir))
@@ -95,11 +110,30 @@ public class Participante extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Hace doClick en el formulario de Info.
+         * Llama el metodo cerrarparticipante() de Cvista.
+
+         * @Param Nombre del Parametro, desc. y para que se usa, (uno por parametro)
+
+         *@Param  s1 Texto que guarda....
+
+         * @return (si el metodo no es void) Desc. de lo que devuelve
+
+         * @Exception - @throws: Nombre de las excepciones que pueden lanzarse
+
+    */
     private void bAnadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAnadirActionPerformed
         Info.jmformulario.doClick();
         Cvista.cerrarparticipante();
     }//GEN-LAST:event_bAnadirActionPerformed
 
+    /**
+
+         * Finaliza la solicitud llamndo al metodo finsolicitud() de BETAPROYECTO.
+
+    */
     private void bFinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bFinActionPerformed
         
         //BETAPROYECTO.finsolicitud();

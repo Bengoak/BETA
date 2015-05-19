@@ -5,6 +5,14 @@
  */
 package Vista;
 
+/**
+
+         * Clase ValidarDni: Contiene la operacion necesaria para validar el DNI.
+
+         * @author Proyecto
+
+*/
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JOptionPane;
@@ -17,6 +25,15 @@ public class ValidarDni {
         
     }
     
+    /**
+
+         * Hace la operacion necesaria para validar el DNI, reciviendo el DNI y devolviendo un boolean.
+
+         * @Param DniTutor, es el DNI del tutor del formulario que se envia para validarlo.
+
+         * @return retorna un boolean, ddependiendo de si el DNI es corecto o no.
+
+    */
     public static boolean ValidarDni(String DniTutor) {
         
         char[] letras = new char[23];
@@ -74,7 +91,13 @@ public class ValidarDni {
     }
     
     
-    
+    /**
+
+         * Contiene el array con las letras para el DNI
+
+         * @Param letra, recive el array para las letras.
+
+    */
     public static void valoresletras(char[] letras){
         
         letras[0]='T';

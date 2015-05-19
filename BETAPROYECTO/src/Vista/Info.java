@@ -6,20 +6,25 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * Vista Info: Contiene la barra de menú para acceder a los paneles del programa.
+
+         * @author Proyecto
+
+*/
 public class Info extends javax.swing.JFrame {
 
     /**
-     * Creates new form Info
-     */
+
+         * Ajusta el tamaño de la clase y lo posiciona e el centro.
+
+    */
     public Info() {        
         initComponents();
         this.setSize(1151, 662);
         this.setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -36,12 +41,14 @@ public class Info extends javax.swing.JFrame {
         jmformulario = new javax.swing.JMenuItem();
         jmdetalles = new javax.swing.JMenuItem();
         jmlistado = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(1151, 662));
 
         jMenu1.setText("Menu");
 
+        jminfo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/Information-icon.png"))); // NOI18N
         jminfo.setText("Información");
         jminfo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,6 +57,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jminfo);
 
+        jmfase.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/reloj.png"))); // NOI18N
         jmfase.setText("Fase");
         jmfase.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +66,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmfase);
 
+        jmformulario.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/formulario.png"))); // NOI18N
         jmformulario.setText("Formulario");
         jmformulario.setEnabled(false);
         jmformulario.addActionListener(new java.awt.event.ActionListener() {
@@ -67,6 +76,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmformulario);
 
+        jmdetalles.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/gafas.png"))); // NOI18N
         jmdetalles.setText("Detalles situación solicitud");
         jmdetalles.setEnabled(false);
         jmdetalles.addActionListener(new java.awt.event.ActionListener() {
@@ -76,6 +86,7 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmdetalles);
 
+        jmlistado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/listado.png"))); // NOI18N
         jmlistado.setText("Listado del sorteo");
         jmlistado.setEnabled(false);
         jmlistado.addActionListener(new java.awt.event.ActionListener() {
@@ -85,6 +96,15 @@ public class Info extends javax.swing.JFrame {
         });
         jMenu1.add(jmlistado);
 
+        jMenuItem1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/salirrpog.png"))); // NOI18N
+        jMenuItem1.setText("Salir");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMenuItem1);
+
         jMenuBar1.add(jMenu1);
 
         setJMenuBar(jMenuBar1);
@@ -93,45 +113,79 @@ public class Info extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 840, Short.MAX_VALUE)
+            .addGap(0, 1141, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 558, Short.MAX_VALUE)
+            .addGap(0, 634, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 0.
+
+    */
     private void jminfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jminfoActionPerformed
         
         Cvista.lanzar(0);
         
     }//GEN-LAST:event_jminfoActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 1.
+
+    */
     private void jmfaseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmfaseActionPerformed
         
         Cvista.lanzar(1);
         
     }//GEN-LAST:event_jmfaseActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 2.
+
+    */
     private void jmformularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmformularioActionPerformed
         
         Cvista.lanzar(2);
         
     }//GEN-LAST:event_jmformularioActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 3.
+
+    */
     private void jmdetallesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmdetallesActionPerformed
         
         Cvista.lanzar(3);
         
     }//GEN-LAST:event_jmdetallesActionPerformed
 
+    /**
+
+         * Llama al metodo lanzar de Cvista pasandole un 4.
+
+    */
     private void jmlistadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jmlistadoActionPerformed
         
         Cvista.lanzar(4);
         
     }//GEN-LAST:event_jmlistadoActionPerformed
+
+    /**
+
+         * Finaliza el programa.
+
+    */
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -171,10 +225,11 @@ public class Info extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     public static javax.swing.JMenuItem jmdetalles;
     public static javax.swing.JMenuItem jmfase;
     public static javax.swing.JMenuItem jmformulario;
     public static javax.swing.JMenuItem jminfo;
     public static javax.swing.JMenuItem jmlistado;
     // End of variables declaration//GEN-END:variables
-}
+ }

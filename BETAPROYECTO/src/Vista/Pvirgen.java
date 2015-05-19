@@ -6,14 +6,19 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * JPanel Pvirgen: Es un panel vacio que utiliza el Cvista parra mostrar los paneles.
+
+         * @author Proyecto
+
+*/
 abstract class Pvirgen extends javax.swing.JPanel {
 
     /**
-     * Creates new form Pvirgen
-     */
+
+         * Ajusta el tamaño del JPanel.
+
+    */
     public Pvirgen() {
         initComponents();
         this.setSize(1151, 662);
@@ -34,7 +39,7 @@ abstract class Pvirgen extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1051, Short.MAX_VALUE)
+            .addGap(0, 1151, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

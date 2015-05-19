@@ -6,14 +6,21 @@
 package Vista;
 
 /**
- *
- * @author newuser
- */
+
+         * Clase SeleccionCentro: Mustra los centros de la base de datos.
+
+         * @author Proyecto
+
+*/
 public class SeleccionCentro extends javax.swing.JFrame {
 
     /**
-     * Creates new form SeleccionCentro
-     */
+
+         * Centra la clase y recive un ArrayList.
+
+         * @Param ArrayList, recibe un ArrayList con los centros.
+
+         */
     public SeleccionCentro(/*Arraylist*/) {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -34,6 +41,7 @@ public class SeleccionCentro extends javax.swing.JFrame {
         bSeleccion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Lucida Grande", 1, 18)); // NOI18N
         jLabel1.setText("Seleccion de Centro");
@@ -83,13 +91,19 @@ public class SeleccionCentro extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+
+         * Llama al metodo cogercentro() de Formulario y le pasa el centro seleccionado y la posicion en la que esta en la lista.
+         * Llama al metodo cerrarseleccioncentro().
+
+    */
     private void bSeleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSeleccionActionPerformed
         
-        Formulario.tfCentro.setText(lCentros.getSelectedValue().toString());
+        Formulario.cogercentro(lCentros.getSelectedValue().toString(), String.valueOf(lCentros.getSelectedIndex()));
         Cvista.cerrarseleccioncentro();
         
     }//GEN-LAST:event_bSeleccionActionPerformed
-
+    
     /**
      * @param args the command line arguments
      */

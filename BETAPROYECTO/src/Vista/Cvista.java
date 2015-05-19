@@ -6,8 +6,12 @@
 package Vista;
 
 import javax.swing.JOptionPane;
+import java.util.ArrayList;
 
-
+/**
+ * Clase Cvista: Es la clase controladora de las vistas.
+ * @author Proyecto
+ */
 public class Cvista {
     
     private static Info info;
@@ -28,12 +32,22 @@ public class Cvista {
     
     
     
-    
+    /**
+     * Muestra la Clase Info con el panel de Informacion.
+     */
     public static void start (){
         info = new Info();
-        info.setVisible(true);        
+        info.setVisible(true);       
+        panel = new Informacion();
+        info.add(panel);
+        info.pack();
+        panel.setVisible(true);
     }
 
+    /**
+     * Se encarga de mostrar el panel que le pasemos con el switch.
+     * @param i Recibe el parametro que puede ser un 0, 1, 2, 3, 4 y dependiendo de lo que sea, muestra un panel u otro.
+     */
     public static void lanzar(int i) { 
         boolean x = true;
         if(panel != null){
@@ -68,7 +82,11 @@ public class Cvista {
         }
     }
     
-    
+
+    /**
+     * Recibe un parametro y hace doClick en fase de Info.
+     * @param i Recibe un parametro que se guarda en esfase.
+     */
     public static void estadofase(int i) { 
         
         esfase = i; 
@@ -76,48 +94,99 @@ public class Cvista {
                 
     }
     
-    public static void guardar(/*Object*/) {
+    /**
+     * Muestra la clase participante y le pasa el objeto con los participantes de la solicitud.
+     * Falsta el ArrayList del parametro que recibe que contiene los participantes de la solicitud.
+     */
+    public static void guardar(/*ArrayList*/) {
         
-        participante = new Participante();
+        participante = new Participante(/*ArrayList*/);
         participante.setVisible(true);
         
     }
     
+    /**
+     * Cierra la clase participante.
+     */
     public static void cerrarparticipante(){
         participante.dispose();
     }
-    
+
+    /**
+     * Cierra la clase busquedaindividual.
+     */
     public static void cerrarbusquedaIndividual(){
         busquedaindividual.dispose();
     }
 
+/**
+ * Muestra un mensage con la proteccion de datos.
+ */
     public static void protecciondatos() {        
         JOptionPane.showMessageDialog(null, "Proteccion de datos.");
     }
 
+    /**
+     * Lama al metodo validardni para comprovar si el Dni es correcto y devuelve un boolean dependiendo de si esta bien o no.
+     * @param DniTutor Recibe el DNI del tutor para pasarselo el metodo ValidarDni de la clase ValidarDni.
+     * @return Devuelve un boolean dependiendo del DNI.
+     */
     static boolean validardni(String DniTutor) {
         validacion = ValidarDni.ValidarDni(DniTutor);
         return validacion;        
     }
     
-    public static void calles(){
-        seleccioncalle = new SeleccionCalle(/*Object*/);
+    
+    /**
+
+         * Muestra la clase seleccionarcalle y le pasa u ArrayList con las calles.
+
+         * @Param ArrayList, Recibe un ArrayList con las calles, para pasarselo a la clase seleccionarcalle.
+
+    */
+    public static void calles(/*ArrayList*/){
+        seleccioncalle = new SeleccionCalle(/*ArrayList*/);
         seleccioncalle.setVisible(true);
     }
 
+    /**
+
+         * Cierra la clase seleccionarcalle.
+
+    */
     static void cerrarseleccioncalle() {
         seleccioncalle.dispose();
     }
 
-    static void centros() {
-        seleccioncentro = new SeleccionCentro(/*Object*/);
+    
+    /**
+
+         * Muestra la clase seleccionarcentro y le pasa u ArrayList con los centros.
+
+         * @Param ArrayList, Recibe un ArrayList con los centros, para pasarselo a la clase seleccionarcentro.
+
+    */
+    static void centros(/*ArrayList*/) {
+        seleccioncentro = new SeleccionCentro(/*ArrayList*/);
         seleccioncentro.setVisible(true);
     }
 
+    /**
+
+         * Cierra la clase seleccionarcentro.
+         
+    */
     static void cerrarseleccioncentro() {
         seleccioncentro.dispose();
     }
 
+    /**
+
+         * Muestra el panel detalles y recibe un Objeto que pasa al al panel detalles.
+
+         * @Param Objeto, Recibe un objeto con los detalles a mostrar en el panel detalles.
+
+    */
     static void detalles(/*Object*/) {
         panel = new Detalles(/*Object*/);
         info.add(panel);
