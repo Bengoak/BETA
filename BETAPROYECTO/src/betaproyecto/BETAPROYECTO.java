@@ -279,7 +279,7 @@ public class BETAPROYECTO {
         Tutor t=new Tutor(dni);
         t=TutorBD.getByMyPk(t);
         System.out.print("");
-        return t;  
+        return t;
         
     }
     public static void finsolicitud() {
