@@ -280,7 +280,7 @@ public class BETAPROYECTO {
         t=TutorBD.getByMyPk(t);
         System.out.print("");
         return t;
-       
+        
     }
     public static void finsolicitud() {
         ///volcamos el array de crios

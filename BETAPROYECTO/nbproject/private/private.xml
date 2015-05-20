@@ -2,26 +2,12 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-<<<<<<< HEAD
         <group>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Provincia.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/NenDB.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/CalleBD.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/betaproyecto/BETAPROYECTO.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/ProvinciaBD.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Conexion/ConexionOracle.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Localidad.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/SolicitudBD.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Direccion.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Municipio.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Calle.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Tlfn.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/LocalidadBD.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/MunicipioBD.java</file>
-            <file>file:/G:/DAW/proyecto/beta/BETAPROYECTO/src/Modelo/Centro.java</file>
+            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/betaproyecto/BETAPROYECTO.java</file>
+            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Cvista.java</file>
+            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Detalles.java</file>
+            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/Formulario.java</file>
+            <file>file:/Users/newuser/BETA/BETAPROYECTO/src/Vista/BusquedaIndividual.java</file>
         </group>
-=======
-        <group/>
->>>>>>> 8c8a09dc29797e05a7ca0e16acbaa0a5c694624c
     </open-files>
 </project-private>

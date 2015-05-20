@@ -26,6 +26,7 @@ public class Cvista {
     private static Boolean validacion;
     private static SeleccionCalle seleccioncalle;
     private static SeleccionCentro seleccioncentro;
+    private static Portada portada;
     
     
     private static int esfase = 0;
@@ -38,7 +39,7 @@ public class Cvista {
     public static void start (){
         info = new Info();
         info.setVisible(true);       
-        panel = new Informacion();
+        panel = new Portada();
         info.add(panel);
         info.pack();
         panel.setVisible(true);
