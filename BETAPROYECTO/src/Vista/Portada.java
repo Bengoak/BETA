@@ -6,13 +6,13 @@
 package Vista;
 
 /**
- *  JPanel Portada: Contiene la imagen del inicio del programa
- * @author Proyecto
+ *
+ * @author newuser
  */
 public class Portada extends Pvirgen {
 
     /**
-     * Ajusta el tamaño del panel.
+     * Creates new form Portada
      */
     public Portada() {
         initComponents();
@@ -39,11 +39,15 @@ public class Portada extends Pvirgen {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jLabel1)
+                .addGap(0, 22, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
